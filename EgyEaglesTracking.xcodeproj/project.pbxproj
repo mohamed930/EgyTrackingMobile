@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D32297D62BFBE20200EE19E9 /* TextFieldComponets.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32297D52BFBE20200EE19E9 /* TextFieldComponets.swift */; };
+		D32297D92BFBE77500EE19E9 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32297D82BFBE77500EE19E9 /* View.swift */; };
 		D34FAA522BFBB698008C5827 /* EgyEaglesTrackingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34FAA512BFBB698008C5827 /* EgyEaglesTrackingApp.swift */; };
 		D34FAA542BFBB698008C5827 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34FAA532BFBB698008C5827 /* ContentView.swift */; };
 		D34FAA562BFBB69A008C5827 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D34FAA552BFBB69A008C5827 /* Assets.xcassets */; };
@@ -14,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D32297D52BFBE20200EE19E9 /* TextFieldComponets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldComponets.swift; sourceTree = "<group>"; };
+		D32297D82BFBE77500EE19E9 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		D34FAA4E2BFBB698008C5827 /* EgyEaglesTracking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EgyEaglesTracking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D34FAA512BFBB698008C5827 /* EgyEaglesTrackingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EgyEaglesTrackingApp.swift; sourceTree = "<group>"; };
 		D34FAA532BFBB698008C5827 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -32,6 +36,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D32297D42BFBE1EE00EE19E9 /* componets */ = {
+			isa = PBXGroup;
+			children = (
+				D32297D52BFBE20200EE19E9 /* TextFieldComponets.swift */,
+			);
+			path = componets;
+			sourceTree = "<group>";
+		};
+		D32297D72BFBE76000EE19E9 /* utilits */ = {
+			isa = PBXGroup;
+			children = (
+				D32297D82BFBE77500EE19E9 /* View.swift */,
+			);
+			path = utilits;
+			sourceTree = "<group>";
+		};
 		D34FAA452BFBB698008C5827 = {
 			isa = PBXGroup;
 			children = (
@@ -52,6 +72,8 @@
 			isa = PBXGroup;
 			children = (
 				D34FAA5F2BFBB6A6008C5827 /* AppStarter */,
+				D32297D72BFBE76000EE19E9 /* utilits */,
+				D32297D42BFBE1EE00EE19E9 /* componets */,
 				D34FAA602BFBB6AE008C5827 /* Screens */,
 				D34FAA612BFBB6B5008C5827 /* Assets */,
 			);
@@ -161,6 +183,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D32297D62BFBE20200EE19E9 /* TextFieldComponets.swift in Sources */,
+				D32297D92BFBE77500EE19E9 /* View.swift in Sources */,
 				D34FAA542BFBB698008C5827 /* ContentView.swift in Sources */,
 				D34FAA522BFBB698008C5827 /* EgyEaglesTrackingApp.swift in Sources */,
 			);
