@@ -11,6 +11,8 @@ struct ContentView: View {
     
     @State var email: String = ""
     
+    var screenWidth: CGFloat = UIScreen.main.bounds.width
+    
     var body: some View {
         VStack {
             Image("EgyEagles")
@@ -58,6 +60,26 @@ struct ContentView: View {
                     .overlay(RoundedRectangle(cornerRadius: 23).stroke(Color("#B1B1B1")))
                     .padding([.horizontal], 10)
                     .font(.system(size: 16,weight: .medium))
+            }
+            
+            
+            VStack {
+                
+                Spacer()
+                
+                Button {
+                    print("Hello World!!")
+                } label: {
+                    Text("Login")
+                        .padding()
+                        .frame(width: screenWidth - (37*2))
+                }
+                .frame(height: 46)
+                .background(Color("#239C6F"))
+                .foregroundColor(.white)
+                .font(.system(size: 16,weight: .medium))
+                .clipShape(Capsule())
+
             }
             
             Spacer()
