@@ -51,10 +51,9 @@
 		D34FAA502BFBB698008C5827 /* EgyEaglesTracking */ = {
 			isa = PBXGroup;
 			children = (
-				D34FAA512BFBB698008C5827 /* EgyEaglesTrackingApp.swift */,
-				D34FAA532BFBB698008C5827 /* ContentView.swift */,
-				D34FAA552BFBB69A008C5827 /* Assets.xcassets */,
-				D34FAA572BFBB69A008C5827 /* Preview Content */,
+				D34FAA5F2BFBB6A6008C5827 /* AppStarter */,
+				D34FAA602BFBB6AE008C5827 /* Screens */,
+				D34FAA612BFBB6B5008C5827 /* Assets */,
 			);
 			path = EgyEaglesTracking;
 			sourceTree = "<group>";
@@ -65,6 +64,31 @@
 				D34FAA582BFBB69A008C5827 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D34FAA5F2BFBB6A6008C5827 /* AppStarter */ = {
+			isa = PBXGroup;
+			children = (
+				D34FAA512BFBB698008C5827 /* EgyEaglesTrackingApp.swift */,
+			);
+			path = AppStarter;
+			sourceTree = "<group>";
+		};
+		D34FAA602BFBB6AE008C5827 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				D34FAA532BFBB698008C5827 /* ContentView.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		D34FAA612BFBB6B5008C5827 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				D34FAA552BFBB69A008C5827 /* Assets.xcassets */,
+				D34FAA572BFBB69A008C5827 /* Preview Content */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,7 +290,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"EgyEaglesTracking/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"EgyEaglesTracking/Assets/Preview Content\"";
 				DEVELOPMENT_TEAM = 9DRYUUNTK3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -295,7 +319,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"EgyEaglesTracking/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"EgyEaglesTracking/Assets/Preview Content\"";
 				DEVELOPMENT_TEAM = 9DRYUUNTK3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
