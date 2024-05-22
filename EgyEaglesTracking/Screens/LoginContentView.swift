@@ -15,7 +15,11 @@ struct LoginContentView: View {
     @State var isPasswordVisible = true
     @FocusState private var focusedField: Field?
     
+    @State var isButtonTapped: Bool = false
+    
     @State var ErrorMessage: Bool = true
+    
+    @StateObject var viewmodel = LoginViewModel()
     
     enum Field: Hashable {
         case email
@@ -37,7 +41,7 @@ struct LoginContentView: View {
                     .padding([.top], 96)
                     .padding([.bottom],50)
                 
-                TextFieldComponets(email: email, placeHolder: "Email", image: "Email")
+                TextFieldComponets(email: $email, errorMessage: $ErrorMessage, placeHolder: "Email", image: "Email")
                     .submitLabel(.next)
                     .focused($focusedField, equals: .email)
                     .onSubmit {
@@ -64,7 +68,7 @@ struct LoginContentView: View {
                                 .textFieldStyle(PlainTextFieldStyle())
                                 .padding([.horizontal], 56)
                                 .cornerRadius(23)
-                                .overlay(RoundedRectangle(cornerRadius: 23).stroke(Color("#B1B1B1")))
+                                .overlay(RoundedRectangle(cornerRadius: 23).stroke(ErrorMessage ?  Color("#B1B1B1") : .red))
                                 .padding([.horizontal], 10)
                                 .padding([.bottom], 8)
                                 .font(.system(size: 16,weight: .medium))
@@ -76,7 +80,7 @@ struct LoginContentView: View {
                         }
                         // case to see password as plain text
                         else {
-                            TextFieldComponets(email: password, placeHolder: "Password", image: "password")
+                            TextFieldComponets(email: $password, errorMessage: $ErrorMessage, placeHolder: "Password", image: "password")
                                 .focused($focusedField, equals: .password)
                                 .onSubmit {
                                     focusedField = .none
@@ -93,6 +97,7 @@ struct LoginContentView: View {
                         Button(action: {
                             // Toggle password visibility
                             self.isPasswordVisible.toggle()
+                            
                         }) {
                             Image(systemName: self.isPasswordVisible ? "eye.slash" : "eye")
                                 .padding(.trailing, 20)
@@ -125,7 +130,20 @@ struct LoginContentView: View {
                     Spacer()
                     
                     Button {
-                        print("Hello World!!")
+                        
+                        self.endTextEditing()
+                        
+                        Task {
+                            await viewmodel.login(username: email, password: password)
+                            
+                            guard let user = self.viewmodel.user else { return }
+                            
+                            if !user.success {
+                                ErrorMessage.toggle()
+                            }
+                        }
+                        
+                        
                     } label: {
                         Text("Login")
                             .padding()

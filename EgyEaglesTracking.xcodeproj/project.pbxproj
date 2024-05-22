@@ -10,9 +10,18 @@
 		D32297D62BFBE20200EE19E9 /* TextFieldComponets.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32297D52BFBE20200EE19E9 /* TextFieldComponets.swift */; };
 		D32297D92BFBE77500EE19E9 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32297D82BFBE77500EE19E9 /* View.swift */; };
 		D34FAA522BFBB698008C5827 /* EgyEaglesTrackingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34FAA512BFBB698008C5827 /* EgyEaglesTrackingApp.swift */; };
-		D34FAA542BFBB698008C5827 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34FAA532BFBB698008C5827 /* ContentView.swift */; };
+		D34FAA542BFBB698008C5827 /* LoginContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34FAA532BFBB698008C5827 /* LoginContentView.swift */; };
 		D34FAA562BFBB69A008C5827 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D34FAA552BFBB69A008C5827 /* Assets.xcassets */; };
 		D34FAA592BFBB69A008C5827 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D34FAA582BFBB69A008C5827 /* Preview Assets.xcassets */; };
+		D3D00DA02BFE577600E31DFA /* Target.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D00D9F2BFE577600E31DFA /* Target.swift */; };
+		D3D00DA32BFE57B900E31DFA /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D00DA22BFE57B900E31DFA /* Api.swift */; };
+		D3D00DA52BFE57F400E31DFA /* BaseApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D00DA42BFE57F400E31DFA /* BaseApi.swift */; };
+		D3D00DA82BFE58B600E31DFA /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D00DA72BFE58B600E31DFA /* ErrorMessage.swift */; };
+		D3D00DAD2BFE5EBD00E31DFA /* AuthNetowrking.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D00DAC2BFE5EBD00E31DFA /* AuthNetowrking.swift */; };
+		D3D00DB02BFE5FA200E31DFA /* AuthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D00DAF2BFE5FA200E31DFA /* AuthAPI.swift */; };
+		D3D00DB22BFE5FE800E31DFA /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D00DB12BFE5FE800E31DFA /* LoginModel.swift */; };
+		D3D00DB42BFE624C00E31DFA /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D00DB32BFE624C00E31DFA /* LoginViewModel.swift */; };
+		D3D00DB72BFE904400E31DFA /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D00DB62BFE904400E31DFA /* BaseModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,9 +29,18 @@
 		D32297D82BFBE77500EE19E9 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		D34FAA4E2BFBB698008C5827 /* EgyEaglesTracking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EgyEaglesTracking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D34FAA512BFBB698008C5827 /* EgyEaglesTrackingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EgyEaglesTrackingApp.swift; sourceTree = "<group>"; };
-		D34FAA532BFBB698008C5827 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D34FAA532BFBB698008C5827 /* LoginContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginContentView.swift; sourceTree = "<group>"; };
 		D34FAA552BFBB69A008C5827 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D34FAA582BFBB69A008C5827 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D3D00D9F2BFE577600E31DFA /* Target.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Target.swift; sourceTree = "<group>"; };
+		D3D00DA22BFE57B900E31DFA /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		D3D00DA42BFE57F400E31DFA /* BaseApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseApi.swift; sourceTree = "<group>"; };
+		D3D00DA72BFE58B600E31DFA /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
+		D3D00DAC2BFE5EBD00E31DFA /* AuthNetowrking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthNetowrking.swift; sourceTree = "<group>"; };
+		D3D00DAF2BFE5FA200E31DFA /* AuthAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAPI.swift; sourceTree = "<group>"; };
+		D3D00DB12BFE5FE800E31DFA /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		D3D00DB32BFE624C00E31DFA /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		D3D00DB62BFE904400E31DFA /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,9 +90,9 @@
 			isa = PBXGroup;
 			children = (
 				D34FAA5F2BFBB6A6008C5827 /* AppStarter */,
-				D32297D42BFBE1EE00EE19E9 /* componets */,
 				D3D00D9D2BFE560900E31DFA /* Network layer */,
 				D34FAA602BFBB6AE008C5827 /* Screens */,
+				D32297D42BFBE1EE00EE19E9 /* componets */,
 				D32297D72BFBE76000EE19E9 /* utilits */,
 				D34FAA612BFBB6B5008C5827 /* Assets */,
 			);
@@ -100,7 +118,9 @@
 		D34FAA602BFBB6AE008C5827 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				D34FAA532BFBB698008C5827 /* ContentView.swift */,
+				D34FAA532BFBB698008C5827 /* LoginContentView.swift */,
+				D3D00DB12BFE5FE800E31DFA /* LoginModel.swift */,
+				D3D00DB32BFE624C00E31DFA /* LoginViewModel.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -117,8 +137,63 @@
 		D3D00D9D2BFE560900E31DFA /* Network layer */ = {
 			isa = PBXGroup;
 			children = (
+				D3D00DA12BFE57B000E31DFA /* Constans */,
+				D3D00D9E2BFE576B00E31DFA /* Base */,
+				D3D00DA62BFE58AE00E31DFA /* Error */,
+				D3D00DA92BFE5E9500E31DFA /* Endpoints */,
+				D3D00DB52BFE903200E31DFA /* model */,
 			);
 			path = "Network layer";
+			sourceTree = "<group>";
+		};
+		D3D00D9E2BFE576B00E31DFA /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				D3D00D9F2BFE577600E31DFA /* Target.swift */,
+				D3D00DA42BFE57F400E31DFA /* BaseApi.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		D3D00DA12BFE57B000E31DFA /* Constans */ = {
+			isa = PBXGroup;
+			children = (
+				D3D00DA22BFE57B900E31DFA /* Api.swift */,
+			);
+			path = Constans;
+			sourceTree = "<group>";
+		};
+		D3D00DA62BFE58AE00E31DFA /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				D3D00DA72BFE58B600E31DFA /* ErrorMessage.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
+		D3D00DA92BFE5E9500E31DFA /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				D3D00DAA2BFE5EA700E31DFA /* Auth Module */,
+			);
+			path = Endpoints;
+			sourceTree = "<group>";
+		};
+		D3D00DAA2BFE5EA700E31DFA /* Auth Module */ = {
+			isa = PBXGroup;
+			children = (
+				D3D00DAC2BFE5EBD00E31DFA /* AuthNetowrking.swift */,
+				D3D00DAF2BFE5FA200E31DFA /* AuthAPI.swift */,
+			);
+			path = "Auth Module";
+			sourceTree = "<group>";
+		};
+		D3D00DB52BFE903200E31DFA /* model */ = {
+			isa = PBXGroup;
+			children = (
+				D3D00DB62BFE904400E31DFA /* BaseModel.swift */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,10 +266,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3D00DA52BFE57F400E31DFA /* BaseApi.swift in Sources */,
+				D3D00DA32BFE57B900E31DFA /* Api.swift in Sources */,
+				D3D00DAD2BFE5EBD00E31DFA /* AuthNetowrking.swift in Sources */,
+				D3D00DB72BFE904400E31DFA /* BaseModel.swift in Sources */,
+				D3D00DB22BFE5FE800E31DFA /* LoginModel.swift in Sources */,
 				D32297D62BFBE20200EE19E9 /* TextFieldComponets.swift in Sources */,
 				D32297D92BFBE77500EE19E9 /* View.swift in Sources */,
-				D34FAA542BFBB698008C5827 /* ContentView.swift in Sources */,
+				D3D00DA82BFE58B600E31DFA /* ErrorMessage.swift in Sources */,
+				D3D00DB02BFE5FA200E31DFA /* AuthAPI.swift in Sources */,
+				D3D00DB42BFE624C00E31DFA /* LoginViewModel.swift in Sources */,
+				D34FAA542BFBB698008C5827 /* LoginContentView.swift in Sources */,
 				D34FAA522BFBB698008C5827 /* EgyEaglesTrackingApp.swift in Sources */,
+				D3D00DA02BFE577600E31DFA /* Target.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
