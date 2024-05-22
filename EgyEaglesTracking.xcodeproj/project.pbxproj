@@ -72,9 +72,10 @@
 			isa = PBXGroup;
 			children = (
 				D34FAA5F2BFBB6A6008C5827 /* AppStarter */,
-				D32297D72BFBE76000EE19E9 /* utilits */,
 				D32297D42BFBE1EE00EE19E9 /* componets */,
+				D3D00D9D2BFE560900E31DFA /* Network layer */,
 				D34FAA602BFBB6AE008C5827 /* Screens */,
+				D32297D72BFBE76000EE19E9 /* utilits */,
 				D34FAA612BFBB6B5008C5827 /* Assets */,
 			);
 			path = EgyEaglesTracking;
@@ -111,6 +112,13 @@
 				D34FAA572BFBB69A008C5827 /* Preview Content */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		D3D00D9D2BFE560900E31DFA /* Network layer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Network layer";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

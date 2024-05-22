@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  LoginContentView.swift
 //  EgyEaglesTracking
 //
 //  Created by Mohamed Ali on 20/05/2024.
@@ -8,7 +8,7 @@
 import SwiftUI
 import Combine
 
-struct ContentView: View {
+struct LoginContentView: View {
     
     @State var email: String = ""
     @State var password: String = ""
@@ -56,7 +56,7 @@ struct ContentView: View {
                                 Spacer()
                             }
                             .padding([.horizontal],30)
-                            .offset(y: 0)
+                            .offset(y: -4)
                             // MARK: - password icon
                             
                             SecureField("Password",text: self.$password)
@@ -66,6 +66,7 @@ struct ContentView: View {
                                 .cornerRadius(23)
                                 .overlay(RoundedRectangle(cornerRadius: 23).stroke(Color("#B1B1B1")))
                                 .padding([.horizontal], 10)
+                                .padding([.bottom], 8)
                                 .font(.system(size: 16,weight: .medium))
                                 .focused($focusedField, equals: .password)
                                 .onSubmit {
@@ -102,7 +103,7 @@ struct ContentView: View {
                     }
                     .padding([.horizontal], 21)
                         .frame(height: 46)
-                        .offset(y: isPasswordVisible ? 0 : -4)
+                        .offset(y: -4)
                     
                     // MARK: - Eye button
                 } // MARK: - password TextField
@@ -150,8 +151,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct LoginContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        LoginContentView()
     }
 }
