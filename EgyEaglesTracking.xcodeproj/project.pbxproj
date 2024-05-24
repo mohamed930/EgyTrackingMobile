@@ -16,6 +16,8 @@
 		D34FAA542BFBB698008C5827 /* LoginContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34FAA532BFBB698008C5827 /* LoginContentView.swift */; };
 		D34FAA562BFBB69A008C5827 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D34FAA552BFBB69A008C5827 /* Assets.xcassets */; };
 		D34FAA592BFBB69A008C5827 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D34FAA582BFBB69A008C5827 /* Preview Assets.xcassets */; };
+		D397E59D2C00F0D300511488 /* customAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D397E59C2C00F0D300511488 /* customAlert.swift */; };
+		D397E59F2C00FA9000511488 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D397E59E2C00FA9000511488 /* HomeViewModel.swift */; };
 		D3D00DA02BFE577600E31DFA /* Target.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D00D9F2BFE577600E31DFA /* Target.swift */; };
 		D3D00DA32BFE57B900E31DFA /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D00DA22BFE57B900E31DFA /* Api.swift */; };
 		D3D00DA52BFE57F400E31DFA /* BaseApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D00DA42BFE57F400E31DFA /* BaseApi.swift */; };
@@ -37,6 +39,8 @@
 		D34FAA532BFBB698008C5827 /* LoginContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginContentView.swift; sourceTree = "<group>"; };
 		D34FAA552BFBB69A008C5827 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D34FAA582BFBB69A008C5827 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D397E59C2C00F0D300511488 /* customAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customAlert.swift; sourceTree = "<group>"; };
+		D397E59E2C00FA9000511488 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		D3D00D9F2BFE577600E31DFA /* Target.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Target.swift; sourceTree = "<group>"; };
 		D3D00DA22BFE57B900E31DFA /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		D3D00DA42BFE57F400E31DFA /* BaseApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseApi.swift; sourceTree = "<group>"; };
@@ -74,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				D307107D2C00BE6B00D24849 /* HomeScreen.swift */,
+				D397E59E2C00FA9000511488 /* HomeViewModel.swift */,
 			);
 			path = "Home Screen";
 			sourceTree = "<group>";
@@ -83,6 +88,7 @@
 			children = (
 				D32297D52BFBE20200EE19E9 /* TextFieldComponets.swift */,
 				D30710792C00BC4E00D24849 /* LoaderIndecatorComponets.swift */,
+				D397E59C2C00F0D300511488 /* customAlert.swift */,
 			);
 			path = componets;
 			sourceTree = "<group>";
@@ -296,6 +302,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D397E59F2C00FA9000511488 /* HomeViewModel.swift in Sources */,
 				D3D00DA52BFE57F400E31DFA /* BaseApi.swift in Sources */,
 				D3D00DA32BFE57B900E31DFA /* Api.swift in Sources */,
 				D3D00DAD2BFE5EBD00E31DFA /* AuthNetowrking.swift in Sources */,
@@ -311,6 +318,7 @@
 				D34FAA542BFBB698008C5827 /* LoginContentView.swift in Sources */,
 				D34FAA522BFBB698008C5827 /* EgyEaglesTrackingApp.swift in Sources */,
 				D3D00DA02BFE577600E31DFA /* Target.swift in Sources */,
+				D397E59D2C00F0D300511488 /* customAlert.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

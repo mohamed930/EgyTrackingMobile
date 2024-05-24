@@ -5,7 +5,7 @@
 //  Created by Mohamed Ali on 22/05/2024.
 //
 
-import Foundation
+import SwiftUI
 
 class BaseAPI<T:TargetType> {
     func fetchData<M: Decodable>(Target: T) async throws -> M {
@@ -93,5 +93,12 @@ class BaseAPI<T:TargetType> {
                 print(string)
             }
         }
+    }
+    
+    
+    func fetchUserToken() -> String {
+        @AppStorage("token") var token = ""
+        
+        return token
     }
 }

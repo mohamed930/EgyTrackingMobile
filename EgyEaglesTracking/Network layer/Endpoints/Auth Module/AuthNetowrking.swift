@@ -9,6 +9,7 @@ import Foundation
 
 enum AuthNetowrking {
     case login(userName: String,password: String)
+    case logout(token: String)
 }
 
 extension AuthNetowrking: TargetType {
@@ -20,6 +21,8 @@ extension AuthNetowrking: TargetType {
         switch self {
             case .login:
                 return .login
+            case .logout:
+                return .logout
         }
     }
     
@@ -27,6 +30,8 @@ extension AuthNetowrking: TargetType {
         switch self {
             case .login:
                 return .post
+            case .logout:
+                return .delete
         }
     }
     
@@ -34,6 +39,8 @@ extension AuthNetowrking: TargetType {
         switch self {
             case .login(let username,let password):
                 return .requestParameters(parameters: ["Email": username,"Password": password])
+            case .logout:
+                return .requestPlain
         }
     }
     
@@ -41,6 +48,8 @@ extension AuthNetowrking: TargetType {
         switch self {
             case .login:
                 return [:]
+        case .logout(let token):
+            return ["Authorization": "Bearer \(token)"]
         }
     }
     

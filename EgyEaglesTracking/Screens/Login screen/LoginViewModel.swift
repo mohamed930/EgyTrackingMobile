@@ -12,6 +12,8 @@ class LoginViewModel: ObservableObject {
     
     @Published var islogin: Bool?
     
+    @AppStorage("token") var token = ""
+    
     func login(username: String,password: String) async {
         
         do {
@@ -21,6 +23,10 @@ class LoginViewModel: ObservableObject {
                 guard let self = self else { return }
                 
                 self.islogin = response.success
+                
+                guard let data = response.data else { return }
+                
+                self.token   = data.token
             }
             
         }

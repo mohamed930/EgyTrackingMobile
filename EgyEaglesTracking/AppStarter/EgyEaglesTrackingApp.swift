@@ -9,9 +9,20 @@ import SwiftUI
 
 @main
 struct EgyEaglesTrackingApp: App {
+    
+    @AppStorage("token") var token = ""
+    
     var body: some Scene {
         WindowGroup {
-            LoginContentView()
+            
+            if token.isEmpty {
+                LoginContentView()
+            }
+            else {
+                HomeScreen()
+            }
+            
+            
         }
     }
 }
