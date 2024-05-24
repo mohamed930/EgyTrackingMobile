@@ -99,7 +99,7 @@ struct customAlert: View {
                 withAnimation(.spring()) {
                     offset = 0
                 }
-        }
+            }
         }
         
     }
