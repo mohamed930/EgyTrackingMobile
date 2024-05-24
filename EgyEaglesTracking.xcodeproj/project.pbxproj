@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D30710762C00B60700D24849 /* SwiftfulLoadingIndicators in Frameworks */ = {isa = PBXBuildFile; productRef = D30710752C00B60700D24849 /* SwiftfulLoadingIndicators */; };
+		D307107A2C00BC4E00D24849 /* LoaderIndecatorComponets.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30710792C00BC4E00D24849 /* LoaderIndecatorComponets.swift */; };
+		D307107E2C00BE6B00D24849 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D307107D2C00BE6B00D24849 /* HomeScreen.swift */; };
 		D32297D62BFBE20200EE19E9 /* TextFieldComponets.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32297D52BFBE20200EE19E9 /* TextFieldComponets.swift */; };
 		D32297D92BFBE77500EE19E9 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32297D82BFBE77500EE19E9 /* View.swift */; };
 		D34FAA522BFBB698008C5827 /* EgyEaglesTrackingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34FAA512BFBB698008C5827 /* EgyEaglesTrackingApp.swift */; };
@@ -25,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D30710792C00BC4E00D24849 /* LoaderIndecatorComponets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderIndecatorComponets.swift; sourceTree = "<group>"; };
+		D307107D2C00BE6B00D24849 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		D32297D52BFBE20200EE19E9 /* TextFieldComponets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldComponets.swift; sourceTree = "<group>"; };
 		D32297D82BFBE77500EE19E9 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		D34FAA4E2BFBB698008C5827 /* EgyEaglesTracking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EgyEaglesTracking.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,16 +53,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D30710762C00B60700D24849 /* SwiftfulLoadingIndicators in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D307107B2C00BE5700D24849 /* Login screen */ = {
+			isa = PBXGroup;
+			children = (
+				D3D00DB12BFE5FE800E31DFA /* LoginModel.swift */,
+				D3D00DB32BFE624C00E31DFA /* LoginViewModel.swift */,
+				D34FAA532BFBB698008C5827 /* LoginContentView.swift */,
+			);
+			path = "Login screen";
+			sourceTree = "<group>";
+		};
+		D307107C2C00BE5F00D24849 /* Home Screen */ = {
+			isa = PBXGroup;
+			children = (
+				D307107D2C00BE6B00D24849 /* HomeScreen.swift */,
+			);
+			path = "Home Screen";
+			sourceTree = "<group>";
+		};
 		D32297D42BFBE1EE00EE19E9 /* componets */ = {
 			isa = PBXGroup;
 			children = (
 				D32297D52BFBE20200EE19E9 /* TextFieldComponets.swift */,
+				D30710792C00BC4E00D24849 /* LoaderIndecatorComponets.swift */,
 			);
 			path = componets;
 			sourceTree = "<group>";
@@ -118,9 +143,8 @@
 		D34FAA602BFBB6AE008C5827 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				D34FAA532BFBB698008C5827 /* LoginContentView.swift */,
-				D3D00DB12BFE5FE800E31DFA /* LoginModel.swift */,
-				D3D00DB32BFE624C00E31DFA /* LoginViewModel.swift */,
+				D307107B2C00BE5700D24849 /* Login screen */,
+				D307107C2C00BE5F00D24849 /* Home Screen */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -212,6 +236,9 @@
 			dependencies = (
 			);
 			name = EgyEaglesTracking;
+			packageProductDependencies = (
+				D30710752C00B60700D24849 /* SwiftfulLoadingIndicators */,
+			);
 			productName = EgyEaglesTracking;
 			productReference = D34FAA4E2BFBB698008C5827 /* EgyEaglesTracking.app */;
 			productType = "com.apple.product-type.application";
@@ -240,6 +267,9 @@
 				Base,
 			);
 			mainGroup = D34FAA452BFBB698008C5827;
+			packageReferences = (
+				D30710742C00B60700D24849 /* XCRemoteSwiftPackageReference "SwiftfulLoadingIndicators" */,
+			);
 			productRefGroup = D34FAA4F2BFBB698008C5827 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -269,6 +299,7 @@
 				D3D00DA52BFE57F400E31DFA /* BaseApi.swift in Sources */,
 				D3D00DA32BFE57B900E31DFA /* Api.swift in Sources */,
 				D3D00DAD2BFE5EBD00E31DFA /* AuthNetowrking.swift in Sources */,
+				D307107A2C00BC4E00D24849 /* LoaderIndecatorComponets.swift in Sources */,
 				D3D00DB72BFE904400E31DFA /* BaseModel.swift in Sources */,
 				D3D00DB22BFE5FE800E31DFA /* LoginModel.swift in Sources */,
 				D32297D62BFBE20200EE19E9 /* TextFieldComponets.swift in Sources */,
@@ -276,6 +307,7 @@
 				D3D00DA82BFE58B600E31DFA /* ErrorMessage.swift in Sources */,
 				D3D00DB02BFE5FA200E31DFA /* AuthAPI.swift in Sources */,
 				D3D00DB42BFE624C00E31DFA /* LoginViewModel.swift in Sources */,
+				D307107E2C00BE6B00D24849 /* HomeScreen.swift in Sources */,
 				D34FAA542BFBB698008C5827 /* LoginContentView.swift in Sources */,
 				D34FAA522BFBB698008C5827 /* EgyEaglesTrackingApp.swift in Sources */,
 				D3D00DA02BFE577600E31DFA /* Target.swift in Sources */,
@@ -415,6 +447,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -444,6 +477,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -479,6 +513,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D30710742C00B60700D24849 /* XCRemoteSwiftPackageReference "SwiftfulLoadingIndicators" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftfulThinking/SwiftfulLoadingIndicators.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D30710752C00B60700D24849 /* SwiftfulLoadingIndicators */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D30710742C00B60700D24849 /* XCRemoteSwiftPackageReference "SwiftfulLoadingIndicators" */;
+			productName = SwiftfulLoadingIndicators;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D34FAA462BFBB698008C5827 /* Project object */;
 }

@@ -10,7 +10,7 @@ import SwiftUI
 class LoginViewModel: ObservableObject {
     let authapi = AuthAPI()
     
-    @Published var user: BaseModel<UserData>?
+    @Published var islogin: Bool?
     
     func login(username: String,password: String) async {
         
@@ -20,8 +20,7 @@ class LoginViewModel: ObservableObject {
             DispatchQueue.main.async { [weak self] in
                 guard let self = self else { return }
                 
-                print(response)
-                self.user = response
+                self.islogin = response.success
             }
             
         }
