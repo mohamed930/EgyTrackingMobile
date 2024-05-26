@@ -12,4 +12,5 @@ enum ErrorMessage: Error {
     case invalidResponse
     case invalidParameters
     case invalidData
+    case invalidToken
 }

@@ -73,7 +73,7 @@ class BaseAPI<T:TargetType> {
         // MARK: - EndDebug
         // -------------------------------------------
         
-        guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+        guard let response = response as? HTTPURLResponse else {
             do {
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
@@ -84,14 +84,24 @@ class BaseAPI<T:TargetType> {
             }
         }
         
-        do {
-            let decoder = JSONDecoder()
-            decoder.keyDecodingStrategy = .convertFromSnakeCase
-            return try decoder.decode(M.self, from: data)
+        if response.statusCode == 200 || response.statusCode == 201 {
+            do {
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                return try decoder.decode(M.self, from: data)
+            }
+            catch {
+                throw ErrorMessage.invalidData
+            }
         }
-        catch {
-            throw ErrorMessage.invalidData
+        else if response.statusCode == 401 {
+            throw ErrorMessage.invalidToken
         }
+        else {
+            throw ErrorMessage.invalidResponse
+        }
+        
+        
     }
     
     private func buildParams(task: TaskOperation) -> ([String:Any],EncodingType?) {

@@ -12,6 +12,7 @@ class HomeViewModel: ObservableObject {
     
     @Published var carArray = Array<CarsModel>()
     @Published var numberOfCars: String?
+    @Published var loginAgain: Bool = false
     
     private var authapi = AuthAPI()
     private var homeapi = HomeAPI()
@@ -69,6 +70,12 @@ class HomeViewModel: ObservableObject {
                 print("Invalid Parameters")
             case .invalidData:
                 print("Invalid Data")
+            case .invalidToken:
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
+                    
+                    self.loginAgain = true
+                }
             }
         }
         

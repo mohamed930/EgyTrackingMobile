@@ -105,41 +105,57 @@ struct HomeScreen: View {
                 } // MARK: - VStack
                 
                 if isActive {
-                    customAlert(isActive: $isActive,
-                                imge: "logoutRed",
-                                title: "Logout of app",
-                                message: "Are you sure to want logout from app ?",
-                                buttonTitle: "Logout") {
-                        // logout
-                        
-                        
-                        isloading.toggle()
-                        
-                        Task {
-                            let response = await viewmodel.logout()
+                    
+                    NavigationLink(destination: LoginContentView(), isActive: $backToLogin) {
+                        customAlert(isActive: $isActive,
+                                    imge: "logoutRed",
+                                    title: "Logout of app",
+                                    message: "Are you sure to want logout from app ?",
+                                    buttonTitle: "Logout") {
+                            // logout
                             
-                            if response {
-                                isloading.toggle()
-                                viewmodel.removeToken()
-                                backToLogin.toggle()
+                            
+                            isloading.toggle()
+                            
+                            Task {
+                                let response = await viewmodel.logout()
+                                
+                                if response {
+                                    isloading.toggle()
+                                    viewmodel.removeToken()
+                                    backToLogin.toggle()
+                                }
                             }
+                            
+                            
                         }
-                        
-                        
                     }
-                    NavigationLink("", destination: LoginContentView(), isActive: $backToLogin)
+                    
+                    
+//                    NavigationLink("", destination: LoginContentView(), isActive: $backToLogin)
                 }
                 
                 
                 if isloading {
                     LoaderIndecatorComponets(isloading: $isloading)
+                        .ignoresSafeArea(.all)
+                        .frame(maxHeight: .infinity)
+                }
+                
+                if backToLogin {
+                    NavigationLink("", destination: LoginContentView(), isActive: $backToLogin)
                 }
                 
             } // MARK: - ZStack
-            
-            
         }
         .navigationBarBackButtonHidden(true)
+        .alert(isPresented: $viewmodel.loginAgain) {
+            Alert(title: Text("Seasion expired"), message: Text("Plase, login again"), dismissButton: .cancel(Text("Login"), action: {
+                viewmodel.removeToken()
+                backToLogin.toggle()
+            }) )
+
+        }
         .task {
             isloading = true
             
@@ -149,6 +165,67 @@ struct HomeScreen: View {
                 isloading = false
             }
         }
+        
+        /*ZStack {
+            NavigationView {
+                
+                
+                
+                
+            }
+            .navigationBarBackButtonHidden(true)
+            .alert(isPresented: $viewmodel.loginAgain) {
+                Alert(title: Text("Seasion expired"), message: Text("Plase, login again"), dismissButton: .cancel(Text("Login"), action: {
+                    viewmodel.removeToken()
+                    backToLogin.toggle()
+                }) )
+
+            }
+            NavigationLink("", destination: LoginContentView(), isActive: $backToLogin)
+            .task {
+                isloading = true
+                
+                let repsonse = await viewmodel.fetchCarsOperation()
+                
+                if repsonse {
+                    isloading = false
+                }
+            }
+            
+            if isActive {
+                customAlert(isActive: $isActive,
+                            imge: "logoutRed",
+                            title: "Logout of app",
+                            message: "Are you sure to want logout from app ?",
+                            buttonTitle: "Logout") {
+                    // logout
+                    
+                    
+                    isloading.toggle()
+                    
+                    Task {
+                        let response = await viewmodel.logout()
+                        
+                        if response {
+                            isloading.toggle()
+                            viewmodel.removeToken()
+                            backToLogin.toggle()
+                        }
+                    }
+                    
+                    
+                }
+                NavigationLink("", destination: LoginContentView(), isActive: $backToLogin)
+            }
+            
+            
+            if isloading {
+                LoaderIndecatorComponets(isloading: $isloading)
+                    .ignoresSafeArea(.all)
+                    .frame(maxHeight: .infinity)
+            }
+        }*/
+        
         
     }
 }

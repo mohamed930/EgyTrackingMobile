@@ -42,6 +42,7 @@ struct customAlert: View {
                 Text(title)
                     .font(.system(size: 16))
                     .fontWeight(.medium)
+                    .foregroundColor(.black)
                 
                 Text(message)
                     .font(.system(size: 14))
@@ -96,9 +97,12 @@ struct customAlert: View {
             .padding(15)
             .offset(y: offset)
             .onAppear {
-                withAnimation(.spring()) {
-                    offset = 0
+                if isActive {
+                    withAnimation(.spring()) {
+                        offset = 0
+                    }
                 }
+                
             }
         }
         

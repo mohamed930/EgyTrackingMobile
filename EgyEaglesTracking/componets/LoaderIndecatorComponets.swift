@@ -14,6 +14,10 @@ struct LoaderIndecatorComponets: View {
     
     var body: some View {
         ZStack {
+            
+            Color(.black)
+                .opacity(0.75)
+            
             VStack {
                 LoadingIndicator(animation: .threeBalls, color: Color("#239C6F"), size: .large)
                 
@@ -25,7 +29,7 @@ struct LoaderIndecatorComponets: View {
             
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color.black.opacity(0.75))
+        .ignoresSafeArea(.all)
         .hidden(!isloading)
     }
 }
