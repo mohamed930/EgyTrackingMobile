@@ -14,6 +14,8 @@ struct HomeScreen: View {
     
     @State var isloading: Bool = false
     
+    @State var moveToProfile: Bool = false
+    
     @StateObject var viewmodel = HomeViewModel()
     
     var body: some View {
@@ -26,28 +28,10 @@ struct HomeScreen: View {
                     // Header View.
                     HStack {
                         
-                        HStack {
-                            Image("EgyEaglesHome")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 30)
-                                .padding(.trailing,12)
-                            
-                            VStack(alignment: .leading) {
-                                Text("Welcome,")
-                                    .fontWeight(.medium)
-                                    .foregroundColor(Color("#8E8E8E"))
-                                    .font(.system(size: 12,weight: .medium))
-                                    .multilineTextAlignment(.leading)
-                                
-                                Text("Mohamed Ali")
-                                    .font(.system(size: 14,weight: .medium))
-                                    .fontWeight(.medium)
-                                    .multilineTextAlignment(.leading)
-                            }
-                            
-                            Spacer()
-                        } // MARK: - The Image & Text
+                        WelcomeComponents {
+                            moveToProfile.toggle()
+                        }
+                        NavigationLink("", destination: ProfileScreen(), isActive: $moveToProfile)// MARK: - The Image & Text
                         
                         
                         Button {
