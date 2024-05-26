@@ -12,6 +12,8 @@
 		D307107E2C00BE6B00D24849 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D307107D2C00BE6B00D24849 /* HomeScreen.swift */; };
 		D32297D62BFBE20200EE19E9 /* TextFieldComponets.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32297D52BFBE20200EE19E9 /* TextFieldComponets.swift */; };
 		D32297D92BFBE77500EE19E9 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32297D82BFBE77500EE19E9 /* View.swift */; };
+		D34F462A2C033CBB0053FC77 /* HomeNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34F46292C033CBB0053FC77 /* HomeNetworking.swift */; };
+		D34F462C2C033D930053FC77 /* HomeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34F462B2C033D930053FC77 /* HomeAPI.swift */; };
 		D34FAA522BFBB698008C5827 /* EgyEaglesTrackingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34FAA512BFBB698008C5827 /* EgyEaglesTrackingApp.swift */; };
 		D34FAA542BFBB698008C5827 /* LoginContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34FAA532BFBB698008C5827 /* LoginContentView.swift */; };
 		D34FAA562BFBB69A008C5827 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D34FAA552BFBB69A008C5827 /* Assets.xcassets */; };
@@ -36,6 +38,8 @@
 		D307107D2C00BE6B00D24849 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		D32297D52BFBE20200EE19E9 /* TextFieldComponets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldComponets.swift; sourceTree = "<group>"; };
 		D32297D82BFBE77500EE19E9 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		D34F46292C033CBB0053FC77 /* HomeNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNetworking.swift; sourceTree = "<group>"; };
+		D34F462B2C033D930053FC77 /* HomeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAPI.swift; sourceTree = "<group>"; };
 		D34FAA4E2BFBB698008C5827 /* EgyEaglesTracking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EgyEaglesTracking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D34FAA512BFBB698008C5827 /* EgyEaglesTrackingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EgyEaglesTrackingApp.swift; sourceTree = "<group>"; };
 		D34FAA532BFBB698008C5827 /* LoginContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginContentView.swift; sourceTree = "<group>"; };
@@ -105,6 +109,15 @@
 				D32297D82BFBE77500EE19E9 /* View.swift */,
 			);
 			path = utilits;
+			sourceTree = "<group>";
+		};
+		D34F46282C033CAB0053FC77 /* Home Module */ = {
+			isa = PBXGroup;
+			children = (
+				D34F46292C033CBB0053FC77 /* HomeNetworking.swift */,
+				D34F462B2C033D930053FC77 /* HomeAPI.swift */,
+			);
+			path = "Home Module";
 			sourceTree = "<group>";
 		};
 		D34FAA452BFBB698008C5827 = {
@@ -219,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				D3D00DAA2BFE5EA700E31DFA /* Auth Module */,
+				D34F46282C033CAB0053FC77 /* Home Module */,
 			);
 			path = Endpoints;
 			sourceTree = "<group>";
@@ -316,12 +330,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D34F462A2C033CBB0053FC77 /* HomeNetworking.swift in Sources */,
 				D397E59F2C00FA9000511488 /* HomeViewModel.swift in Sources */,
 				D3D00DA52BFE57F400E31DFA /* BaseApi.swift in Sources */,
 				D3D00DA32BFE57B900E31DFA /* Api.swift in Sources */,
 				D3D00DAD2BFE5EBD00E31DFA /* AuthNetowrking.swift in Sources */,
 				D307107A2C00BC4E00D24849 /* LoaderIndecatorComponets.swift in Sources */,
 				D3D00DB72BFE904400E31DFA /* BaseModel.swift in Sources */,
+				D34F462C2C033D930053FC77 /* HomeAPI.swift in Sources */,
 				D3D00DB22BFE5FE800E31DFA /* LoginModel.swift in Sources */,
 				D397E5A42C0106BC00511488 /* CarCell.swift in Sources */,
 				D32297D62BFBE20200EE19E9 /* TextFieldComponets.swift in Sources */,

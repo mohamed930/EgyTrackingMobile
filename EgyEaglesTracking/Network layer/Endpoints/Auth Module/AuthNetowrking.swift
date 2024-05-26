@@ -38,7 +38,7 @@ extension AuthNetowrking: TargetType {
     var task: TaskOperation {
         switch self {
             case .login(let username,let password):
-                return .requestParameters(parameters: ["Email": username,"Password": password])
+            return .requestParameters(parameters: ["Email": username,"Password": password],endcoding: .body)
             case .logout:
                 return .requestPlain
         }

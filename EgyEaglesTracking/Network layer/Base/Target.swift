@@ -7,6 +7,11 @@
 
 import Foundation
 
+enum EncodingType {
+    case parmters
+    case body
+}
+
 enum HTTPMethod : String {
     case get = "GET"
     case post = "POST"
@@ -16,7 +21,7 @@ enum HTTPMethod : String {
 
 enum TaskOperation {
     case requestPlain
-    case requestParameters(parameters : [String:Any])
+    case requestParameters(parameters : [String:Any],endcoding: EncodingType)
 }
 
 protocol TargetType {
