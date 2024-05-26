@@ -20,7 +20,7 @@ struct CarCell: View {
                         .scaledToFit()
                         .frame(height: 30)
                         
-                    VStack(alignment: .leading) {
+                    VStack(alignment: .leading,spacing: 4) {
                         Text("\(model.carType) | \(model.carNumber) | \(model.carYearModel)")
                             .font(.system(size: 14,weight: .medium))
                         
@@ -48,14 +48,16 @@ struct CarCell: View {
                 }
             }
             .padding()
+            .frame(maxWidth: .infinity)
+            .background(Color.white)
+            .cornerRadius(20.0)
+            .overlay( /// apply a rounded border
+                RoundedRectangle(cornerRadius: 16)
+                    .stroke(Color("#AAAAAA"), lineWidth: 1)
+                    .shadow(color: Color.gray.opacity(0.2), radius: 4, x: 0, y: 2)
+            )
         }
-        .fixedSize(horizontal: false, vertical: true)
-        .padding()
-        .cornerRadius(20.0)
-        .overlay( /// apply a rounded border
-            RoundedRectangle(cornerRadius: 16)
-                .stroke(Color("#AAAAAA"), lineWidth: 1)
-        )
+        
         
     }
 }

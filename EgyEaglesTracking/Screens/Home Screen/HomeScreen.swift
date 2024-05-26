@@ -23,7 +23,7 @@ struct HomeScreen: View {
             ZStack {
                 VStack {
                     
-                    // Header View
+                    // Header View.
                     HStack {
                         
                         HStack {
@@ -67,6 +67,7 @@ struct HomeScreen: View {
                     .padding(32)
                     .frame(height: 100)
                     
+                    // Number of cars.
                     HStack {
                         HStack {
                             Text("Your cars")
@@ -86,6 +87,16 @@ struct HomeScreen: View {
                     }
                     .padding([.leading,.trailing],32)
                     
+                    // List of cars.
+                    List(viewmodel.carArray) { car in
+                        CarCell(model: car)
+                            .listRowSeparator(.hidden)
+                            .listRowInsets(EdgeInsets()) // Remove default padding
+                            .padding([.horizontal],15)
+                            .padding([.top,.bottom],10)
+                            .buttonStyle(PlainButtonStyle())
+                    }
+                    .listStyle(PlainListStyle())
                     
                     
                     
@@ -132,6 +143,15 @@ struct HomeScreen: View {
             
         }
         .navigationBarBackButtonHidden(true)
+        .onAppear {
+            let cars = [
+                    CarsModel(carType: "BMW", carNumber: "123 ABC", carYearModel: "2023", speed: 23.5, status: false),
+                    CarsModel(carType: "Audi", carNumber: "456 DEF", carYearModel: "2022", speed: 56.7, status: true),
+                    CarsModel(carType: "Tesla", carNumber: "789 GHI", carYearModel: "2021", speed: 78.9, status: false)
+                ]
+            
+            viewmodel.carArray = cars
+        }
         
         
     }

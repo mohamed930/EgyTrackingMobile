@@ -10,6 +10,8 @@ import SwiftUI
 class HomeViewModel: ObservableObject {
     @AppStorage("token") var token = ""
     
+    @Published var carArray = Array<CarsModel>()
+    
     private var authapi = AuthAPI()
     
     func removeToken() {

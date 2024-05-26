@@ -7,10 +7,11 @@
 
 import Foundation
 
-struct CarsModel {
-    var carType: String
-    var carNumber: String
-    var carYearModel: String
-    var speed: Double
-    var status: Bool
+struct CarsModel: Identifiable {
+    let id = UUID()
+    let carType: String
+    let carNumber: String
+    let carYearModel: String
+    let speed: Double
+    let status: Bool
 }
