@@ -51,36 +51,55 @@ struct HomeScreen: View {
                     .padding(32)
                     .frame(height: 100)
                     
-                    // Number of cars.
-                    HStack {
-                        HStack {
-                            Text("Your cars")
-                                .font(.system(size: 16))
-                                .fontWeight(.bold)
-                            
-                            Spacer()
+                    Group {
+                        
+                        if let count = viewmodel.numberOfCars {
+                            if count != "0" {
+                                // Number of cars.
+                                HStack {
+                                    HStack {
+                                        Text("Your cars")
+                                            .font(.system(size: 16))
+                                            .fontWeight(.bold)
+                                        
+                                        Spacer()
+                                    }
+                                    
+                                    Text("\(viewmodel.numberOfCars ?? "")")
+                                        .font(.system(size: 14))
+                                        .fontWeight(.medium)
+                                    
+                                    Text("cars found")
+                                        .font(.system(size: 14))
+                                        .fontWeight(.medium)
+                                }
+                                .padding([.leading,.trailing],32)
+                                
+                                // List of cars.
+                                List(viewmodel.carArray) { car in
+                                    CarCell(model: car)
+                                        .listRowSeparator(.hidden)
+                                        .listRowInsets(EdgeInsets()) // Remove default padding
+                                        .padding([.horizontal],15)
+                                        .padding([.top,.bottom],10)
+                                        .buttonStyle(PlainButtonStyle())
+                                }
+                                .listStyle(PlainListStyle())
+                            }
+                            else {
+                                
+                                Spacer()
+                                
+                                PlaceHolderComponents(imge: "CarPlaceHolder",
+                                                      title: "There is no cars",
+                                                      message: "Please, add vehicle to track it")
+                                
+                                Spacer()
+                            }
                         }
-                        
-                        Text("\(viewmodel.numberOfCars ?? "")")
-                            .font(.system(size: 14))
-                            .fontWeight(.medium)
-                        
-                        Text("cars found")
-                            .font(.system(size: 14))
-                            .fontWeight(.medium)
                     }
-                    .padding([.leading,.trailing],32)
                     
-                    // List of cars.
-                    List(viewmodel.carArray) { car in
-                        CarCell(model: car)
-                            .listRowSeparator(.hidden)
-                            .listRowInsets(EdgeInsets()) // Remove default padding
-                            .padding([.horizontal],15)
-                            .padding([.top,.bottom],10)
-                            .buttonStyle(PlainButtonStyle())
-                    }
-                    .listStyle(PlainListStyle())
+                    
                     
                     
                     

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D3047F382C05A4E50031E3BE /* PlaceHolderComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3047F372C05A4E50031E3BE /* PlaceHolderComponents.swift */; };
 		D30710762C00B60700D24849 /* SwiftfulLoadingIndicators in Frameworks */ = {isa = PBXBuildFile; productRef = D30710752C00B60700D24849 /* SwiftfulLoadingIndicators */; };
 		D307107A2C00BC4E00D24849 /* LoaderIndecatorComponets.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30710792C00BC4E00D24849 /* LoaderIndecatorComponets.swift */; };
 		D307107E2C00BE6B00D24849 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D307107D2C00BE6B00D24849 /* HomeScreen.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D3047F372C05A4E50031E3BE /* PlaceHolderComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceHolderComponents.swift; sourceTree = "<group>"; };
 		D30710792C00BC4E00D24849 /* LoaderIndecatorComponets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderIndecatorComponets.swift; sourceTree = "<group>"; };
 		D307107D2C00BE6B00D24849 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		D32297D52BFBE20200EE19E9 /* TextFieldComponets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldComponets.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				D3D888392C039E500057C047 /* NavigationComponets.swift */,
 				D3D8883B2C03A4160057C047 /* WelcomeComponents.swift */,
 				D3D8883D2C03A4FE0057C047 /* PermissionsComponents.swift */,
+				D3047F372C05A4E50031E3BE /* PlaceHolderComponents.swift */,
 			);
 			path = componets;
 			sourceTree = "<group>";
@@ -369,6 +372,7 @@
 				D3D00DB42BFE624C00E31DFA /* LoginViewModel.swift in Sources */,
 				D3D888382C039DDD0057C047 /* ProfileScreen.swift in Sources */,
 				D397E5A12C01066000511488 /* CarsModel.swift in Sources */,
+				D3047F382C05A4E50031E3BE /* PlaceHolderComponents.swift in Sources */,
 				D307107E2C00BE6B00D24849 /* HomeScreen.swift in Sources */,
 				D34FAA542BFBB698008C5827 /* LoginContentView.swift in Sources */,
 				D34FAA522BFBB698008C5827 /* EgyEaglesTrackingApp.swift in Sources */,
