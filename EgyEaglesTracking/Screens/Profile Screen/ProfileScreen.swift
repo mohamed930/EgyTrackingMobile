@@ -12,6 +12,8 @@ struct ProfileScreen: View {
     // Access the presentation mode environment value
     @Environment(\.presentationMode) var presentationMode
     
+    @State var name: String
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -21,7 +23,7 @@ struct ProfileScreen: View {
                         presentationMode.wrappedValue.dismiss()
                     }
                     
-                    WelcomeComponents(action: {})
+                    WelcomeComponents(str: name,action: {})
                         .padding()
                         .padding([.leading],8)
                     
@@ -56,6 +58,6 @@ struct ProfileScreen: View {
 
 struct ProfileScreen_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileScreen()
+        ProfileScreen(name: "Mohamed Ali")
     }
 }

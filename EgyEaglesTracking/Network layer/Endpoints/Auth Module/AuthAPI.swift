@@ -10,6 +10,7 @@ import Foundation
 protocol AuthProtocol {
     func login(userName: String,password: String) async throws -> BaseModel<UserData>
     func logout() async throws -> BaseModel<UserData>
+    func fetchProfile() async throws -> BaseModel<UserModel>
 }
 
 class AuthAPI: BaseAPI<AuthNetowrking>, AuthProtocol {
@@ -20,5 +21,9 @@ class AuthAPI: BaseAPI<AuthNetowrking>, AuthProtocol {
     
     func logout() async throws -> BaseModel<UserData> {
         try await fetchData(Target: .logout(token: self.fetchUserToken()))
+    }
+    
+    func fetchProfile() async throws -> BaseModel<UserModel> {
+        try await fetchData(Target: .userProfile(token: self.fetchUserToken()))
     }
 }

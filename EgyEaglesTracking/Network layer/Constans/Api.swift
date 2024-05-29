@@ -14,4 +14,5 @@ enum Api: String {
     case login = "api/authentication/signin"
     case logout = "api/authentication/LogOut"
     case vehicles = "api/Vehicles"
+    case profile = "api/User/Profile"
 }

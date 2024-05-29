@@ -9,6 +9,8 @@ import SwiftUI
 
 struct WelcomeComponents: View {
     
+    var str: String
+    
     var action: () -> ()
     
     var body: some View {
@@ -29,7 +31,7 @@ struct WelcomeComponents: View {
                     .font(.system(size: 12,weight: .medium))
                     .multilineTextAlignment(.leading)
                 
-                Text("Mohamed Ali")
+                Text(str)
                     .font(.system(size: 14,weight: .medium))
                     .fontWeight(.medium)
                     .multilineTextAlignment(.leading)
@@ -42,6 +44,6 @@ struct WelcomeComponents: View {
 
 struct WelcomeComponents_Previews: PreviewProvider {
     static var previews: some View {
-        WelcomeComponents(action: {})
+        WelcomeComponents(str: "Mohamed Ali",action: {})
     }
 }

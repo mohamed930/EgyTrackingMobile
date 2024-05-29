@@ -14,6 +14,8 @@ class HomeViewModel: ObservableObject {
     @Published var numberOfCars: String?
     @Published var loginAgain: Bool = false
     
+    @Published var username: String = ""
+    
     private var authapi = AuthAPI()
     private var homeapi = HomeAPI()
     
@@ -52,6 +54,12 @@ class HomeViewModel: ObservableObject {
                 }
                 else {
                     print("there is no cars.")
+                    DispatchQueue.main.async { [weak self] in
+                        guard let self = self else { return }
+                        self.numberOfCars = "0"
+                    }
+                    
+                    
                 }
             }
             else {
@@ -80,5 +88,24 @@ class HomeViewModel: ObservableObject {
         }
         
         return true
+    }
+    
+    func fetchUserInfo() async {
+        do {
+            let response = try await authapi.fetchProfile()
+            
+            guard let data = response.data else { return }
+            
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
+                
+                self.username = data.firstName + " " + data.lastName
+            }
+            
+            
+        }
+        catch {
+            print(error.localizedDescription)
+        }
     }
 }
