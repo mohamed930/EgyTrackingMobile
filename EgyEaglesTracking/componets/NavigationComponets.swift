@@ -10,6 +10,7 @@ import SwiftUI
 struct NavigationComponets: View {
     
     var text: String
+    @State var isHidden = true
     var action: () -> ()
     
     var body: some View {
@@ -30,6 +31,18 @@ struct NavigationComponets: View {
                         .frame(width: 30,height: 30)
                         
                         Spacer()
+                        
+                        Button {
+                            action()
+                        } label: {
+                            Image("addButton")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 30)
+                        }
+                        .frame(width: 30,height: 30)
+                        .hidden(isHidden)
+                        .padding([.top],5)
 
                     }
                     .padding()

@@ -19,17 +19,19 @@ struct ProfileScreen: View {
             ZStack {
                 VStack {
                     
-                    NavigationComponets(text: "Profile") {
+                    NavigationComponets(text: "Profile" ,action:  {
                         presentationMode.wrappedValue.dismiss()
-                    }
+                    })
                     
                     WelcomeComponents(str: name,action: {})
                         .padding()
                         .padding([.leading],8)
                     
                     VStack(spacing: 16) {
-                        PermissionsComponents(image: "company", title: "Company") {
-                            // move to company.
+                        
+                        NavigationLink(destination: CompanyScreen()) {
+                            PermissionsComponents(image: "company", title: "Company") {}
+                                .disabled(true)
                         }
                         
                         PermissionsComponents(image: "Drivers", title: "Drivers") {

@@ -23,6 +23,9 @@
 		D397E59F2C00FA9000511488 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D397E59E2C00FA9000511488 /* HomeViewModel.swift */; };
 		D397E5A12C01066000511488 /* CarsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D397E5A02C01066000511488 /* CarsModel.swift */; };
 		D397E5A42C0106BC00511488 /* CarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D397E5A32C0106BC00511488 /* CarCell.swift */; };
+		D3B669492C0828A0001C7CFE /* CompanyScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B669482C0828A0001C7CFE /* CompanyScreen.swift */; };
+		D3B6694C2C082C33001C7CFE /* CompanyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B6694B2C082C33001C7CFE /* CompanyCell.swift */; };
+		D3B6694E2C082EC0001C7CFE /* CompanyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B6694D2C082EC0001C7CFE /* CompanyModel.swift */; };
 		D3BC0CFF2C075C9F008FDE8B /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BC0CFE2C075C9F008FDE8B /* UserModel.swift */; };
 		D3D00DA02BFE577600E31DFA /* Target.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D00D9F2BFE577600E31DFA /* Target.swift */; };
 		D3D00DA32BFE57B900E31DFA /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D00DA22BFE57B900E31DFA /* Api.swift */; };
@@ -56,6 +59,9 @@
 		D397E59E2C00FA9000511488 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		D397E5A02C01066000511488 /* CarsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsModel.swift; sourceTree = "<group>"; };
 		D397E5A32C0106BC00511488 /* CarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarCell.swift; sourceTree = "<group>"; };
+		D3B669482C0828A0001C7CFE /* CompanyScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyScreen.swift; sourceTree = "<group>"; };
+		D3B6694B2C082C33001C7CFE /* CompanyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyCell.swift; sourceTree = "<group>"; };
+		D3B6694D2C082EC0001C7CFE /* CompanyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyModel.swift; sourceTree = "<group>"; };
 		D3BC0CFE2C075C9F008FDE8B /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		D3D00D9F2BFE577600E31DFA /* Target.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Target.swift; sourceTree = "<group>"; };
 		D3D00DA22BFE57B900E31DFA /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
@@ -188,6 +194,7 @@
 				D307107B2C00BE5700D24849 /* Login screen */,
 				D307107C2C00BE5F00D24849 /* Home Screen */,
 				D3D888362C039DB10057C047 /* Profile Screen */,
+				D3B669472C082886001C7CFE /* company screen */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -205,6 +212,24 @@
 			isa = PBXGroup;
 			children = (
 				D397E5A32C0106BC00511488 /* CarCell.swift */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		D3B669472C082886001C7CFE /* company screen */ = {
+			isa = PBXGroup;
+			children = (
+				D3B6694A2C082C2B001C7CFE /* cell */,
+				D3B669482C0828A0001C7CFE /* CompanyScreen.swift */,
+				D3B6694D2C082EC0001C7CFE /* CompanyModel.swift */,
+			);
+			path = "company screen";
+			sourceTree = "<group>";
+		};
+		D3B6694A2C082C2B001C7CFE /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				D3B6694B2C082C33001C7CFE /* CompanyCell.swift */,
 			);
 			path = cell;
 			sourceTree = "<group>";
@@ -356,6 +381,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3B6694C2C082C33001C7CFE /* CompanyCell.swift in Sources */,
 				D34F462A2C033CBB0053FC77 /* HomeNetworking.swift in Sources */,
 				D397E59F2C00FA9000511488 /* HomeViewModel.swift in Sources */,
 				D3D00DA52BFE57F400E31DFA /* BaseApi.swift in Sources */,
@@ -373,6 +399,7 @@
 				D3D8883A2C039E500057C047 /* NavigationComponets.swift in Sources */,
 				D3D00DB02BFE5FA200E31DFA /* AuthAPI.swift in Sources */,
 				D3BC0CFF2C075C9F008FDE8B /* UserModel.swift in Sources */,
+				D3B669492C0828A0001C7CFE /* CompanyScreen.swift in Sources */,
 				D3D00DB42BFE624C00E31DFA /* LoginViewModel.swift in Sources */,
 				D3D888382C039DDD0057C047 /* ProfileScreen.swift in Sources */,
 				D397E5A12C01066000511488 /* CarsModel.swift in Sources */,
@@ -383,6 +410,7 @@
 				D3D00DA02BFE577600E31DFA /* Target.swift in Sources */,
 				D3D8883E2C03A4FE0057C047 /* PermissionsComponents.swift in Sources */,
 				D397E59D2C00F0D300511488 /* customAlert.swift in Sources */,
+				D3B6694E2C082EC0001C7CFE /* CompanyModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
