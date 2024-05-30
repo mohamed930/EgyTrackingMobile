@@ -16,7 +16,7 @@ struct CompanyCell: View {
         ZStack {
             HStack {
                 HStack(spacing: 12) {
-                    Image("CarLogo")
+                    Image("CompanyLogo")
                         .resizable()
                         .scaledToFit()
                         .frame(height: 30)
