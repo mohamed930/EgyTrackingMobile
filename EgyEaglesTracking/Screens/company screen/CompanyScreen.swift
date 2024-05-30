@@ -12,6 +12,8 @@ struct CompanyScreen: View {
     
     @StateObject var viewmodel = CompanyViewModel()
     
+    @State var alertActive: Bool = false
+    
     // Access the presentation mode environment value
     @Environment(\.presentationMode) var presentationMode
     
@@ -69,10 +71,11 @@ struct CompanyScreen: View {
                                     .buttonStyle(PlainButtonStyle())
                                     .swipeActions {
                                         Button(role: .destructive) {
-                                                                    // add action to button.
-                                                                } label: {
-                                                                    Label("Delete", systemImage: "trash")
-                                                                }
+                                                    alertActive.toggle()
+                                        } label: {
+                                            Label("Delete", systemImage: "trash")
+                                        }
+
                                     }
                             }
                             .listStyle(PlainListStyle())
@@ -87,6 +90,18 @@ struct CompanyScreen: View {
                 if viewmodel.isloading {
                     LoaderIndecatorComponets(isloading: $viewmodel.isloading)
                 }
+                
+                // Add Custom Alert to confrim The deletation operation.
+                if alertActive {
+                    customAlert(isActive: $alertActive,
+                                imge: "TrashIcon",
+                                title: "Delete a company",
+                                message: "Are you sure to want delete this company ?",
+                                buttonTitle: "Delete") {
+                        // delete operation.
+                    }
+                }
+                
             } // MARK: - ZStack
         } // MARK: - NavigationView
         .navigationBarBackButtonHidden(true)
@@ -95,6 +110,11 @@ struct CompanyScreen: View {
         }
         
         
+    }
+    
+    private func shouldAllowDelete(for company: CompanyModel) -> Bool {
+        // Your logic to determine if delete should be allowed
+        return true
     }
 }
 
