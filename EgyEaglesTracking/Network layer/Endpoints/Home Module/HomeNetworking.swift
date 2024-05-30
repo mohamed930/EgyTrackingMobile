@@ -9,6 +9,7 @@ import Foundation
 
 enum HomeNetworking {
     case fetchVehiclesForUser(token: String)
+    case fetchCompanies(token: String)
 }
 
 extension HomeNetworking: TargetType {
@@ -20,12 +21,14 @@ extension HomeNetworking: TargetType {
         switch self {
             case .fetchVehiclesForUser:
                 return .vehicles
+            case .fetchCompanies:
+                return .allCompanies
         }
     }
     
     var method: HTTPMethod {
         switch self {
-            case .fetchVehiclesForUser:
+            case .fetchVehiclesForUser , .fetchCompanies:
                 return .get
         }
     }
@@ -34,12 +37,15 @@ extension HomeNetworking: TargetType {
         switch self {
             case .fetchVehiclesForUser:
                 return .requestParameters(parameters: ["pageNumber": 1,"pageSize": 25], endcoding: .parmters)
+            case .fetchCompanies:
+                return .requestPlain
         }
     }
     
     var headers: [String : String]? {
         switch self {
-            case .fetchVehiclesForUser(let token):
+            case .fetchVehiclesForUser(let token),
+                 .fetchCompanies(let token):
                 return ["Authorization": "Bearer \(token)"]
         }
     }

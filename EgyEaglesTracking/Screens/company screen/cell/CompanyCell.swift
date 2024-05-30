@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CompanyCell: View {
     
-    @State var isActive: Bool = true
+    @State var model: CompanyModel
     
     var body: some View {
         
@@ -24,11 +24,11 @@ struct CompanyCell: View {
                     VStack(alignment: .leading,spacing: 4) {
                         
                         
-                        Text("Company name")
+                        Text("\(model.companyName)")
                             .font(.system(size: 14,weight: .medium))
                         
                         
-                        Text("Indevidual")
+                        Text("\(model.companyType)")
                             .font(.system(size: 12,weight: .medium))
                             .foregroundColor(Color("#FC68FF"))
                     }
@@ -41,7 +41,7 @@ struct CompanyCell: View {
                         print("No")
                     } label: {
                         Circle()
-                            .foregroundColor(isActive ? .green : .red)
+                            .foregroundColor(model.inActive ? .green : .red)
                             .frame(width: 15,height: 15)
                     }
                     
@@ -68,6 +68,34 @@ struct CompanyCell: View {
 
 struct CompanyCell_Previews: PreviewProvider {
     static var previews: some View {
-        CompanyCell()
+        
+        let exampleCompany = CompanyModel(
+            companyName: "Tech Innovations Inc.",
+            customersContractNumber: "12345",
+            upLevelID: "U123",
+            emailAddress: "contact@techinnovations.com",
+            inActive: false,
+            comments: "Leading provider of tech solutions.",
+            phoneNumber: "555-1234",
+            adminID: "A789",
+            commercialRecordIssueDateHijri: "1442-07-01",
+            managerPhoneNumber: "555-5678",
+            customerType: "Corporate",
+            address: "123 Tech Lane",
+            priority: 1,
+            companyType: "Private",
+            cid: "C987",
+            contractNumber: "C1234",
+            commercialRecordNumber: "CR456",
+            managerName: "John Doe",
+            consuming: "High",
+            contractEndDate: "2025-12-31",
+            managerMobileNumber: "555-8765",
+            waslID: "W123",
+            identityNumber: "ID5678",
+            dateOfBirth: "1980-01-01"
+        )
+        
+        CompanyCell(model: exampleCompany)
     }
 }

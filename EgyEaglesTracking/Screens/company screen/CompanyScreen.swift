@@ -10,8 +10,7 @@ import SwiftUI
 
 struct CompanyScreen: View {
     
-    @State var isloading: Bool = false
-    @State var listOfCompanies = Array<CompanyModel>()
+    @StateObject var viewmodel = CompanyViewModel()
     
     // Access the presentation mode environment value
     @Environment(\.presentationMode) var presentationMode
@@ -29,57 +28,70 @@ struct CompanyScreen: View {
                     }
                     .padding([.bottom],32)
                     
-                    // 2. you found.
-                    HStack {
-                        HStack {
-                            Text("Your companies")
-                                .font(.system(size: 16))
-                                .fontWeight(.bold)
-                            
+                    
+                    Group {
+                        if viewmodel.count == "0" {
+                            Spacer()
+                            Spacer()
+                            PlaceHolderComponents(imge: "noDataFound", title: "There is no Companies", message: "Please, add Companies to edit it")
+                            Spacer()
                             Spacer()
                         }
-                        
-                        Text("3")
-                            .font(.system(size: 14))
-                            .fontWeight(.medium)
-                        
-                        Text("company found")
-                            .font(.system(size: 14))
-                            .fontWeight(.medium)
+                        else {
+                            // 2. you found.
+                            HStack {
+                                HStack {
+                                    Text("Your companies")
+                                        .font(.system(size: 16))
+                                        .fontWeight(.bold)
+                                    
+                                    Spacer()
+                                }
+                                
+                                Text("\(viewmodel.count)")
+                                    .font(.system(size: 14))
+                                    .fontWeight(.medium)
+                                
+                                Text("company found")
+                                    .font(.system(size: 14))
+                                    .fontWeight(.medium)
+                            }
+                            .padding([.leading,.trailing],16)
+                            
+                            
+                            // 3. list of companies.
+                            List(viewmodel.companies) { str in
+                                CompanyCell(model: str)
+                                    .listRowSeparator(.hidden)
+                                    .listRowInsets(EdgeInsets()) // Remove default padding
+                                    .padding([.horizontal],15)
+                                    .padding([.top,.bottom],10)
+                                    .buttonStyle(PlainButtonStyle())
+                                    .swipeActions {
+                                        Button(role: .destructive) {
+                                                                    // add action to button.
+                                                                } label: {
+                                                                    Label("Delete", systemImage: "trash")
+                                                                }
+                                    }
+                            }
+                            .listStyle(PlainListStyle())
+                        }
                     }
-                    .padding([.leading,.trailing],16)
-                    
-                    
-                    // 3. list of companies.
-                    List(listOfCompanies) { str in
-                        CompanyCell()
-                            .listRowSeparator(.hidden)
-                            .listRowInsets(EdgeInsets()) // Remove default padding
-                            .padding([.horizontal],15)
-                            .padding([.top,.bottom],10)
-                            .buttonStyle(PlainButtonStyle())
-                    }
-                    .listStyle(PlainListStyle())
-                    
                     
                     Spacer()
                 } // MARK: - VStack
                 
                 
                 // loading indecator
-                if isloading {
-                    LoaderIndecatorComponets(isloading: $isloading)
+                if viewmodel.isloading {
+                    LoaderIndecatorComponets(isloading: $viewmodel.isloading)
                 }
             } // MARK: - ZStack
         } // MARK: - NavigationView
         .navigationBarBackButtonHidden(true)
-        .onAppear {
-            listOfCompanies = [
-                                CompanyModel(name: ""),
-                                CompanyModel(name: ""),
-                                CompanyModel(name: ""),
-                                CompanyModel(name: "")
-                              ]
+        .task {
+            await viewmodel.fetchCompanies()
         }
         
         
