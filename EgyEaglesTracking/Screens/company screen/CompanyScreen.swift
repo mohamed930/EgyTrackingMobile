@@ -13,6 +13,7 @@ struct CompanyScreen: View {
     @StateObject var viewmodel = CompanyViewModel()
     
     @State var alertActive: Bool = false
+    @State var NavigationFlag: Bool = false
     
     // Access the presentation mode environment value
     @Environment(\.presentationMode) var presentationMode
@@ -25,10 +26,14 @@ struct CompanyScreen: View {
                 VStack {
                     
                     // 1. navigation View
-                    NavigationComponets(text: "Companies",isHidden: false) {
+                    NavigationComponets(text: "Companies",isHidden: false,action: {
                         presentationMode.wrappedValue.dismiss()
-                    }
+                        
+                    },addAction: {
+                        NavigationFlag.toggle()
+                    })
                     .padding([.bottom],32)
+                    NavigationLink("", destination: AddCompanyScreen(), isActive: $NavigationFlag)
                     
                     
                     Group {

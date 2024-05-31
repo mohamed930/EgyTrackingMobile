@@ -13,6 +13,9 @@
 		D307107E2C00BE6B00D24849 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D307107D2C00BE6B00D24849 /* HomeScreen.swift */; };
 		D32297D62BFBE20200EE19E9 /* TextFieldComponets.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32297D52BFBE20200EE19E9 /* TextFieldComponets.swift */; };
 		D32297D92BFBE77500EE19E9 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32297D82BFBE77500EE19E9 /* View.swift */; };
+		D32581752C09EC220084F2A8 /* AddCompanyScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32581742C09EC220084F2A8 /* AddCompanyScreen.swift */; };
+		D32581772C09EDC40084F2A8 /* InputComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32581762C09EDC40084F2A8 /* InputComponents.swift */; };
+		D32581792C0A01D00084F2A8 /* AddAdminComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32581782C0A01D00084F2A8 /* AddAdminComponents.swift */; };
 		D34F462A2C033CBB0053FC77 /* HomeNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34F46292C033CBB0053FC77 /* HomeNetworking.swift */; };
 		D34F462C2C033D930053FC77 /* HomeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34F462B2C033D930053FC77 /* HomeAPI.swift */; };
 		D34FAA522BFBB698008C5827 /* EgyEaglesTrackingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34FAA512BFBB698008C5827 /* EgyEaglesTrackingApp.swift */; };
@@ -49,6 +52,9 @@
 		D307107D2C00BE6B00D24849 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		D32297D52BFBE20200EE19E9 /* TextFieldComponets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldComponets.swift; sourceTree = "<group>"; };
 		D32297D82BFBE77500EE19E9 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		D32581742C09EC220084F2A8 /* AddCompanyScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCompanyScreen.swift; sourceTree = "<group>"; };
+		D32581762C09EDC40084F2A8 /* InputComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputComponents.swift; sourceTree = "<group>"; };
+		D32581782C0A01D00084F2A8 /* AddAdminComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAdminComponents.swift; sourceTree = "<group>"; };
 		D34F46292C033CBB0053FC77 /* HomeNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNetworking.swift; sourceTree = "<group>"; };
 		D34F462B2C033D930053FC77 /* HomeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAPI.swift; sourceTree = "<group>"; };
 		D34FAA4E2BFBB698008C5827 /* EgyEaglesTracking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EgyEaglesTracking.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,6 +130,8 @@
 				D3D8883B2C03A4160057C047 /* WelcomeComponents.swift */,
 				D3D8883D2C03A4FE0057C047 /* PermissionsComponents.swift */,
 				D3047F372C05A4E50031E3BE /* PlaceHolderComponents.swift */,
+				D32581762C09EDC40084F2A8 /* InputComponents.swift */,
+				D32581782C0A01D00084F2A8 /* AddAdminComponents.swift */,
 			);
 			path = componets;
 			sourceTree = "<group>";
@@ -134,6 +142,14 @@
 				D32297D82BFBE77500EE19E9 /* View.swift */,
 			);
 			path = utilits;
+			sourceTree = "<group>";
+		};
+		D32581732C09EC0D0084F2A8 /* AddCompany screen */ = {
+			isa = PBXGroup;
+			children = (
+				D32581742C09EC220084F2A8 /* AddCompanyScreen.swift */,
+			);
+			path = "AddCompany screen";
 			sourceTree = "<group>";
 		};
 		D34F46282C033CAB0053FC77 /* Home Module */ = {
@@ -197,6 +213,7 @@
 				D307107C2C00BE5F00D24849 /* Home Screen */,
 				D3D888362C039DB10057C047 /* Profile Screen */,
 				D3B669472C082886001C7CFE /* company screen */,
+				D32581732C09EC0D0084F2A8 /* AddCompany screen */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -393,14 +410,17 @@
 				D36210EA2C08CA060076133B /* CompanyViewModel.swift in Sources */,
 				D3D00DAD2BFE5EBD00E31DFA /* AuthNetowrking.swift in Sources */,
 				D307107A2C00BC4E00D24849 /* LoaderIndecatorComponets.swift in Sources */,
+				D32581792C0A01D00084F2A8 /* AddAdminComponents.swift in Sources */,
 				D3D00DB72BFE904400E31DFA /* BaseModel.swift in Sources */,
 				D34F462C2C033D930053FC77 /* HomeAPI.swift in Sources */,
 				D3D00DB22BFE5FE800E31DFA /* LoginModel.swift in Sources */,
 				D397E5A42C0106BC00511488 /* CarCell.swift in Sources */,
+				D32581772C09EDC40084F2A8 /* InputComponents.swift in Sources */,
 				D32297D62BFBE20200EE19E9 /* TextFieldComponets.swift in Sources */,
 				D32297D92BFBE77500EE19E9 /* View.swift in Sources */,
 				D3D00DA82BFE58B600E31DFA /* ErrorMessage.swift in Sources */,
 				D3D8883A2C039E500057C047 /* NavigationComponets.swift in Sources */,
+				D32581752C09EC220084F2A8 /* AddCompanyScreen.swift in Sources */,
 				D3D00DB02BFE5FA200E31DFA /* AuthAPI.swift in Sources */,
 				D3BC0CFF2C075C9F008FDE8B /* UserModel.swift in Sources */,
 				D3B669492C0828A0001C7CFE /* CompanyScreen.swift in Sources */,

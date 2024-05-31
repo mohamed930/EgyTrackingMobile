@@ -12,6 +12,7 @@ struct NavigationComponets: View {
     var text: String
     @State var isHidden = true
     var action: () -> ()
+    var addAction: () -> ()
     
     var body: some View {
         ZStack {
@@ -33,7 +34,7 @@ struct NavigationComponets: View {
                         Spacer()
                         
                         Button {
-                            action()
+                            addAction()
                         } label: {
                             Image("addButton")
                                 .resizable()
@@ -54,6 +55,6 @@ struct NavigationComponets: View {
 
 struct NavigationComponets_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationComponets(text: "Profile", action: {})
+        NavigationComponets(text: "Profile", action: {},addAction: {})
     }
 }

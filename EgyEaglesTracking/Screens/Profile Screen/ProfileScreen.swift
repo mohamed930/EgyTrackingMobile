@@ -21,7 +21,7 @@ struct ProfileScreen: View {
                     
                     NavigationComponets(text: "Profile" ,action:  {
                         presentationMode.wrappedValue.dismiss()
-                    })
+                    },addAction: {})
                     
                     WelcomeComponents(str: name,action: {})
                         .padding()
