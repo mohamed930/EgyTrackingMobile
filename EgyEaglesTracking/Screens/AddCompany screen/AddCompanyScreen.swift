@@ -12,6 +12,9 @@ struct AddCompanyScreen: View {
     // Access the presentation mode environment value
     @Environment(\.presentationMode) var presentationMode
     
+    var screenWidth: CGFloat = UIScreen.main.bounds.width
+    var screenhight: CGFloat = UIScreen.main.bounds.height
+    
     @State var name: String = ""
     @State var name1: String = ""
     
@@ -59,7 +62,26 @@ struct AddCompanyScreen: View {
                         
                         InputComponents(text: $name,labelText: "Comments")
                         
-                       AddAdminComponents()
+                        AddAdminComponents()
+                        
+                        SendToWASLView()
+                            .padding([.top],32)
+                        
+                        Button {
+                            self.endTextEditing()
+                        } label: {
+                            Text("Add")
+                                .padding()
+                                .frame(width: screenWidth - (37))
+                        }
+                        .frame(height: 46)
+                        .background(Color("#239C6F"))
+                        .foregroundColor(.white)
+                        .font(.system(size: 16,weight: .medium))
+                        .clipShape(Capsule())
+                        .listRowSeparator(.hidden)
+                        .padding([.top],32)
+                            
                     }
                     
                     
