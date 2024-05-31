@@ -10,6 +10,7 @@ import Foundation
 protocol HomeApiProtocol {
     func fetchVehicles() async throws -> BaseModel<carResponse>
     func fetchAllCompanies() async throws -> BaseModel<CompanyResponse>
+    func deleteCompany(customerId: String) async throws -> BaseModel<CompanyResponse>
 }
 
 class HomeAPI: BaseAPI<HomeNetworking>, HomeApiProtocol {
@@ -20,6 +21,10 @@ class HomeAPI: BaseAPI<HomeNetworking>, HomeApiProtocol {
     
     func fetchAllCompanies() async throws -> BaseModel<CompanyResponse> {
         try await fetchData(Target: .fetchCompanies(token: self.fetchUserToken()))
+    }
+    
+    func deleteCompany(customerId: String) async throws -> BaseModel<CompanyResponse> {
+        try await fetchData(Target: .deleteCompany(id: customerId, token: self.fetchUserToken()))
     }
     
 }

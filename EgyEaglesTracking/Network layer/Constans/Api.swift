@@ -16,4 +16,5 @@ enum Api: String {
     case vehicles = "api/Vehicles"
     case profile = "api/User/Profile"
     case allCompanies = "api/OperationCompany"
+    case deleteCompany = "api/OperationCompany/DeleteOperationCompany"
 }

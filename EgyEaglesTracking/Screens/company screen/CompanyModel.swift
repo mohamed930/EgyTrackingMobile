@@ -15,21 +15,21 @@ struct CompanyModel: Identifiable , Codable {
     var id = UUID()
     let companyName: String
     let customersContractNumber: String?
-    let upLevelID, emailAddress: String
+    let upLevelID, emailAddress: String?
     let inActive: Bool
     let comments: String?
-    let phoneNumber: String
+    let phoneNumber: String?
     let adminID, commercialRecordIssueDateHijri: String?
-    let managerPhoneNumber, customerType: String
+    let managerPhoneNumber, customerType: String?
     let address: String?
-    let priority: Int
+    let priority: Int?
     let companyType, cid: String
     let contractNumber, commercialRecordNumber: String?
-    let managerName: String
+    let managerName: String?
     let consuming, contractEndDate: String?
-    let managerMobileNumber: String
+    let managerMobileNumber: String?
     let waslID: String?
-    let identityNumber: String
+    let identityNumber: String?
     let dateOfBirth: String?
 
     enum CodingKeys: String, CodingKey {

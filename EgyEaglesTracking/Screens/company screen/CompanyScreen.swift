@@ -72,6 +72,7 @@ struct CompanyScreen: View {
                                     .swipeActions {
                                         Button(role: .destructive) {
                                                     alertActive.toggle()
+                                            viewmodel.companyId = str.cid
                                         } label: {
                                             Label("Delete", systemImage: "trash")
                                         }
@@ -99,6 +100,14 @@ struct CompanyScreen: View {
                                 message: "Are you sure to want delete this company ?",
                                 buttonTitle: "Delete") {
                         // delete operation.
+                        Task {
+                            let response = await viewmodel.deleteCompany()
+                            
+                            if response {
+                                viewmodel.deleteCompanyAsUI()
+                            }
+                        }
+                        
                     }
                 }
                 
