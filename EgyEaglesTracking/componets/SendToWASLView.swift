@@ -26,7 +26,7 @@ struct SendToWASLView: View {
             .cornerRadius(25)
             .overlay(
                 RoundedRectangle(cornerRadius: 25)
-                    .stroke(Color(.systemGray4), lineWidth: 1)
+                    .stroke(Color("#E5E7EB"), lineWidth: 6)
             )
             
             Spacer()
