@@ -16,7 +16,14 @@ struct AddCompanyScreen: View {
     var screenhight: CGFloat = UIScreen.main.bounds.height
     
     @State var name: String = ""
-    @State var name1: String = ""
+    @State var phone: String = ""
+    @State var extensionNumber: String = ""
+    @State var email: String = ""
+    @State var identityNumber: String = ""
+    @State var contractNumber: String = ""
+    @State var contractCompanyNumber: String = ""
+    @State var address: String = ""
+    @State var comments: String = ""
     
     var body: some View {
         NavigationView {
@@ -32,13 +39,13 @@ struct AddCompanyScreen: View {
                     Group {
                         InputComponents(text: $name,labelText: "Company name", isNotRequired: false)
                         
-                        InputComponents(text: $name,labelText: "Phone number", isNotRequired: false)
+                        InputComponents(text: $phone,labelText: "Phone number", isNotRequired: false,keyboardType: .asciiCapableNumberPad)
                         
-                        InputComponents(text: $name,labelText: "Extension number")
+                        InputComponents(text: $extensionNumber,labelText: "Extension number",keyboardType: .asciiCapableNumberPad)
                         
-                        InputComponents(text: $name,labelText: "Email address",isNotRequired: false)
+                        InputComponents(text: $email,labelText: "Email address",isNotRequired: false)
                         
-                        InputComponents(text: $name,labelText: "Identity number",isNotRequired: false)
+                        InputComponents(text: $identityNumber,labelText: "Identity number",isNotRequired: false,keyboardType: .asciiCapableNumberPad)
                         
                         InputComponents(text: $name,labelText: "Company type",isNotRequired: false,isNotChooceTextField: false)
                         
@@ -48,19 +55,19 @@ struct AddCompanyScreen: View {
                         
                         InputComponents(text: $name,labelText: "Consuming",isNotChooceTextField: false)
                         
-                        InputComponents(text: $name,labelText: "Contract number")
+                        InputComponents(text: $contractNumber,labelText: "Contract number",keyboardType: .asciiCapableNumberPad)
                     }
                     
                     Group {
-                        InputComponents(text: $name,labelText: "Contract company number")
+                        InputComponents(text: $contractCompanyNumber,labelText: "Contract company number",keyboardType: .asciiCapableNumberPad)
                         
                         InputComponents(text: $name,labelText: "Contract End date")
                         
                         InputComponents(text: $name,labelText: "Customer type",isNotRequired: false,isNotChooceTextField: false)
                         
-                        InputComponents(text: $name,labelText: "Address")
+                        InputComponents(text: $address,labelText: "Address")
                         
-                        InputComponents(text: $name,labelText: "Comments")
+                        InputComponents(text: $comments,labelText: "Comments")
                         
                         AddAdminComponents()
                         

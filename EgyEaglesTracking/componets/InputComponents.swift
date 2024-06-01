@@ -15,6 +15,7 @@ struct InputComponents: View {
     @State var labelText: String
     @State var isNotRequired: Bool = true
     @State var isNotChooceTextField: Bool = true
+    @State var keyboardType: UIKeyboardType = .default
     
     
     var body: some View {
@@ -43,6 +44,7 @@ struct InputComponents: View {
                 .padding([.bottom], 8)
                 .font(.system(size: 16,weight: .medium))
                 .focused($isFocused)
+                .keyboardType(keyboardType)
                 .overlay {
                     HStack {
                         Spacer()
