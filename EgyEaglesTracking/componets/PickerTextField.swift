@@ -97,7 +97,13 @@ struct PickerTextField: UIViewRepresentable {
     
     func updateUIView(_ uiView: UITextField, context: Context) {
         if let lastSelectedIndex = lastSelectedIndex {
-            uiView.text = data[lastSelectedIndex]
+            if lastSelectedIndex > data.count {
+                uiView.text = data[lastSelectedIndex - 1]
+            }
+            else {
+                uiView.text = data[lastSelectedIndex]
+            }
+            
         }
     }
     

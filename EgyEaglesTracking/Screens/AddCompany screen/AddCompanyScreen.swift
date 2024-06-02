@@ -24,11 +24,13 @@ struct AddCompanyScreen: View {
     @State var contractCompanyNumber: String = ""
     @State var address: String = ""
     @State var comments: String = ""
+    @State var dateOfBirth: String = ""
     
     @State var selectedType: Int?
     @State var selectedPriority: Int?
     @State var selectedConsuming: Int?
     @State var selectedCustomerType: Int?
+    @State var selectedTSPType: Int?
     
     var body: some View {
         NavigationView {
@@ -56,7 +58,7 @@ struct AddCompanyScreen: View {
                                    labelTitle: "Company type",
                                    data: ["Indevdual","Normal"],isnotImportant: false)
                         
-                        InputComponents(text: $name,labelText: "Date of birth",isNotRequired: false)
+                        InputComponents(text: $dateOfBirth,labelText: "Date of birth",isNotRequired: false)
                         
                         PickerView(selectedIndex: $selectedPriority,
                                    labelTitle: "Priority",
@@ -79,6 +81,12 @@ struct AddCompanyScreen: View {
                                    data: ["Normal","TSP"],
                                    isnotImportant: false)
                         
+                        PickerView(selectedIndex: $selectedTSPType,
+                                   labelTitle: "TSP",
+                                   data: ["Lamar"],
+                                   isnotImportant: false)
+                        .hide(if: selectedCustomerType == 0 ? false : true)
+                        
                         InputComponents(text: $address,labelText: "Address")
                         
                         InputComponents(text: $comments,labelText: "Comments")
@@ -90,6 +98,7 @@ struct AddCompanyScreen: View {
                         
                         Button {
                             self.endTextEditing()
+                            print("Hello Wordld!!")
                         } label: {
                             Text("Add")
                                 .padding()
@@ -102,7 +111,9 @@ struct AddCompanyScreen: View {
                         .clipShape(Capsule())
                         .listRowSeparator(.hidden)
                         .padding([.top],32)
-                            
+                        .opacity(validationButton() ? 1 : 0.5)
+                        .disabled(!validationButton())
+                        .listRowBackground(Color.clear)
                     }
                     
                     
@@ -116,6 +127,28 @@ struct AddCompanyScreen: View {
             
         }
         .navigationBarBackButtonHidden(true)
+    }
+    
+    
+    func validationButton() -> Bool {
+        if !name.isEmpty && !phone.isEmpty && !email.isEmpty && !identityNumber.isEmpty && selectedCustomerType != nil && !dateOfBirth.isEmpty  {
+            
+            if selectedCustomerType == 0 && selectedTSPType != nil {
+                return true
+            }
+            else if selectedCustomerType == 1 {
+                
+                return true
+            }
+            else {
+                
+                return false
+            }
+            
+        }
+        else {
+            return false
+        }
     }
 }
 

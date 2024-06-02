@@ -17,6 +17,7 @@
 		D32581772C09EDC40084F2A8 /* InputComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32581762C09EDC40084F2A8 /* InputComponents.swift */; };
 		D32581792C0A01D00084F2A8 /* AddAdminComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32581782C0A01D00084F2A8 /* AddAdminComponents.swift */; };
 		D3377BDD2C0C4B290075576C /* PickerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3377BDC2C0C4B290075576C /* PickerTextField.swift */; };
+		D3377BDF2C0C908D0075576C /* HideViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3377BDE2C0C908D0075576C /* HideViewModifier.swift */; };
 		D34F462A2C033CBB0053FC77 /* HomeNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34F46292C033CBB0053FC77 /* HomeNetworking.swift */; };
 		D34F462C2C033D930053FC77 /* HomeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34F462B2C033D930053FC77 /* HomeAPI.swift */; };
 		D34FAA522BFBB698008C5827 /* EgyEaglesTrackingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34FAA512BFBB698008C5827 /* EgyEaglesTrackingApp.swift */; };
@@ -58,6 +59,7 @@
 		D32581762C09EDC40084F2A8 /* InputComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputComponents.swift; sourceTree = "<group>"; };
 		D32581782C0A01D00084F2A8 /* AddAdminComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAdminComponents.swift; sourceTree = "<group>"; };
 		D3377BDC2C0C4B290075576C /* PickerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerTextField.swift; sourceTree = "<group>"; };
+		D3377BDE2C0C908D0075576C /* HideViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideViewModifier.swift; sourceTree = "<group>"; };
 		D34F46292C033CBB0053FC77 /* HomeNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNetworking.swift; sourceTree = "<group>"; };
 		D34F462B2C033D930053FC77 /* HomeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAPI.swift; sourceTree = "<group>"; };
 		D34FAA4E2BFBB698008C5827 /* EgyEaglesTracking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EgyEaglesTracking.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -146,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				D32297D82BFBE77500EE19E9 /* View.swift */,
+				D3377BDE2C0C908D0075576C /* HideViewModifier.swift */,
 			);
 			path = utilits;
 			sourceTree = "<group>";
@@ -436,6 +439,7 @@
 				D397E5A12C01066000511488 /* CarsModel.swift in Sources */,
 				D3047F382C05A4E50031E3BE /* PlaceHolderComponents.swift in Sources */,
 				D307107E2C00BE6B00D24849 /* HomeScreen.swift in Sources */,
+				D3377BDF2C0C908D0075576C /* HideViewModifier.swift in Sources */,
 				D34FAA542BFBB698008C5827 /* LoginContentView.swift in Sources */,
 				D34FAA522BFBB698008C5827 /* EgyEaglesTrackingApp.swift in Sources */,
 				D3D00DA02BFE577600E31DFA /* Target.swift in Sources */,
