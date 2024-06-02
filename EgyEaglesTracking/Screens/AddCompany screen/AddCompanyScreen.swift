@@ -25,6 +25,11 @@ struct AddCompanyScreen: View {
     @State var address: String = ""
     @State var comments: String = ""
     
+    @State var selectedType: Int?
+    @State var selectedPriority: Int?
+    @State var selectedConsuming: Int?
+    @State var selectedCustomerType: Int?
+    
     var body: some View {
         NavigationView {
             
@@ -47,13 +52,19 @@ struct AddCompanyScreen: View {
                         
                         InputComponents(text: $identityNumber,labelText: "Identity number",isNotRequired: false,keyboardType: .asciiCapableNumberPad)
                         
-                        InputComponents(text: $name,labelText: "Company type",isNotRequired: false,isNotChooceTextField: false)
+                        PickerView(selectedIndex: $selectedType,
+                                   labelTitle: "Company type",
+                                   data: ["Indevdual","Normal"],isnotImportant: false)
                         
                         InputComponents(text: $name,labelText: "Date of birth",isNotRequired: false)
                         
-                        InputComponents(text: $name,labelText: "Priority",isNotChooceTextField: false)
+                        PickerView(selectedIndex: $selectedPriority,
+                                   labelTitle: "Priority",
+                                   data: ["0","1","2","3","4","5","6","7","8","9","10"])
                         
-                        InputComponents(text: $name,labelText: "Consuming",isNotChooceTextField: false)
+                        PickerView(selectedIndex: $selectedConsuming,
+                                   labelTitle: "Consuming",
+                                   data: ["Norma","Fast"])
                         
                         InputComponents(text: $contractNumber,labelText: "Contract number",keyboardType: .asciiCapableNumberPad)
                     }
@@ -63,7 +74,10 @@ struct AddCompanyScreen: View {
                         
                         InputComponents(text: $name,labelText: "Contract End date")
                         
-                        InputComponents(text: $name,labelText: "Customer type",isNotRequired: false,isNotChooceTextField: false)
+                        PickerView(selectedIndex: $selectedCustomerType,
+                                   labelTitle: "Customer type",
+                                   data: ["Normal","TSP"],
+                                   isnotImportant: false)
                         
                         InputComponents(text: $address,labelText: "Address")
                         
