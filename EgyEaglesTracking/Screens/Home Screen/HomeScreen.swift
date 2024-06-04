@@ -18,6 +18,9 @@ struct HomeScreen: View {
     
     @StateObject var viewmodel = HomeViewModel()
     
+    // Access the presentation mode environment value
+    @Environment(\.presentationMode) var presentationMode
+    
     var body: some View {
         
         NavigationView {
@@ -124,7 +127,8 @@ struct HomeScreen: View {
                                 
                                 if response {
                                     viewmodel.removeToken()
-                                    backToLogin.toggle()
+//                                    backToLogin.toggle()
+                                    presentationMode.wrappedValue.dismiss()
                                 }
                                 
                             }
@@ -142,7 +146,7 @@ struct HomeScreen: View {
                 }
                 
                 if backToLogin {
-                    NavigationLink("", destination: LoginContentView(), isActive: $backToLogin)
+                     NavigationLink("", destination: LoginContentView(), isActive: $backToLogin)
                 }
                 
             } // MARK: - ZStack

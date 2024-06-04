@@ -11,6 +11,8 @@ enum HomeNetworking {
     case fetchVehiclesForUser(token: String)
     case fetchCompanies(token: String)
     case deleteCompany(id: String,token: String)
+    
+    case addCompany(customerModel: CustomerModel,token: String)
 }
 
 extension HomeNetworking: TargetType {
@@ -26,6 +28,8 @@ extension HomeNetworking: TargetType {
                 return .allCompanies
             case .deleteCompany:
                 return .deleteCompany
+            case .addCompany:
+                return .addCompany
         }
     }
     
@@ -36,6 +40,8 @@ extension HomeNetworking: TargetType {
             
             case .deleteCompany:
                 return .delete
+            case .addCompany:
+                return .post
         }
     }
     
@@ -49,6 +55,9 @@ extension HomeNetworking: TargetType {
             
             case .deleteCompany(let id,_):
                 return .requestParameters(parameters: ["CustomerId": id], endcoding: .parmters)
+            
+        case .addCompany(let model,_):
+            return .requestParameters(parameters: model.dictionary, endcoding: .body)
         }
     }
     
@@ -56,7 +65,8 @@ extension HomeNetworking: TargetType {
         switch self {
             case .fetchVehiclesForUser(let token),
                  .fetchCompanies(let token),
-                 .deleteCompany(_,let token):
+                 .deleteCompany(_,let token),
+                 .addCompany(_,let token):
                 return ["Authorization": "Bearer \(token)"]
         }
     }

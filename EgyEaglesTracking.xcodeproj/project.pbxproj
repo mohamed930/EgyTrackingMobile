@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D30183942C0D9F6700704522 /* TSPCompanies.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30183932C0D9F6700704522 /* TSPCompanies.swift */; };
+		D30183962C0DA16C00704522 /* AddCompanyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30183952C0DA16C00704522 /* AddCompanyViewModel.swift */; };
 		D3047F382C05A4E50031E3BE /* PlaceHolderComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3047F372C05A4E50031E3BE /* PlaceHolderComponents.swift */; };
 		D30710762C00B60700D24849 /* SwiftfulLoadingIndicators in Frameworks */ = {isa = PBXBuildFile; productRef = D30710752C00B60700D24849 /* SwiftfulLoadingIndicators */; };
 		D307107A2C00BC4E00D24849 /* LoaderIndecatorComponets.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30710792C00BC4E00D24849 /* LoaderIndecatorComponets.swift */; };
@@ -30,6 +32,7 @@
 		D397E59F2C00FA9000511488 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D397E59E2C00FA9000511488 /* HomeViewModel.swift */; };
 		D397E5A12C01066000511488 /* CarsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D397E5A02C01066000511488 /* CarsModel.swift */; };
 		D397E5A42C0106BC00511488 /* CarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D397E5A32C0106BC00511488 /* CarCell.swift */; };
+		D3A976FB2C0EE59E006CE6F1 /* CustomerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A976FA2C0EE59E006CE6F1 /* CustomerModel.swift */; };
 		D3B669492C0828A0001C7CFE /* CompanyScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B669482C0828A0001C7CFE /* CompanyScreen.swift */; };
 		D3B6694C2C082C33001C7CFE /* CompanyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B6694B2C082C33001C7CFE /* CompanyCell.swift */; };
 		D3B6694E2C082EC0001C7CFE /* CompanyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B6694D2C082EC0001C7CFE /* CompanyModel.swift */; };
@@ -50,6 +53,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D30183932C0D9F6700704522 /* TSPCompanies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSPCompanies.swift; sourceTree = "<group>"; };
+		D30183952C0DA16C00704522 /* AddCompanyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCompanyViewModel.swift; sourceTree = "<group>"; };
 		D3047F372C05A4E50031E3BE /* PlaceHolderComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceHolderComponents.swift; sourceTree = "<group>"; };
 		D30710792C00BC4E00D24849 /* LoaderIndecatorComponets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderIndecatorComponets.swift; sourceTree = "<group>"; };
 		D307107D2C00BE6B00D24849 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
@@ -73,6 +78,7 @@
 		D397E59E2C00FA9000511488 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		D397E5A02C01066000511488 /* CarsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsModel.swift; sourceTree = "<group>"; };
 		D397E5A32C0106BC00511488 /* CarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarCell.swift; sourceTree = "<group>"; };
+		D3A976FA2C0EE59E006CE6F1 /* CustomerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerModel.swift; sourceTree = "<group>"; };
 		D3B669482C0828A0001C7CFE /* CompanyScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyScreen.swift; sourceTree = "<group>"; };
 		D3B6694B2C082C33001C7CFE /* CompanyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyCell.swift; sourceTree = "<group>"; };
 		D3B6694D2C082EC0001C7CFE /* CompanyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyModel.swift; sourceTree = "<group>"; };
@@ -149,6 +155,7 @@
 			children = (
 				D32297D82BFBE77500EE19E9 /* View.swift */,
 				D3377BDE2C0C908D0075576C /* HideViewModifier.swift */,
+				D30183932C0D9F6700704522 /* TSPCompanies.swift */,
 			);
 			path = utilits;
 			sourceTree = "<group>";
@@ -156,6 +163,8 @@
 		D32581732C09EC0D0084F2A8 /* AddCompany screen */ = {
 			isa = PBXGroup;
 			children = (
+				D3A976FA2C0EE59E006CE6F1 /* CustomerModel.swift */,
+				D30183952C0DA16C00704522 /* AddCompanyViewModel.swift */,
 				D32581742C09EC220084F2A8 /* AddCompanyScreen.swift */,
 			);
 			path = "AddCompany screen";
@@ -429,6 +438,7 @@
 				D32297D62BFBE20200EE19E9 /* TextFieldComponets.swift in Sources */,
 				D32297D92BFBE77500EE19E9 /* View.swift in Sources */,
 				D3D00DA82BFE58B600E31DFA /* ErrorMessage.swift in Sources */,
+				D30183942C0D9F6700704522 /* TSPCompanies.swift in Sources */,
 				D3D8883A2C039E500057C047 /* NavigationComponets.swift in Sources */,
 				D32581752C09EC220084F2A8 /* AddCompanyScreen.swift in Sources */,
 				D3D00DB02BFE5FA200E31DFA /* AuthAPI.swift in Sources */,
@@ -442,6 +452,8 @@
 				D3377BDF2C0C908D0075576C /* HideViewModifier.swift in Sources */,
 				D34FAA542BFBB698008C5827 /* LoginContentView.swift in Sources */,
 				D34FAA522BFBB698008C5827 /* EgyEaglesTrackingApp.swift in Sources */,
+				D3A976FB2C0EE59E006CE6F1 /* CustomerModel.swift in Sources */,
+				D30183962C0DA16C00704522 /* AddCompanyViewModel.swift in Sources */,
 				D3D00DA02BFE577600E31DFA /* Target.swift in Sources */,
 				D3D8883E2C03A4FE0057C047 /* PermissionsComponents.swift in Sources */,
 				D397E59D2C00F0D300511488 /* customAlert.swift in Sources */,

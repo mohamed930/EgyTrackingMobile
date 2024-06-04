@@ -14,17 +14,13 @@ struct EgyEaglesTrackingApp: App {
     
     var body: some Scene {
         WindowGroup {
-            
-            /*
              if token.isEmpty {
                  LoginContentView()
              }
              else {
                  HomeScreen()
              }
-             */
-            
-            AddCompanyScreen()
+             
         }
     }
 }

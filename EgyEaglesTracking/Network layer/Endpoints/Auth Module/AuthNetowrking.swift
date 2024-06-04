@@ -15,7 +15,7 @@ enum AuthNetowrking {
 
 extension AuthNetowrking: TargetType {
     var baseURL: Api {
-        return .baseUrl
+        return .baseTracking
     }
     
     var path: Api {

@@ -40,6 +40,7 @@ class CompanyViewModel: ObservableObject {
                     
                     self.companies = data.result
                     self.count = "\(data.result.count)"
+                    self.cacheTSPCompanies(data: data.result)
                 }
                 
             }
@@ -103,6 +104,16 @@ class CompanyViewModel: ObservableObject {
         
         companies.remove(at: index)
         count = "\(companies.count)"
+    }
+    
+    
+    private func cacheTSPCompanies(data: [CompanyModel]) {
+        for i in data {
+            if i.customerType == "Dealer" {
+                TSPCompanies.shared.data.append(i)
+            }
+        }
+        
     }
     
 }
