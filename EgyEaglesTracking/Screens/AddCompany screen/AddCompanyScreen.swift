@@ -50,7 +50,14 @@ struct AddCompanyScreen: View {
                     List {
                         
                         Group {
-                            InputComponents(text: $name,labelText: "Company name", isNotRequired: false)
+                            InputComponents(text: $name,labelText: "Company name", isNotRequired: false,errorBorder: viewmodel.companyName)
+                            
+                            Text("Company name must be unique")
+                                .font(.system(size: 12))
+                                .fontWeight(.medium)
+                                .padding([.top],-26)
+                                .foregroundColor(.red)
+                                .hide(if: !viewmodel.companyName)
                             
                             InputComponents(text: $phone,labelText: "Phone number", isNotRequired: false,keyboardType: .asciiCapableNumberPad)
                             

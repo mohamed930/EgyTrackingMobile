@@ -15,7 +15,7 @@ struct CarsModel: Identifiable, Codable {
     var id = UUID()
     let carId: String
     let inActive: Bool
-    let vehicleModel: String
+    let vehicleModel: String?
     let minSpeed: Double
     let vehiclePlate: VehiclePlate
     let manufacturingYear: String?

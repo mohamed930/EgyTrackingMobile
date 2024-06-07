@@ -8,7 +8,7 @@
 import Foundation
 
 struct NewAdmin: Codable {
-    let email: String = "string@s.s"
+    let email: String = "info@egyeagles.com"
     let password: String = "Aa_123@@@"
     let firstName: String = "sss"
     let lastName: String = "sss"
@@ -55,8 +55,8 @@ struct CustomerModel: Codable {
     let contractNumber: String = ""
     let customersContractNumber: String = ""
     let contractEndDate: String = ""
-    let adminId: String = "f4346b776beb40ba97d7fcc85ef0197c"
-    let upLevelId: String = "6649dac4db129a313fec74e6"
+    var adminId: String = "f4346b776beb40ba97d7fcc85ef0197c"
+    var upLevelId: String = "6649dac4db129a313fec74e6"
     let addToWasl: Bool
     let xapiKey: String
     let newAdmin: NewAdmin

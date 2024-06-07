@@ -23,7 +23,7 @@ struct CarCell: View {
                     VStack(alignment: .leading,spacing: 4) {
                         
                         HStack(spacing: 4) {
-                            Text("\(model.vehicleModel)")
+                            Text("\(model.vehicleModel ?? "U/K")")
                                 .font(.system(size: 14,weight: .medium))
                             
                             Text("|")

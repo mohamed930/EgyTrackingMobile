@@ -37,7 +37,7 @@ struct CompanyModel: Identifiable , Codable {
         case customersContractNumber = "CustomersContractNumber"
         case upLevelID = "UpLevelId"
         case emailAddress = "EmailAddress"
-        case inActive = "InActive"
+        case inActive = "IsActive"
         case comments = "Comments"
         case phoneNumber = "PhoneNumber"
         case adminID = "AdminId"

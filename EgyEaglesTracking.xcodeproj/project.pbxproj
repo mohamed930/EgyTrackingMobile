@@ -37,6 +37,8 @@
 		D3B6694C2C082C33001C7CFE /* CompanyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B6694B2C082C33001C7CFE /* CompanyCell.swift */; };
 		D3B6694E2C082EC0001C7CFE /* CompanyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B6694D2C082EC0001C7CFE /* CompanyModel.swift */; };
 		D3BC0CFF2C075C9F008FDE8B /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BC0CFE2C075C9F008FDE8B /* UserModel.swift */; };
+		D3BD3AD92C139AD500654D01 /* JWTDecode in Frameworks */ = {isa = PBXBuildFile; productRef = D3BD3AD82C139AD500654D01 /* JWTDecode */; };
+		D3BD3ADB2C139AF000654D01 /* JwtDecode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BD3ADA2C139AF000654D01 /* JwtDecode.swift */; };
 		D3D00DA02BFE577600E31DFA /* Target.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D00D9F2BFE577600E31DFA /* Target.swift */; };
 		D3D00DA32BFE57B900E31DFA /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D00DA22BFE57B900E31DFA /* Api.swift */; };
 		D3D00DA52BFE57F400E31DFA /* BaseApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D00DA42BFE57F400E31DFA /* BaseApi.swift */; };
@@ -83,6 +85,7 @@
 		D3B6694B2C082C33001C7CFE /* CompanyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyCell.swift; sourceTree = "<group>"; };
 		D3B6694D2C082EC0001C7CFE /* CompanyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyModel.swift; sourceTree = "<group>"; };
 		D3BC0CFE2C075C9F008FDE8B /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		D3BD3ADA2C139AF000654D01 /* JwtDecode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JwtDecode.swift; sourceTree = "<group>"; };
 		D3D00D9F2BFE577600E31DFA /* Target.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Target.swift; sourceTree = "<group>"; };
 		D3D00DA22BFE57B900E31DFA /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		D3D00DA42BFE57F400E31DFA /* BaseApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseApi.swift; sourceTree = "<group>"; };
@@ -103,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3BD3AD92C139AD500654D01 /* JWTDecode in Frameworks */,
 				D30710762C00B60700D24849 /* SwiftfulLoadingIndicators in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -156,6 +160,7 @@
 				D32297D82BFBE77500EE19E9 /* View.swift */,
 				D3377BDE2C0C908D0075576C /* HideViewModifier.swift */,
 				D30183932C0D9F6700704522 /* TSPCompanies.swift */,
+				D3BD3ADA2C139AF000654D01 /* JwtDecode.swift */,
 			);
 			path = utilits;
 			sourceTree = "<group>";
@@ -361,6 +366,7 @@
 			name = EgyEaglesTracking;
 			packageProductDependencies = (
 				D30710752C00B60700D24849 /* SwiftfulLoadingIndicators */,
+				D3BD3AD82C139AD500654D01 /* JWTDecode */,
 			);
 			productName = EgyEaglesTracking;
 			productReference = D34FAA4E2BFBB698008C5827 /* EgyEaglesTracking.app */;
@@ -392,6 +398,7 @@
 			mainGroup = D34FAA452BFBB698008C5827;
 			packageReferences = (
 				D30710742C00B60700D24849 /* XCRemoteSwiftPackageReference "SwiftfulLoadingIndicators" */,
+				D3BD3AD72C139AD500654D01 /* XCRemoteSwiftPackageReference "JWTDecode" */,
 			);
 			productRefGroup = D34FAA4F2BFBB698008C5827 /* Products */;
 			projectDirPath = "";
@@ -459,6 +466,7 @@
 				D397E59D2C00F0D300511488 /* customAlert.swift in Sources */,
 				D3B6694E2C082EC0001C7CFE /* CompanyModel.swift in Sources */,
 				D3377BDD2C0C4B290075576C /* PickerTextField.swift in Sources */,
+				D3BD3ADB2C139AF000654D01 /* JwtDecode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -671,6 +679,14 @@
 				minimumVersion = 0.0.4;
 			};
 		};
+		D3BD3AD72C139AD500654D01 /* XCRemoteSwiftPackageReference "JWTDecode" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/auth0/JWTDecode.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -678,6 +694,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D30710742C00B60700D24849 /* XCRemoteSwiftPackageReference "SwiftfulLoadingIndicators" */;
 			productName = SwiftfulLoadingIndicators;
+		};
+		D3BD3AD82C139AD500654D01 /* JWTDecode */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D3BD3AD72C139AD500654D01 /* XCRemoteSwiftPackageReference "JWTDecode" */;
+			productName = JWTDecode;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

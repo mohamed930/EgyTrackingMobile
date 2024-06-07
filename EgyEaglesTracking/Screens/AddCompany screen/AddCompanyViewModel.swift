@@ -14,6 +14,8 @@ class AddCompanyViewModel: ObservableObject {
     @Published var success: Bool!
     @Published var error: Bool = false
     
+    @Published var companyName: Bool!
+    
     
     private let homeapi = HomeAPI()
     var companyData: CustomerModel!
@@ -34,11 +36,17 @@ class AddCompanyViewModel: ObservableObject {
         isloading = true
         
         do {
+            guard let model = JwtDecode.shared.decode() else { return }
+            companyData.adminId = model.uid.replacingOccurrences(of: "-", with: "", options: .literal, range: nil)
+            companyData.upLevelId = model.pCid
             
             let response = try await homeapi.addCompany(customerModel: companyData)
             
             DispatchQueue.main.async { [weak self] in
                 guard let self = self else { return }
+                
+                print(response.success)
+                print(response.message)
                 
                 isloading = false
                 if response.success {
@@ -46,6 +54,11 @@ class AddCompanyViewModel: ObservableObject {
                 }
                 else {
                     error = true
+                    
+                    if response.message.contains("CompanyName") {
+                        print("we are here!!!")
+                        companyName = true
+                    }
                 }
             }
             

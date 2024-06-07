@@ -98,7 +98,14 @@ class BaseAPI<T:TargetType> {
             throw ErrorMessage.invalidToken
         }
         else {
-            throw ErrorMessage.invalidResponse
+            do {
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                return try decoder.decode(M.self, from: data)
+            }
+            catch {
+                throw ErrorMessage.invalidData
+            }
         }
         
         
