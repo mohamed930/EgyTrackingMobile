@@ -22,7 +22,7 @@ struct CarsModel: Identifiable, Codable {
     
     enum CodingKeys: String, CodingKey {
         case carId = "Id"
-        case inActive = "InActive"
+        case inActive = "IsActive"
         case vehicleModel = "VehicleModel"
         case minSpeed = "MinSpeed"
         case vehiclePlate

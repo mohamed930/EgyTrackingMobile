@@ -17,7 +17,7 @@ struct InputComponents: View {
     @State var isNotChooceTextField: Bool = true
     @State var keyboardType: UIKeyboardType = .default
     
-    @State var errorBorder: Bool = false
+    @Binding var errorBorder: Bool?
     
     
     var body: some View {
@@ -42,7 +42,7 @@ struct InputComponents: View {
                 .textFieldStyle(PlainTextFieldStyle())
                 .padding([.horizontal], 20)
                 .cornerRadius(23)
-                .overlay(RoundedRectangle(cornerRadius: 23).stroke(errorBorder ? .red: Color("#E8E8E8")))
+                .overlay(RoundedRectangle(cornerRadius: 23).stroke((errorBorder ?? false) ? .red: Color("#E8E8E8")))
                 .padding([.bottom], 8)
                 .font(.system(size: 16,weight: .medium))
                 .focused($isFocused)
@@ -76,8 +76,9 @@ struct InputComponents: View {
 struct InputComponents_Previews: PreviewProvider {
     
     @State static var email = ""
+    @State static var error: Bool? = true
     
     static var previews: some View {
-        InputComponents(text: $email, labelText: "Company name", errorBorder: true)
+        InputComponents(text: $email, labelText: "Company name", errorBorder: $error)
     }
 }

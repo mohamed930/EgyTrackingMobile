@@ -5,7 +5,7 @@
 //  Created by Mohamed Ali on 03/06/2024.
 //
 
-import Foundation
+import SwiftUI
 
 class AddCompanyViewModel: ObservableObject {
     @Published var data: [String] = Array<String>()
@@ -14,7 +14,10 @@ class AddCompanyViewModel: ObservableObject {
     @Published var success: Bool!
     @Published var error: Bool = false
     
-    @Published var companyName: Bool!
+    @Published var companyName: Bool? = false
+    @Published var phoneNumber: Bool? = false
+    @Published var identity: Bool? = false
+    @Published var binding: Bool? = false
     
     
     private let homeapi = HomeAPI()
@@ -56,8 +59,17 @@ class AddCompanyViewModel: ObservableObject {
                     error = true
                     
                     if response.message.contains("CompanyName") {
-                        print("we are here!!!")
                         companyName = true
+                    }
+                    else if response.message.contains("Phone number") {
+                        companyName = false
+                        identity = false
+                        phoneNumber = true
+                    }
+                    else if response.message.contains("IdentityNumber") {
+                        identity?.toggle()
+                        companyName = false
+                        phoneNumber = false
                     }
                 }
             }

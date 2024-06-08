@@ -68,21 +68,43 @@ struct CompanyScreen: View {
                             
                             // 3. list of companies.
                             List(viewmodel.companies) { str in
-                                CompanyCell(model: str)
+                                
+                                
+                                ZStack {
+                                    
+                                    CompanyCell(model: str)
                                     .listRowSeparator(.hidden)
                                     .listRowInsets(EdgeInsets()) // Remove default padding
                                     .padding([.horizontal],15)
                                     .padding([.top,.bottom],10)
                                     .buttonStyle(PlainButtonStyle())
-                                    .swipeActions {
-                                        Button(role: .destructive) {
-                                                    alertActive.toggle()
-                                            viewmodel.companyId = str.cid
-                                        } label: {
-                                            Label("Delete", systemImage: "trash")
-                                        }
-
+                                    
+                                    
+                                    NavigationLink(destination: AddCompanyScreen(companyModel: str)) {
+                                        EmptyView()
                                     }
+                                    .opacity(0)
+                                    .buttonStyle(PlainButtonStyle())
+                                    
+                                }
+                                .listStyle(PlainListStyle())
+                                .listRowInsets(EdgeInsets()) // Remove default padding
+                                .listRowSeparator(.hidden)
+                                .buttonStyle(PlainButtonStyle())
+                                .listRowBackground(Color.clear)
+                                .swipeActions {
+                                    Button(role: .destructive) {
+                                         alertActive.toggle()
+                                        viewmodel.companyId = str.cid
+                                    } label: {
+                                        Label("Delete", systemImage: "trash")
+                                    }
+
+                                }
+                                
+                                
+                                
+                                
                             }
                             .listStyle(PlainListStyle())
                         }

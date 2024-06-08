@@ -37,6 +37,8 @@ struct AddCompanyScreen: View {
     
     @StateObject var viewmodel = AddCompanyViewModel()
     
+    @State var companyModel: CompanyModel?
+    
     var body: some View {
         NavigationView {
             
@@ -50,28 +52,44 @@ struct AddCompanyScreen: View {
                     List {
                         
                         Group {
-                            InputComponents(text: $name,labelText: "Company name", isNotRequired: false,errorBorder: viewmodel.companyName)
+                            InputComponents(text: $name, labelText: "Company name",isNotRequired: false, errorBorder: $viewmodel.companyName)
                             
                             Text("Company name must be unique")
                                 .font(.system(size: 12))
                                 .fontWeight(.medium)
                                 .padding([.top],-26)
                                 .foregroundColor(.red)
-                                .hide(if: !viewmodel.companyName)
+                                .hide(if: !(viewmodel.companyName ?? false))
                             
-                            InputComponents(text: $phone,labelText: "Phone number", isNotRequired: false,keyboardType: .asciiCapableNumberPad)
+                            InputComponents(text: $phone,labelText: "Phone number", isNotRequired: false,keyboardType: .asciiCapableNumberPad, errorBorder: $viewmodel.phoneNumber)
                             
-                            InputComponents(text: $extensionNumber,labelText: "Extension number",keyboardType: .asciiCapableNumberPad)
                             
-                            InputComponents(text: $email,labelText: "Email address",isNotRequired: false)
+                            Text("Phone number must be unique")
+                                .font(.system(size: 12))
+                                .fontWeight(.medium)
+                                .padding([.top],-26)
+                                .foregroundColor(.red)
+                                .hide(if: !(viewmodel.phoneNumber ?? false))
                             
-                            InputComponents(text: $identityNumber,labelText: "Identity number",isNotRequired: false,keyboardType: .asciiCapableNumberPad)
+                            
+                            InputComponents(text: $extensionNumber,labelText: "Extension number",keyboardType: .asciiCapableNumberPad, errorBorder: $viewmodel.binding)
+                            
+                            InputComponents(text: $email,labelText: "Email address",isNotRequired: false, errorBorder: $viewmodel.binding)
+                            
+                            InputComponents(text: $identityNumber,labelText: "Identity number",isNotRequired: false,keyboardType: .asciiCapableNumberPad, errorBorder: $viewmodel.identity)
+                            
+                            Text("Identity must be unique")
+                                .font(.system(size: 12))
+                                .fontWeight(.medium)
+                                .padding([.top],-26)
+                                .foregroundColor(.red)
+                                .hide(if: !(viewmodel.identity ?? false))
                             
                             PickerView(selectedIndex: $selectedType,
                                        labelTitle: "Company type",
                                        data: companyTypes ,isnotImportant: false)
                             
-                            InputComponents(text: $dateOfBirth,labelText: "Date of birth",isNotRequired: false)
+                            InputComponents(text: $dateOfBirth,labelText: "Date of birth",isNotRequired: false, errorBorder: $viewmodel.binding)
                             
                             PickerView(selectedIndex: $selectedPriority,
                                        labelTitle: "Priority",
@@ -81,13 +99,13 @@ struct AddCompanyScreen: View {
                                        labelTitle: "Consuming",
                                        data: ["Norma","Fast"])
                             
-                            InputComponents(text: $contractNumber,labelText: "Contract number",keyboardType: .asciiCapableNumberPad)
+                            InputComponents(text: $contractNumber,labelText: "Contract number",keyboardType: .asciiCapableNumberPad, errorBorder: $viewmodel.binding)
                         }
                         
                         Group {
-                            InputComponents(text: $contractCompanyNumber,labelText: "Contract company number",keyboardType: .asciiCapableNumberPad)
+                            InputComponents(text: $contractCompanyNumber,labelText: "Contract company number",keyboardType: .asciiCapableNumberPad, errorBorder: $viewmodel.binding)
                             
-                            InputComponents(text: $name,labelText: "Contract End date")
+                            InputComponents(text: $name,labelText: "Contract End date", errorBorder: $viewmodel.binding)
                             
                             PickerView(selectedIndex: $selectedCustomerType,
                                        labelTitle: "Customer type",
@@ -100,9 +118,9 @@ struct AddCompanyScreen: View {
                                        isnotImportant: false)
                             .hide(if: selectedCustomerType == 0 ? false : true)
                             
-                            InputComponents(text: $address,labelText: "Address")
+                            InputComponents(text: $address,labelText: "Address", errorBorder: $viewmodel.binding)
                             
-                            InputComponents(text: $comments,labelText: "Comments")
+                            InputComponents(text: $comments,labelText: "Comments", errorBorder: $viewmodel.binding)
                             
                             AddAdminComponents()
                             
@@ -159,6 +177,8 @@ struct AddCompanyScreen: View {
                 viewmodel.fetchData()
             }
             
+            renderDataForEditing()
+            
         })
         .alert(isPresented: $viewmodel.error) {
             Alert(title: Text("Company adding error"), message: Text("Plase, try again"), dismissButton: .cancel(Text("Ok")))
@@ -211,6 +231,23 @@ struct AddCompanyScreen: View {
                                   newAdmin: NewAdmin())
         
         viewmodel.companyData = model
+    }
+    
+    func renderDataForEditing() {
+        guard let model = companyModel else { return }
+        
+        name  = model.companyName
+        phone = model.phoneNumber ?? ""
+        email = model.emailAddress ?? ""
+        identityNumber = model.identityNumber ?? ""
+        selectedType = model.companyType == "Individual" ? 0 : 1
+        dateOfBirth = model.dateOfBirth ?? ""
+        selectedPriority = model.priority ?? 0
+        contractNumber = model.contractNumber ?? ""
+        contractCompanyNumber = model.customersContractNumber ?? ""
+        selectedCustomerType = model.customerType == "Normal" ? 0 : 1
+        address = model.address ?? ""
+        comments = model.comments ?? ""
     }
 }
 
