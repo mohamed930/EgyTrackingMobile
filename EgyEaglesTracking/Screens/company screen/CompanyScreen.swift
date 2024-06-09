@@ -95,7 +95,7 @@ struct CompanyScreen: View {
                                 .swipeActions {
                                     Button(role: .destructive) {
                                          alertActive.toggle()
-                                        viewmodel.companyId = str.cid
+                                         viewmodel.companyId = str.cid
                                     } label: {
                                         Label("Delete", systemImage: "trash")
                                     }

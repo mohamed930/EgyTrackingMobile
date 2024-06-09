@@ -10,6 +10,7 @@ import Foundation
 enum EncodingType {
     case parmters
     case body
+    case url
 }
 
 enum HTTPMethod : String {

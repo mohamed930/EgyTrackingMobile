@@ -27,7 +27,7 @@ extension HomeNetworking: TargetType {
             case .fetchCompanies:
                 return .allCompanies
             case .deleteCompany:
-                return .deleteCompany
+                return .allCompanies
             case .addCompany:
                 return .addCompany
         }
@@ -54,7 +54,7 @@ extension HomeNetworking: TargetType {
                 return .requestPlain
             
             case .deleteCompany(let id,_):
-                return .requestParameters(parameters: ["CustomerId": id], endcoding: .parmters)
+                return .requestParameters(parameters: ["CustomerId": id], endcoding: .url)
             
         case .addCompany(let model,_):
             return .requestParameters(parameters: model.dictionary, endcoding: .body)

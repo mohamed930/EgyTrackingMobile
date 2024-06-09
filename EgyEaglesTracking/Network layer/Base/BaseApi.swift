@@ -9,13 +9,20 @@ import SwiftUI
 
 class BaseAPI<T:TargetType> {
     func fetchData<M: Decodable>(Target: T) async throws -> M {
-        let endpoint = (Target.baseURL.rawValue + Target.path.rawValue)
+        var endpoint = (Target.baseURL.rawValue + Target.path.rawValue)
+        
+        let params = buildParams(task: Target.task)
+        
+        if params.1 == .url {
+            for (_, value) in params.0 {
+                endpoint = endpoint + "/" + "\(value)"
+            }
+        }
         
 //        guard let url = URL(string: endpoint) else { throw ErrorMessage.invalidUrl }
         
         guard var urlComponents = URLComponents(string: endpoint) else { throw ErrorMessage.invalidUrl }
         
-        let params = buildParams(task: Target.task)
         
         if !params.0.isEmpty {
             if params.1 == .parmters {
@@ -83,6 +90,9 @@ class BaseAPI<T:TargetType> {
                 throw ErrorMessage.invalidResponse
             }
         }
+        
+        // MARK: - For Debugging.
+        print("Response code \(response.statusCode)")
         
         if response.statusCode == 200 || response.statusCode == 201 {
             do {
