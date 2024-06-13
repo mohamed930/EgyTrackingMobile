@@ -9,49 +9,96 @@ import SwiftUI
 
 class VehicleViewModel: ObservableObject {
     @Published var data = [CarsModel]()
-    @Published var count = 0
+    @Published var count = -1
+    
+    @Published var isloading = false
     
     var vehicleId: String = ""
     
-    func fetchData() {
-        let car1 = CarsModel(
-            carId: "ABC123",
-            inActive: false,
-            vehicleModel: "Toyota Corolla",
-            minSpeed: 50.0,
-            vehiclePlate: VehiclePlate(number: "1234", rightLetter: "A", middleLetter: "B", leftLetter: "C"),
-            manufacturingYear: "2019"
-        )
-
-        let car2 = CarsModel(
-            carId: "DEF456",
-            inActive: true,
-            vehicleModel: "Honda Civic",
-            minSpeed: 45.0,
-            vehiclePlate: VehiclePlate(number: "5678", rightLetter: "D", middleLetter: "E", leftLetter: "F"),
-            manufacturingYear: "2018"
-        )
-
-        let car3 = CarsModel(
-            carId: "GHI789",
-            inActive: false,
-            vehicleModel: "Ford Focus",
-            minSpeed: 55.0,
-            vehiclePlate: VehiclePlate(number: "9012", rightLetter: "G", middleLetter: "H", leftLetter: "I"),
-            manufacturingYear: "2020"
-        )
-
-        let car4 = CarsModel(
-            carId: "JKL012",
-            inActive: true,
-            vehicleModel: "Chevrolet Malibu",
-            minSpeed: 60.0,
-            vehiclePlate: VehiclePlate(number: "3456", rightLetter: "J", middleLetter: "K", leftLetter: "L"),
-            manufacturingYear: "2021"
-        )
-
+    private let homeapi = HomeAPI()
+    
+    func fetchData() async {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            
+            isloading.toggle()
+        }
         
-        data = [car1,car2,car3,car4]
-        count = data.count
+        do {
+            let response = try await homeapi.fetchVehicles()
+            
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
+                
+                isloading.toggle()
+            }
+            
+            if response.success {
+                guard let data = response.data else { return }
+                
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
+                    
+                    self.data = data.result
+                    count = self.data.count
+                }
+                
+            }
+            else {
+                print(response.message)
+            }
+        }
+        catch {
+            
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
+                
+                isloading.toggle()
+            }
+            
+            print(error.localizedDescription)
+        }
+    }
+    
+    func deleteVehicle() async {
+        
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            
+            self.isloading.toggle()
+        }
+        
+        do {
+            let response = try await homeapi.deleteVehicle(vehicleId: vehicleId)
+            
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
+                
+                self.isloading.toggle()
+            }
+            
+            if response.success {
+                
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
+                    
+                    guard let index = data.firstIndex(where: {$0.carId == self.vehicleId}) else { return }
+                    
+                    data.remove(at: index)
+                    count = data.count
+                }
+                
+            }
+        }
+        catch {
+            
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
+                
+                self.isloading.toggle()
+            }
+            
+            print(error.localizedDescription)
+        }
     }
 }

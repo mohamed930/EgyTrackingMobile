@@ -75,12 +75,8 @@ struct VehicleCell: View {
             .padding()
             .frame(maxWidth: .infinity)
             .background(Color.white)
-            .cornerRadius(20.0)
-            .overlay( /// apply a rounded border
-                RoundedRectangle(cornerRadius: 16)
-                    .stroke(Color("#AAAAAA"), lineWidth: 1)
-                    .shadow(color: Color.gray.opacity(0.2), radius: 4, x: 0, y: 2)
-            )
+            .cornerRadius(16.0)
+            .shadow(color: Color.gray.opacity(0.4), radius: 4, x: 0, y: 1.5) // Add shadow here
         }
         
     }
