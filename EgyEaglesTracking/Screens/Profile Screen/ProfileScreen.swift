@@ -38,9 +38,12 @@ struct ProfileScreen: View {
                             // move to Drivers.
                         }
                         
-                        PermissionsComponents(image: "Vehicles", title: "Vehicles") {
-                            // move to Vehicles.
+                        NavigationLink(destination: VehiclesScreen()) {
+                            PermissionsComponents(image: "Vehicles", title: "Vehicles") {}
+                                .disabled(true)
                         }
+                        
+                        
                         
                         PermissionsComponents(image: "unit", title: "Units") {
                             // move to Vehicles.

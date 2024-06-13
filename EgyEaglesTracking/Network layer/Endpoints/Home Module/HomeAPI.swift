@@ -12,6 +12,7 @@ protocol HomeApiProtocol {
     func fetchAllCompanies() async throws -> BaseModel<CompanyResponse>
     func deleteCompany(customerId: String) async throws -> BaseModel<CompanyResponse>
     func addCompany(customerModel: CustomerModel) async throws -> BaseModel<CompanyResponse>
+    func updateCompany(customerModel: CustomerModel) async throws -> BaseModel<companyUpdateModel>
 }
 
 class HomeAPI: BaseAPI<HomeNetworking>, HomeApiProtocol {
@@ -30,5 +31,9 @@ class HomeAPI: BaseAPI<HomeNetworking>, HomeApiProtocol {
     
     func addCompany(customerModel: CustomerModel) async throws -> BaseModel<CompanyResponse> {
         try await fetchData(Target: .addCompany(customerModel: customerModel, token: self.fetchUserToken()))
+    }
+    
+    func updateCompany(customerModel: CustomerModel) async throws -> BaseModel<companyUpdateModel> {
+        try await fetchData(Target: .updateCompany(customerModel: customerModel, token: self.fetchUserToken()))
     }
 }

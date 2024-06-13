@@ -45,7 +45,7 @@ struct AddCompanyScreen: View {
             ZStack {
                 VStack {
                     
-                    NavigationComponets(text: "Add new company", action: {
+                    NavigationComponets(text: checkUpdate() ? "Update new company" : "Add new company", action: {
                         presentationMode.wrappedValue.dismiss()
                     }, addAction: {})
                     
@@ -132,12 +132,25 @@ struct AddCompanyScreen: View {
                                 self.buildData()
                                 
                                 Task {
-                                    await viewmodel.addCompanyData()
+                                    guard let companyModel else {
+                                        await viewmodel.addCompanyData()
+                                        return
+                                    }
+                                    
+                                    await viewmodel.updateCompanyData(company: companyModel)
+                                    
+                                    guard let success = viewmodel.success else { return }
+                                    
+                                    if success {
+                                        presentationMode.wrappedValue.dismiss()
+                                        NotificationCenter.default.post(name: NSNotification.updateSuccess, object: nil)
+                                    }
+                                    
                                 }
                                 
                                 
                             } label: {
-                                Text("Add")
+                                Text(checkUpdate() ? "Update" : "Add")
                                     .padding()
                                     .frame(width: screenWidth - (37))
                             }
@@ -248,6 +261,13 @@ struct AddCompanyScreen: View {
         selectedCustomerType = model.customerType == "Normal" ? 0 : 1
         address = model.address ?? ""
         comments = model.comments ?? ""
+    }
+    
+    
+    func checkUpdate() -> Bool {
+        guard companyModel != nil else { return false }
+        
+        return true
     }
 }
 

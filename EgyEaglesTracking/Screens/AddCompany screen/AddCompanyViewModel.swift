@@ -86,4 +86,58 @@ class AddCompanyViewModel: ObservableObject {
             print(error.localizedDescription)
         }
     }
+    
+    func updateCompanyData(company: CompanyModel) async {
+        isloading = true
+        
+        do {
+            guard let model = JwtDecode.shared.decode() else { return }
+            companyData.adminId = model.uid.replacingOccurrences(of: "-", with: "", options: .literal, range: nil)
+            companyData.upLevelId = model.pCid
+            
+            companyData.Id = company.cid
+            
+            let response = try await homeapi.updateCompany(customerModel: companyData)
+            
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
+                
+                print(response.success)
+                print(response.message)
+                
+                isloading = false
+                if response.success {
+                    success = true
+                }
+                else {
+                    error = true
+                    
+                    if response.message.contains("CompanyName") {
+                        companyName = true
+                    }
+                    else if response.message.contains("Phone number") {
+                        companyName = false
+                        identity = false
+                        phoneNumber = true
+                    }
+                    else if response.message.contains("IdentityNumber") {
+                        identity?.toggle()
+                        companyName = false
+                        phoneNumber = false
+                    }
+                }
+            }
+            
+        }
+        catch {
+            
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
+                
+                isloading = false
+            }
+            
+            print(error.localizedDescription)
+        }
+    }
 }

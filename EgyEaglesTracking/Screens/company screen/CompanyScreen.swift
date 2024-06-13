@@ -144,6 +144,12 @@ struct CompanyScreen: View {
         .task {
             await viewmodel.fetchCompanies()
         }
+        .onReceive(NotificationCenter.default.publisher(for: NSNotification.updateSuccess))
+        { _ in
+            Task {
+                await viewmodel.fetchCompanies()
+            }
+        }
         
         
     }

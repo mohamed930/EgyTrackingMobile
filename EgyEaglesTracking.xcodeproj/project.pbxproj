@@ -28,6 +28,8 @@
 		D34FAA592BFBB69A008C5827 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D34FAA582BFBB69A008C5827 /* Preview Assets.xcassets */; };
 		D36210EA2C08CA060076133B /* CompanyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36210E92C08CA060076133B /* CompanyViewModel.swift */; };
 		D36A369F2C0A4E7E00866D49 /* SendToWASLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36A369E2C0A4E7E00866D49 /* SendToWASLView.swift */; };
+		D37C46572C178DCE001064F7 /* NSNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37C46562C178DCE001064F7 /* NSNotification.swift */; };
+		D37C465A2C17919B001064F7 /* VehiclesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37C46592C17919B001064F7 /* VehiclesScreen.swift */; };
 		D397E59D2C00F0D300511488 /* customAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D397E59C2C00F0D300511488 /* customAlert.swift */; };
 		D397E59F2C00FA9000511488 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D397E59E2C00FA9000511488 /* HomeViewModel.swift */; };
 		D397E5A12C01066000511488 /* CarsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D397E5A02C01066000511488 /* CarsModel.swift */; };
@@ -52,6 +54,8 @@
 		D3D8883A2C039E500057C047 /* NavigationComponets.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D888392C039E500057C047 /* NavigationComponets.swift */; };
 		D3D8883C2C03A4160057C047 /* WelcomeComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D8883B2C03A4160057C047 /* WelcomeComponents.swift */; };
 		D3D8883E2C03A4FE0057C047 /* PermissionsComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D8883D2C03A4FE0057C047 /* PermissionsComponents.swift */; };
+		D3F61CA72C1B773900FAB707 /* VehicleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F61CA62C1B773900FAB707 /* VehicleCell.swift */; };
+		D3F61CAB2C1B7DF800FAB707 /* VehicleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F61CAA2C1B7DF800FAB707 /* VehicleViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +80,8 @@
 		D34FAA582BFBB69A008C5827 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D36210E92C08CA060076133B /* CompanyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyViewModel.swift; sourceTree = "<group>"; };
 		D36A369E2C0A4E7E00866D49 /* SendToWASLView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendToWASLView.swift; sourceTree = "<group>"; };
+		D37C46562C178DCE001064F7 /* NSNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSNotification.swift; sourceTree = "<group>"; };
+		D37C46592C17919B001064F7 /* VehiclesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiclesScreen.swift; sourceTree = "<group>"; };
 		D397E59C2C00F0D300511488 /* customAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customAlert.swift; sourceTree = "<group>"; };
 		D397E59E2C00FA9000511488 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		D397E5A02C01066000511488 /* CarsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsModel.swift; sourceTree = "<group>"; };
@@ -99,6 +105,8 @@
 		D3D888392C039E500057C047 /* NavigationComponets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationComponets.swift; sourceTree = "<group>"; };
 		D3D8883B2C03A4160057C047 /* WelcomeComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeComponents.swift; sourceTree = "<group>"; };
 		D3D8883D2C03A4FE0057C047 /* PermissionsComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsComponents.swift; sourceTree = "<group>"; };
+		D3F61CA62C1B773900FAB707 /* VehicleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleCell.swift; sourceTree = "<group>"; };
+		D3F61CAA2C1B7DF800FAB707 /* VehicleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +169,7 @@
 				D3377BDE2C0C908D0075576C /* HideViewModifier.swift */,
 				D30183932C0D9F6700704522 /* TSPCompanies.swift */,
 				D3BD3ADA2C139AF000654D01 /* JwtDecode.swift */,
+				D37C46562C178DCE001064F7 /* NSNotification.swift */,
 			);
 			path = utilits;
 			sourceTree = "<group>";
@@ -237,6 +246,7 @@
 				D3D888362C039DB10057C047 /* Profile Screen */,
 				D3B669472C082886001C7CFE /* company screen */,
 				D32581732C09EC0D0084F2A8 /* AddCompany screen */,
+				D37C46582C17918A001064F7 /* vehicles screen */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -248,6 +258,16 @@
 				D34FAA572BFBB69A008C5827 /* Preview Content */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		D37C46582C17918A001064F7 /* vehicles screen */ = {
+			isa = PBXGroup;
+			children = (
+				D3F61CA52C1B772600FAB707 /* cell */,
+				D37C46592C17919B001064F7 /* VehiclesScreen.swift */,
+				D3F61CAA2C1B7DF800FAB707 /* VehicleViewModel.swift */,
+			);
+			path = "vehicles screen";
 			sourceTree = "<group>";
 		};
 		D397E5A22C0106AD00511488 /* cell */ = {
@@ -348,6 +368,14 @@
 			path = "Profile Screen";
 			sourceTree = "<group>";
 		};
+		D3F61CA52C1B772600FAB707 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				D3F61CA62C1B773900FAB707 /* VehicleCell.swift */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -434,10 +462,12 @@
 				D3D00DA32BFE57B900E31DFA /* Api.swift in Sources */,
 				D3D8883C2C03A4160057C047 /* WelcomeComponents.swift in Sources */,
 				D36210EA2C08CA060076133B /* CompanyViewModel.swift in Sources */,
+				D3F61CA72C1B773900FAB707 /* VehicleCell.swift in Sources */,
 				D3D00DAD2BFE5EBD00E31DFA /* AuthNetowrking.swift in Sources */,
 				D307107A2C00BC4E00D24849 /* LoaderIndecatorComponets.swift in Sources */,
 				D32581792C0A01D00084F2A8 /* AddAdminComponents.swift in Sources */,
 				D3D00DB72BFE904400E31DFA /* BaseModel.swift in Sources */,
+				D37C465A2C17919B001064F7 /* VehiclesScreen.swift in Sources */,
 				D34F462C2C033D930053FC77 /* HomeAPI.swift in Sources */,
 				D3D00DB22BFE5FE800E31DFA /* LoginModel.swift in Sources */,
 				D397E5A42C0106BC00511488 /* CarCell.swift in Sources */,
@@ -451,6 +481,7 @@
 				D3D00DB02BFE5FA200E31DFA /* AuthAPI.swift in Sources */,
 				D3BC0CFF2C075C9F008FDE8B /* UserModel.swift in Sources */,
 				D3B669492C0828A0001C7CFE /* CompanyScreen.swift in Sources */,
+				D37C46572C178DCE001064F7 /* NSNotification.swift in Sources */,
 				D3D00DB42BFE624C00E31DFA /* LoginViewModel.swift in Sources */,
 				D3D888382C039DDD0057C047 /* ProfileScreen.swift in Sources */,
 				D397E5A12C01066000511488 /* CarsModel.swift in Sources */,
@@ -463,6 +494,7 @@
 				D30183962C0DA16C00704522 /* AddCompanyViewModel.swift in Sources */,
 				D3D00DA02BFE577600E31DFA /* Target.swift in Sources */,
 				D3D8883E2C03A4FE0057C047 /* PermissionsComponents.swift in Sources */,
+				D3F61CAB2C1B7DF800FAB707 /* VehicleViewModel.swift in Sources */,
 				D397E59D2C00F0D300511488 /* customAlert.swift in Sources */,
 				D3B6694E2C082EC0001C7CFE /* CompanyModel.swift in Sources */,
 				D3377BDD2C0C4B290075576C /* PickerTextField.swift in Sources */,

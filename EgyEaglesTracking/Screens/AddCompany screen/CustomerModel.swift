@@ -34,6 +34,7 @@ struct NewAdmin: Codable {
 }
 
 struct CustomerModel: Codable {
+    var Id: String?
     let customerType: String
     let companyName: String
     let companyType: String
@@ -62,6 +63,7 @@ struct CustomerModel: Codable {
     let newAdmin: NewAdmin
 
     enum CodingKeys: String, CodingKey {
+        case Id
         case customerType = "CustomerType"
         case companyName = "CompanyName"
         case companyType = "CompanyType"
@@ -138,6 +140,55 @@ struct CustomerModel: Codable {
             dict["ManagerMobileNumber"] = managerMobileNumber
         }
         
+        if let Id = Id {
+            dict["Id"] = Id
+        }
+        
         return dict
+    }
+}
+
+
+struct companyUpdateModel: Codable {
+    let companyName: String
+    let extensionNumber: String?
+    let customersContractNumber, upLevelID, emailAddress: String
+    let inActive: Bool
+    let comments, phoneNumber, adminID: String
+    let commercialRecordIssueDateHijri, managerPhoneNumber: String?
+    let customerType, address: String
+    let priority: Int
+    let companyType, id, contractNumber: String
+    let commercialRecordNumber, managerName: String?
+    let consuming, contractEndDate: String
+    let managerMobileNumber, waslID: String?
+    let identityNumber, dateOfBirth: String
+
+    enum CodingKeys: String, CodingKey {
+        case companyName = "CompanyName"
+        case extensionNumber = "ExtensionNumber"
+        case customersContractNumber = "CustomersContractNumber"
+        case upLevelID = "UpLevelId"
+        case emailAddress = "EmailAddress"
+        case inActive = "InActive"
+        case comments = "Comments"
+        case phoneNumber = "PhoneNumber"
+        case adminID = "AdminId"
+        case commercialRecordIssueDateHijri = "CommercialRecordIssueDateHijri"
+        case managerPhoneNumber = "ManagerPhoneNumber"
+        case customerType = "CustomerType"
+        case address = "Address"
+        case priority
+        case companyType = "CompanyType"
+        case id = "Id"
+        case contractNumber = "ContractNumber"
+        case commercialRecordNumber = "CommercialRecordNumber"
+        case managerName = "ManagerName"
+        case consuming = "Consuming"
+        case contractEndDate = "ContractEndDate"
+        case managerMobileNumber = "ManagerMobileNumber"
+        case waslID = "WaslId"
+        case identityNumber = "IdentityNumber"
+        case dateOfBirth = "DateOfBirth"
     }
 }
