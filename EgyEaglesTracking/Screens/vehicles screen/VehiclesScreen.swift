@@ -139,6 +139,12 @@ struct VehiclesScreen: View {
             }
            
         })
+        .onReceive(NotificationCenter.default.publisher(for: NSNotification.vehicleSuccess))
+        { _ in
+            Task {
+                await viewmodel.fetchData()
+            }
+        }
     }
 }
 

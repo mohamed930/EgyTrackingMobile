@@ -9,4 +9,5 @@ import Foundation
 
 extension NSNotification {
     static let updateSuccess = Notification.Name.init("UpdateSuccess")
+    static let vehicleSuccess = Notification.Name.init("vehicleSuccess")
 }

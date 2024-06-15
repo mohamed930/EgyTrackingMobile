@@ -24,7 +24,7 @@ struct VehicleCell: View {
                     VStack(alignment: .leading,spacing: 4) {
                         
                         
-                        Text("\(model.vehicleModel ?? "u\n")")
+                        Text("\(model.vehicleModel ?? "u/n")")
                             .font(.system(size: 14,weight: .medium))
                             .fontWeight(.bold)
                         
@@ -87,7 +87,7 @@ struct VehicleCell_Previews: PreviewProvider {
         
         let exampleCompany = CarsModel(carId: "1",
                                        inActive: false,
-                                       vehicleModel: "مرسيدس",
+                                       vehicleModel: nil,
                                        minSpeed: 0,
                                        vehiclePlate: VehiclePlate(number: "123",
                                                   rightLetter: "A",

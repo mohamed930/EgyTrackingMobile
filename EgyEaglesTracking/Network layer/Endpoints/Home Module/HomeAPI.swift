@@ -14,6 +14,7 @@ protocol HomeApiProtocol {
     func addCompany(customerModel: CustomerModel) async throws -> BaseModel<CompanyResponse>
     func updateCompany(customerModel: CustomerModel) async throws -> BaseModel<companyUpdateModel>
     func deleteVehicle(vehicleId: String) async throws -> BaseModel<carResponse>
+    func addVehicle(vehicleModel: AddVehicleModel) async throws -> BaseModelWithoutData
 }
 
 class HomeAPI: BaseAPI<HomeNetworking>, HomeApiProtocol {
@@ -40,5 +41,9 @@ class HomeAPI: BaseAPI<HomeNetworking>, HomeApiProtocol {
     
     func deleteVehicle(vehicleId: String) async throws -> BaseModel<carResponse> {
         try await fetchData(Target: .deleteVehicle(id: vehicleId, token: self.fetchUserToken()))
+    }
+    
+    func addVehicle(vehicleModel: AddVehicleModel) async throws -> BaseModelWithoutData {
+        try await fetchData(Target: .addVehicle(vehicleModel: vehicleModel, token: self.fetchUserToken()))
     }
 }

@@ -34,6 +34,8 @@ struct AddVehicleScreen: View {
     
     @State var errorBorder: Bool? = nil
     
+    @StateObject var viewmodel = AddVehicleViewModel()
+    
     
     var fuelType = ["Gasoline","Diesel","Electricity","Natural Gas","Propane","Hydrogen","Biodiesel","Ethanol","Methanol","Compressed Natural Gas (CNG)","Liquefied Natural Gas (LNG)","Liquefied Petroleum Gas (LPG)","Solar Power","Hybrid","Biofuel","Jet Fuel","Kerosene","Coal"]
     
@@ -135,6 +137,18 @@ struct AddVehicleScreen: View {
                             .padding([.top],32)
                         
                         Button {
+                            buildModel()
+                            
+                            Task {
+                                await viewmodel.addVehicle()
+                                
+                                guard let success = viewmodel.success else { return }
+                                
+                                if success {
+                                    presentationMode.wrappedValue.dismiss()
+                                    NotificationCenter.default.post(name: NSNotification.vehicleSuccess, object: nil)
+                                }
+                            }
                             
                         } label: {
                             Text("Submit")
@@ -163,9 +177,30 @@ struct AddVehicleScreen: View {
                 }
                 
                 
+                LoaderIndecatorComponets(isloading: $viewmodel.isloading)
+                
+                
             } // MARK: - ZStack
         }
         .navigationBarBackButtonHidden()
+    }
+    
+    
+    private func buildModel() {
+        
+        guard let jwt = JwtDecode.shared.decode() else { return }
+        
+        let model = AddVehicleModel(sequenceNumber: sequenceNumber,
+                                    plateType: String(selectedPalteType + 1),
+                                    CustomerId: jwt.pCid,
+                                    vehiclePlate: VehiclePlate(number: vehicleNumber,
+                                                               rightLetter: vehicleRightChar,
+                                                               middleLetter: vehicleMiddleChar,
+                                                               leftLetter: vehicleLeftChar))
+        
+        viewmodel.model = model
+        
+        
     }
 }
 

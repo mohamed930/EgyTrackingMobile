@@ -33,4 +33,13 @@ struct CarsModel: Identifiable, Codable {
 // MARK: - VehiclePlate
 struct VehiclePlate: Codable {
     let number, rightLetter, middleLetter, leftLetter: String
+    
+    var dictionary: [String: Any] {
+        return [
+            "number": number,
+            "rightLetter": rightLetter,
+            "middleLetter": middleLetter,
+            "leftLetter": leftLetter,
+        ]
+    }
 }

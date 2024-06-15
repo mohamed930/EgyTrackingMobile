@@ -20,3 +20,16 @@ struct BaseModel<T: Codable>: Codable {
         case data = "Data"
     }
 }
+
+
+struct BaseModelWithoutData: Codable {
+    let statusCode: Int
+    let success: Bool
+    let message: String
+
+    enum CodingKeys: String, CodingKey {
+        case statusCode = "StatusCode"
+        case success = "Success"
+        case message = "Message"
+    }
+}

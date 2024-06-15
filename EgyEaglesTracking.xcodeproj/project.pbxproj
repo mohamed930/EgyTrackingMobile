@@ -42,6 +42,8 @@
 		D3BD3AD92C139AD500654D01 /* JWTDecode in Frameworks */ = {isa = PBXBuildFile; productRef = D3BD3AD82C139AD500654D01 /* JWTDecode */; };
 		D3BD3ADB2C139AF000654D01 /* JwtDecode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BD3ADA2C139AF000654D01 /* JwtDecode.swift */; };
 		D3CA01062C1DA66F0079E375 /* AddVehicleScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CA01052C1DA66F0079E375 /* AddVehicleScreen.swift */; };
+		D3CA01082C1DB7970079E375 /* AddVehicleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CA01072C1DB7970079E375 /* AddVehicleModel.swift */; };
+		D3CA010A2C1DB91B0079E375 /* AddVehicleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CA01092C1DB91B0079E375 /* AddVehicleViewModel.swift */; };
 		D3D00DA02BFE577600E31DFA /* Target.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D00D9F2BFE577600E31DFA /* Target.swift */; };
 		D3D00DA32BFE57B900E31DFA /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D00DA22BFE57B900E31DFA /* Api.swift */; };
 		D3D00DA52BFE57F400E31DFA /* BaseApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D00DA42BFE57F400E31DFA /* BaseApi.swift */; };
@@ -94,6 +96,8 @@
 		D3BC0CFE2C075C9F008FDE8B /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		D3BD3ADA2C139AF000654D01 /* JwtDecode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JwtDecode.swift; sourceTree = "<group>"; };
 		D3CA01052C1DA66F0079E375 /* AddVehicleScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVehicleScreen.swift; sourceTree = "<group>"; };
+		D3CA01072C1DB7970079E375 /* AddVehicleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVehicleModel.swift; sourceTree = "<group>"; };
+		D3CA01092C1DB91B0079E375 /* AddVehicleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVehicleViewModel.swift; sourceTree = "<group>"; };
 		D3D00D9F2BFE577600E31DFA /* Target.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Target.swift; sourceTree = "<group>"; };
 		D3D00DA22BFE57B900E31DFA /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		D3D00DA42BFE57F400E31DFA /* BaseApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseApi.swift; sourceTree = "<group>"; };
@@ -303,6 +307,8 @@
 		D3CA01022C1DA64D0079E375 /* Add vehicle screen */ = {
 			isa = PBXGroup;
 			children = (
+				D3CA01072C1DB7970079E375 /* AddVehicleModel.swift */,
+				D3CA01092C1DB91B0079E375 /* AddVehicleViewModel.swift */,
 				D3CA01052C1DA66F0079E375 /* AddVehicleScreen.swift */,
 			);
 			path = "Add vehicle screen";
@@ -466,6 +472,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3B6694C2C082C33001C7CFE /* CompanyCell.swift in Sources */,
+				D3CA01082C1DB7970079E375 /* AddVehicleModel.swift in Sources */,
 				D34F462A2C033CBB0053FC77 /* HomeNetworking.swift in Sources */,
 				D36A369F2C0A4E7E00866D49 /* SendToWASLView.swift in Sources */,
 				D397E59F2C00FA9000511488 /* HomeViewModel.swift in Sources */,
@@ -473,6 +480,7 @@
 				D3D00DA32BFE57B900E31DFA /* Api.swift in Sources */,
 				D3D8883C2C03A4160057C047 /* WelcomeComponents.swift in Sources */,
 				D36210EA2C08CA060076133B /* CompanyViewModel.swift in Sources */,
+				D3CA010A2C1DB91B0079E375 /* AddVehicleViewModel.swift in Sources */,
 				D3F61CA72C1B773900FAB707 /* VehicleCell.swift in Sources */,
 				D3D00DAD2BFE5EBD00E31DFA /* AuthNetowrking.swift in Sources */,
 				D307107A2C00BC4E00D24849 /* LoaderIndecatorComponets.swift in Sources */,

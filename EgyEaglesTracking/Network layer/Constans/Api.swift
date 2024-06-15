@@ -19,4 +19,5 @@ enum Api: String {
     case addCompany = "api/OperationCompany/CreateOperationCompany"
     case updateCompany = "api/OperationCompany/UpdateOperationCompany"
     case deleteVehicle = "api/Vehicles/DeleteVehicle"
+    case addVehicle = "api/Vehicles/CreateVehicle"
 }
