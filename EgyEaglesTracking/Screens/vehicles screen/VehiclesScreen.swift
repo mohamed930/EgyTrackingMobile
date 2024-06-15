@@ -15,6 +15,7 @@ struct VehiclesScreen: View {
     @StateObject var viewmodel = VehicleViewModel()
     
     @State var alertActive: Bool = false
+    @State var addNavigation: Bool = false
     
     var body: some View {
         NavigationView {
@@ -24,8 +25,9 @@ struct VehiclesScreen: View {
                     NavigationComponets(text: "Vehicles",isHidden: false) {
                         presentationMode.wrappedValue.dismiss()
                     } addAction: {
-                        print("Move to add vehicle screen")
+                        addNavigation.toggle()
                     }
+                    NavigationLink("", destination: AddVehicleScreen(), isActive: $addNavigation)
                     .padding([.bottom],32)
                     
                     Group {
