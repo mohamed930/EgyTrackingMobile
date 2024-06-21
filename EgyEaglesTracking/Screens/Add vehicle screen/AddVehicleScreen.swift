@@ -34,6 +34,12 @@ struct AddVehicleScreen: View {
     
     @State var errorBorder: Bool? = nil
     
+    enum PlateField {
+       case plateNumber1, plateNumber2, plateNumber3
+   }
+    
+    @FocusState private var focusedField: PlateField?
+    
     @StateObject var viewmodel = AddVehicleViewModel()
     
     
@@ -107,18 +113,31 @@ struct AddVehicleScreen: View {
                                     .multilineTextAlignment(.center)
                                     .padding(.horizontal, 8)
                                     .background(RoundedRectangle(cornerRadius: 8).stroke(Color.blue, lineWidth: 1))
+                                    .focused($focusedField, equals: .plateNumber1)
+                                    .onChange(of: vehicleLeftChar) { newValue in
+                                        if newValue.count == 1 {
+                                            focusedField = .plateNumber2
+                                        }
+                                    }
                                                 
                                 TextField("ب", text: $vehicleMiddleChar)
                                     .frame(width: 52, height: 49)
                                     .multilineTextAlignment(.center)
                                     .padding(.horizontal, 8)
                                     .background(RoundedRectangle(cornerRadius: 8).stroke(Color.blue, lineWidth: 1))
+                                    .focused($focusedField, equals: .plateNumber2)
+                                    .onChange(of: vehicleMiddleChar) { newValue in
+                                        if newValue.count == 1 {
+                                            focusedField = .plateNumber3
+                                        }
+                                    }
                                                 
                                 TextField("ت", text: $vehicleRightChar)
                                     .frame(width: 52, height: 49)
                                     .multilineTextAlignment(.center)
                                     .padding(.horizontal, 8)
                                     .background(RoundedRectangle(cornerRadius: 8).stroke(Color.blue, lineWidth: 1))
+                                    .focused($focusedField, equals: .plateNumber3)
                                 
                                 Spacer()
                                             
@@ -162,8 +181,8 @@ struct AddVehicleScreen: View {
                         .clipShape(Capsule())
                         .listRowSeparator(.hidden)
                         .padding([.top],32)
-//                        .opacity(validationButton() ? 1 : 0.5)
-//                        .disabled(!validationButton())
+                        .opacity(buildValidation() ? 1 : 0.5)
+                        .disabled(!buildValidation())
                         .listRowBackground(Color.clear)
                         
                         
@@ -201,6 +220,10 @@ struct AddVehicleScreen: View {
         viewmodel.model = model
         
         
+    }
+    
+    private func buildValidation() -> Bool {
+        return !sequenceNumber.isEmpty && selectedPalteType != nil && !vehicleNumber.isEmpty && !vehicleLeftChar.isEmpty && !vehicleMiddleChar.isEmpty && !vehicleRightChar.isEmpty
     }
 }
 
