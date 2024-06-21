@@ -13,18 +13,18 @@ struct PickerTextField: UIViewRepresentable {
     private let pickerView = UIPickerView()
     private let helper = Helper()
     
-    var data: [String]
+    @Binding var data: [String]
     var placeHolder: String
     
     @Binding var lastSelectedIndex: Int?
     
     class Coordinator: NSObject, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
         
-        private var data: [String]
+        @Binding private var data: [String]
         private var didSelectedItem: ((Int) -> ())?
         
-        init(data: [String], didSelectedItem: ((Int) -> ())? = nil) {
-            self.data = data
+        init(data: Binding<[String]>, didSelectedItem: ((Int) -> ())? = nil) {
+            self._data = data
             self.didSelectedItem = didSelectedItem
         }
         
@@ -54,7 +54,7 @@ struct PickerTextField: UIViewRepresentable {
     }
     
     func makeCoordinator() -> Coordinator {
-        return Coordinator(data: data) { index in
+        return Coordinator(data: $data) { index in
             lastSelectedIndex = index
         }
     }
@@ -62,6 +62,8 @@ struct PickerTextField: UIViewRepresentable {
     func makeUIView(context: Context) -> UITextField {
         self.pickerView.delegate = context.coordinator
         self.pickerView.dataSource = context.coordinator
+        
+        self.pickerView.reloadAllComponents()
         
         self.textField.placeholder = placeHolder
         self.textField.inputView = self.pickerView
@@ -96,6 +98,8 @@ struct PickerTextField: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: UITextField, context: Context) {
+        self.pickerView.reloadAllComponents()
+        
         if let lastSelectedIndex = lastSelectedIndex {
             if data.count > 0 {
                 if lastSelectedIndex > data.count {
@@ -125,7 +129,7 @@ struct PickerView: View {
     
     @Binding var selectedIndex: Int?
     @State var labelTitle: String
-    @State var data: [String]
+    @Binding var data: [String]
     @State var isnotImportant: Bool = true
     
     var body: some View {
@@ -146,7 +150,7 @@ struct PickerView: View {
                 
             }
             
-            PickerTextField(data: data,
+            PickerTextField(data: $data,
                             placeHolder: "Select type",
                             lastSelectedIndex: $selectedIndex)
             .frame(maxWidth: .infinity)
@@ -202,7 +206,8 @@ extension UITextField {
 
 #Preview {
     @State var selected: Int? = 0
+    @State var data = ["Indevidual,Normal"]
     return PickerView(selectedIndex: $selected,
                       labelTitle: "Company type",
-                      data: ["Indevidual,Normal"])
+                      data: $data)
 }

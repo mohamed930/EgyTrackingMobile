@@ -17,6 +17,8 @@ struct VehiclesScreen: View {
     @State var alertActive: Bool = false
     @State var addNavigation: Bool = false
     
+    @State var bindingActive: Bool = false
+    
     var body: some View {
         NavigationView {
             
@@ -86,6 +88,17 @@ struct VehiclesScreen: View {
                                     } label: {
                                         Label("Delete", systemImage: "trash")
                                     }
+                                    
+                                    Button(role: .cancel) {
+                                        bindingActive.toggle()
+                                        viewmodel.vehicleId = str.carId
+                                    } label: {
+                                        Label(
+                                            title: { Text("Bind") },
+                                            icon: { Image(.bindingWhite) }
+                                        )
+                                    }
+                                    .tint(Color("#239C6F"))
 
                                 }
                                 
@@ -123,6 +136,12 @@ struct VehiclesScreen: View {
                         Task{
                             await viewmodel.deleteVehicle()
                         }
+                    }
+                }
+                
+                if bindingActive {
+                    BindingAlertComponets(isActive: $bindingActive) {
+                        // MARK: - Add Binding Action.
                     }
                 }
                 

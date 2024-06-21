@@ -35,6 +35,9 @@ struct AddCompanyScreen: View {
     @State var customerTypes = ["Normal","TSP"]
     @State var companyTypes = ["Individual","Establishment"]
     
+    @State var proity = ["0","1","2","3","4","5","6","7","8","9","10"]
+    @State var type = ["Norma","Fast"]
+    
     @StateObject var viewmodel = AddCompanyViewModel()
     
     @State var companyModel: CompanyModel?
@@ -87,17 +90,17 @@ struct AddCompanyScreen: View {
                             
                             PickerView(selectedIndex: $selectedType,
                                        labelTitle: "Company type",
-                                       data: companyTypes ,isnotImportant: false)
+                                       data: $companyTypes ,isnotImportant: false)
                             
                             InputComponents(text: $dateOfBirth,labelText: "Date of birth",isNotRequired: false, errorBorder: $viewmodel.binding)
                             
                             PickerView(selectedIndex: $selectedPriority,
                                        labelTitle: "Priority",
-                                       data: ["0","1","2","3","4","5","6","7","8","9","10"])
+                                       data: $proity)
                             
                             PickerView(selectedIndex: $selectedConsuming,
                                        labelTitle: "Consuming",
-                                       data: ["Norma","Fast"])
+                                       data: $type)
                             
                             InputComponents(text: $contractNumber,labelText: "Contract number",keyboardType: .asciiCapableNumberPad, errorBorder: $viewmodel.binding)
                         }
@@ -109,12 +112,12 @@ struct AddCompanyScreen: View {
                             
                             PickerView(selectedIndex: $selectedCustomerType,
                                        labelTitle: "Customer type",
-                                       data: customerTypes,
+                                       data: $customerTypes,
                                        isnotImportant: false)
                             
                             PickerView(selectedIndex: $selectedTSPType,
                                        labelTitle: "TSP",
-                                       data: viewmodel.data,
+                                       data: $viewmodel.data,
                                        isnotImportant: false)
                             .hide(if: selectedCustomerType == 0 ? false : true)
                             

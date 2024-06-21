@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		D30183942C0D9F6700704522 /* TSPCompanies.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30183932C0D9F6700704522 /* TSPCompanies.swift */; };
 		D30183962C0DA16C00704522 /* AddCompanyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30183952C0DA16C00704522 /* AddCompanyViewModel.swift */; };
+		D3028C472C25A98000BAC4EE /* UnitsNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3028C462C25A98000BAC4EE /* UnitsNetworking.swift */; };
+		D3028C492C25AA4400BAC4EE /* UnitsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3028C482C25AA4400BAC4EE /* UnitsAPI.swift */; };
+		D3028C4B2C25AC0400BAC4EE /* UnitsForBindingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3028C4A2C25AC0400BAC4EE /* UnitsForBindingModel.swift */; };
 		D3047F382C05A4E50031E3BE /* PlaceHolderComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3047F372C05A4E50031E3BE /* PlaceHolderComponents.swift */; };
 		D30710762C00B60700D24849 /* SwiftfulLoadingIndicators in Frameworks */ = {isa = PBXBuildFile; productRef = D30710752C00B60700D24849 /* SwiftfulLoadingIndicators */; };
 		D307107A2C00BC4E00D24849 /* LoaderIndecatorComponets.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30710792C00BC4E00D24849 /* LoaderIndecatorComponets.swift */; };
@@ -18,6 +21,7 @@
 		D32581752C09EC220084F2A8 /* AddCompanyScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32581742C09EC220084F2A8 /* AddCompanyScreen.swift */; };
 		D32581772C09EDC40084F2A8 /* InputComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32581762C09EDC40084F2A8 /* InputComponents.swift */; };
 		D32581792C0A01D00084F2A8 /* AddAdminComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32581782C0A01D00084F2A8 /* AddAdminComponents.swift */; };
+		D32A64762C259EA2002812F2 /* BindingAlertComponets.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32A64752C259EA2002812F2 /* BindingAlertComponets.swift */; };
 		D3377BDD2C0C4B290075576C /* PickerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3377BDC2C0C4B290075576C /* PickerTextField.swift */; };
 		D3377BDF2C0C908D0075576C /* HideViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3377BDE2C0C908D0075576C /* HideViewModifier.swift */; };
 		D34F462A2C033CBB0053FC77 /* HomeNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34F46292C033CBB0053FC77 /* HomeNetworking.swift */; };
@@ -64,6 +68,9 @@
 /* Begin PBXFileReference section */
 		D30183932C0D9F6700704522 /* TSPCompanies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSPCompanies.swift; sourceTree = "<group>"; };
 		D30183952C0DA16C00704522 /* AddCompanyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCompanyViewModel.swift; sourceTree = "<group>"; };
+		D3028C462C25A98000BAC4EE /* UnitsNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitsNetworking.swift; sourceTree = "<group>"; };
+		D3028C482C25AA4400BAC4EE /* UnitsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitsAPI.swift; sourceTree = "<group>"; };
+		D3028C4A2C25AC0400BAC4EE /* UnitsForBindingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitsForBindingModel.swift; sourceTree = "<group>"; };
 		D3047F372C05A4E50031E3BE /* PlaceHolderComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceHolderComponents.swift; sourceTree = "<group>"; };
 		D30710792C00BC4E00D24849 /* LoaderIndecatorComponets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderIndecatorComponets.swift; sourceTree = "<group>"; };
 		D307107D2C00BE6B00D24849 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
@@ -72,6 +79,7 @@
 		D32581742C09EC220084F2A8 /* AddCompanyScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCompanyScreen.swift; sourceTree = "<group>"; };
 		D32581762C09EDC40084F2A8 /* InputComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputComponents.swift; sourceTree = "<group>"; };
 		D32581782C0A01D00084F2A8 /* AddAdminComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAdminComponents.swift; sourceTree = "<group>"; };
+		D32A64752C259EA2002812F2 /* BindingAlertComponets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingAlertComponets.swift; sourceTree = "<group>"; };
 		D3377BDC2C0C4B290075576C /* PickerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerTextField.swift; sourceTree = "<group>"; };
 		D3377BDE2C0C908D0075576C /* HideViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideViewModifier.swift; sourceTree = "<group>"; };
 		D34F46292C033CBB0053FC77 /* HomeNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNetworking.swift; sourceTree = "<group>"; };
@@ -128,6 +136,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D3028C452C25A96800BAC4EE /* Units Module */ = {
+			isa = PBXGroup;
+			children = (
+				D3028C462C25A98000BAC4EE /* UnitsNetworking.swift */,
+				D3028C482C25AA4400BAC4EE /* UnitsAPI.swift */,
+			);
+			path = "Units Module";
+			sourceTree = "<group>";
+		};
 		D307107B2C00BE5700D24849 /* Login screen */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +181,7 @@
 				D32581782C0A01D00084F2A8 /* AddAdminComponents.swift */,
 				D36A369E2C0A4E7E00866D49 /* SendToWASLView.swift */,
 				D3377BDC2C0C4B290075576C /* PickerTextField.swift */,
+				D32A64752C259EA2002812F2 /* BindingAlertComponets.swift */,
 			);
 			path = componets;
 			sourceTree = "<group>";
@@ -273,6 +291,7 @@
 				D3F61CA52C1B772600FAB707 /* cell */,
 				D37C46592C17919B001064F7 /* VehiclesScreen.swift */,
 				D3F61CAA2C1B7DF800FAB707 /* VehicleViewModel.swift */,
+				D3028C4A2C25AC0400BAC4EE /* UnitsForBindingModel.swift */,
 			);
 			path = "vehicles screen";
 			sourceTree = "<group>";
@@ -356,6 +375,7 @@
 			children = (
 				D3D00DAA2BFE5EA700E31DFA /* Auth Module */,
 				D34F46282C033CAB0053FC77 /* Home Module */,
+				D3028C452C25A96800BAC4EE /* Units Module */,
 			);
 			path = Endpoints;
 			sourceTree = "<group>";
@@ -489,6 +509,7 @@
 				D37C465A2C17919B001064F7 /* VehiclesScreen.swift in Sources */,
 				D34F462C2C033D930053FC77 /* HomeAPI.swift in Sources */,
 				D3D00DB22BFE5FE800E31DFA /* LoginModel.swift in Sources */,
+				D3028C492C25AA4400BAC4EE /* UnitsAPI.swift in Sources */,
 				D397E5A42C0106BC00511488 /* CarCell.swift in Sources */,
 				D32581772C09EDC40084F2A8 /* InputComponents.swift in Sources */,
 				D32297D62BFBE20200EE19E9 /* TextFieldComponets.swift in Sources */,
@@ -500,6 +521,7 @@
 				D3CA01062C1DA66F0079E375 /* AddVehicleScreen.swift in Sources */,
 				D3D00DB02BFE5FA200E31DFA /* AuthAPI.swift in Sources */,
 				D3BC0CFF2C075C9F008FDE8B /* UserModel.swift in Sources */,
+				D32A64762C259EA2002812F2 /* BindingAlertComponets.swift in Sources */,
 				D3B669492C0828A0001C7CFE /* CompanyScreen.swift in Sources */,
 				D37C46572C178DCE001064F7 /* NSNotification.swift in Sources */,
 				D3D00DB42BFE624C00E31DFA /* LoginViewModel.swift in Sources */,
@@ -516,7 +538,9 @@
 				D3D8883E2C03A4FE0057C047 /* PermissionsComponents.swift in Sources */,
 				D3F61CAB2C1B7DF800FAB707 /* VehicleViewModel.swift in Sources */,
 				D397E59D2C00F0D300511488 /* customAlert.swift in Sources */,
+				D3028C4B2C25AC0400BAC4EE /* UnitsForBindingModel.swift in Sources */,
 				D3B6694E2C082EC0001C7CFE /* CompanyModel.swift in Sources */,
+				D3028C472C25A98000BAC4EE /* UnitsNetworking.swift in Sources */,
 				D3377BDD2C0C4B290075576C /* PickerTextField.swift in Sources */,
 				D3BD3ADB2C139AF000654D01 /* JwtDecode.swift in Sources */,
 			);

@@ -43,11 +43,11 @@ struct AddVehicleScreen: View {
     @StateObject var viewmodel = AddVehicleViewModel()
     
     
-    var fuelType = ["Gasoline","Diesel","Electricity","Natural Gas","Propane","Hydrogen","Biodiesel","Ethanol","Methanol","Compressed Natural Gas (CNG)","Liquefied Natural Gas (LNG)","Liquefied Petroleum Gas (LPG)","Solar Power","Hybrid","Biofuel","Jet Fuel","Kerosene","Coal"]
+    @State var fuelType = ["Gasoline","Diesel","Electricity","Natural Gas","Propane","Hydrogen","Biodiesel","Ethanol","Methanol","Compressed Natural Gas (CNG)","Liquefied Natural Gas (LNG)","Liquefied Petroleum Gas (LPG)","Solar Power","Hybrid","Biofuel","Jet Fuel","Kerosene","Coal"]
     
-    let vehicleTypes = ["Car", "Truck", "Motorcycle", "Bicycle", "Bus", "Van", "SUV", "Boat", "Airplane", "Helicopter", "Train", "Tram", "Electric Scooter", "Skateboard", "Segway", "Jet Ski", "Snowmobile", "RV", "Moped", "Golf Cart", "Trolley", "Submarine", "Go-Kart", "Rickshaw", "Hot Air Balloon", "Spacecraft", "Monorail", "Hovercraft", "Bulldozer", "Excavator", "Ambulance", "Fire Truck", "Police Car", "Taxi", "Limousine", "Horse-drawn Carriage", "Paraglider", "Hang Glider", "Dune Buggy", "Electric Bike"]
+    @State var vehicleTypes = ["Car", "Truck", "Motorcycle", "Bicycle", "Bus", "Van", "SUV", "Boat", "Airplane", "Helicopter", "Train", "Tram", "Electric Scooter", "Skateboard", "Segway", "Jet Ski", "Snowmobile", "RV", "Moped", "Golf Cart", "Trolley", "Submarine", "Go-Kart", "Rickshaw", "Hot Air Balloon", "Spacecraft", "Monorail", "Hovercraft", "Bulldozer", "Excavator", "Ambulance", "Fire Truck", "Police Car", "Taxi", "Limousine", "Horse-drawn Carriage", "Paraglider", "Hang Glider", "Dune Buggy", "Electric Bike"]
     
-    let plateTypes = ["Private Car خصوصي", "Public Transport عام نقل", "Private Transport خاص نقل", "Minibus Public حافلة صغيرة عامة", "Minibus Private حافلة صغيرة خاصة", "Taxi اجرة", "Heavy Equipment عامة أشغال", "Export تصدير", "Diplomatic دبلوماسي", "Motorcycle دراجة نارية", "Temporary مؤقت"]
+    @State var plateTypes = ["Private Car خصوصي", "Public Transport عام نقل", "Private Transport خاص نقل", "Minibus Public حافلة صغيرة عامة", "Minibus Private حافلة صغيرة خاصة", "Taxi اجرة", "Heavy Equipment عامة أشغال", "Export تصدير", "Diplomatic دبلوماسي", "Motorcycle دراجة نارية", "Temporary مؤقت"]
 
 
 
@@ -65,9 +65,9 @@ struct AddVehicleScreen: View {
                     
                     
                     List {
-                        PickerView(selectedIndex: $selectedFuel, labelTitle: "Fuel type", data: fuelType)
+                        PickerView(selectedIndex: $selectedFuel, labelTitle: "Fuel type", data: $fuelType)
                         
-                        PickerView(selectedIndex: $selectedVehicle, labelTitle: "Vehicle type", data: vehicleTypes)
+                        PickerView(selectedIndex: $selectedVehicle, labelTitle: "Vehicle type", data: $vehicleTypes)
                         
                         InputComponents(text: $vehicleName, labelText: "Vehicle name", errorBorder: $errorBorder)
                         
@@ -83,7 +83,7 @@ struct AddVehicleScreen: View {
                         
                         InputComponents(text: $sequenceNumber, labelText: "Sequence number", isNotRequired: false , keyboardType: .asciiCapableNumberPad , errorBorder: $errorBorder)
                         
-                        PickerView(selectedIndex: $selectedPalteType, labelTitle: "Plate type", data: plateTypes, isnotImportant: false)
+                        PickerView(selectedIndex: $selectedPalteType, labelTitle: "Plate type", data: $plateTypes, isnotImportant: false)
                         
                         
                         VStack {
