@@ -20,6 +20,8 @@ struct CarsModel: Identifiable, Codable {
     let vehiclePlate: VehiclePlate
     let manufacturingYear: String?
     let imeiNumber: String?
+    let plateType: Int
+    let sequenceNumber: String
     
     enum CodingKeys: String, CodingKey {
         case carId = "Id"
@@ -28,7 +30,7 @@ struct CarsModel: Identifiable, Codable {
         case minSpeed = "MinSpeed"
         case vehiclePlate
         case manufacturingYear = "ManufacturingYear"
-        case imeiNumber
+        case imeiNumber , plateType , sequenceNumber
     }
 }
 

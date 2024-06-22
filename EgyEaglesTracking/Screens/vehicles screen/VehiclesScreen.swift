@@ -71,11 +71,11 @@ struct VehiclesScreen: View {
                                     .buttonStyle(PlainButtonStyle())
                                     
                                     
-            //                        NavigationLink(destination: AddCompanyScreen(companyModel: str)) {
-            //                            EmptyView()
-            //                        }
-            //                        .opacity(0)
-            //                        .buttonStyle(PlainButtonStyle())
+                                    NavigationLink(destination: AddVehicleScreen(vehicleObject: str)) {
+                                        EmptyView()
+                                    }
+                                    .opacity(0)
+                                    .buttonStyle(PlainButtonStyle())
                                     
                                 }
                                 .listStyle(PlainListStyle())

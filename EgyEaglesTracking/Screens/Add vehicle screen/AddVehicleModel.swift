@@ -62,6 +62,7 @@ struct AddVehicleModel: Codable {
             "BusinessTypeWater": false,
             "BusinessTypeHajj": false,
             "vehiclePlate": vehiclePlate.dictionary,
+            "Icon": "DefaultCarIcon.png"
         ]
     }
 }

@@ -91,19 +91,19 @@ struct CarCell: View {
     }
 }
 
-struct CarCell_Previews: PreviewProvider {
-    
-    static var previews: some View {
-        CarCell(model: CarsModel(carId: "1",
-                                 inActive: false,
-                                 vehicleModel: "مرسيدس",
-                                 minSpeed: 0,
-                                 vehiclePlate: VehiclePlate(number: "123",
-                                            rightLetter: "A",
-                                            middleLetter: "V",
-                                            leftLetter: "F")
-                                 ,
-                                 manufacturingYear: "2020", 
-                                 imeiNumber: "iemi"))
-    }
-}
+//struct CarCell_Previews: PreviewProvider {
+//    
+//    static var previews: some View {
+//        CarCell(model: CarsModel(carId: "1",
+//                                 inActive: false,
+//                                 vehicleModel: "مرسيدس",
+//                                 minSpeed: 0,
+//                                 vehiclePlate: VehiclePlate(number: "123",
+//                                            rightLetter: "A",
+//                                            middleLetter: "V",
+//                                            leftLetter: "F")
+//                                 ,
+//                                 manufacturingYear: "2020", 
+//                                 imeiNumber: "iemi"))
+//    }
+//}

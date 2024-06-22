@@ -82,21 +82,21 @@ struct VehicleCell: View {
     }
 }
 
-struct VehicleCell_Previews: PreviewProvider {
-    static var previews: some View {
-        
-        let exampleCompany = CarsModel(carId: "1",
-                                       inActive: false,
-                                       vehicleModel: nil,
-                                       minSpeed: 0,
-                                       vehiclePlate: VehiclePlate(number: "123",
-                                                  rightLetter: "A",
-                                                  middleLetter: "V",
-                                                  leftLetter: "F")
-                                       ,
-                                       manufacturingYear: "2020",
-                                       imeiNumber: "iemi")
-        
-        VehicleCell(model: exampleCompany)
-    }
-}
+//struct VehicleCell_Previews: PreviewProvider {
+//    static var previews: some View {
+//        
+//        let exampleCompany = CarsModel(carId: "1",
+//                                       inActive: false,
+//                                       vehicleModel: nil,
+//                                       minSpeed: 0,
+//                                       vehiclePlate: VehiclePlate(number: "123",
+//                                                  rightLetter: "A",
+//                                                  middleLetter: "V",
+//                                                  leftLetter: "F")
+//                                       ,
+//                                       manufacturingYear: "2020",
+//                                       imeiNumber: "iemi")
+//        
+//        VehicleCell(model: exampleCompany)
+//    }
+//}

@@ -9,6 +9,8 @@ import SwiftUI
 
 struct AddVehicleScreen: View {
     
+    @State var vehicleObject: CarsModel?
+    
     // Access the presentation mode environment value
     @Environment(\.presentationMode) var presentationMode
     
@@ -58,7 +60,7 @@ struct AddVehicleScreen: View {
                 
                 VStack {
                     
-                    NavigationComponets(text: "Add new vehicle") {
+                    NavigationComponets(text: handleEditViee() ? "update a vehicle" : "Add new vehicle") {
                         presentationMode.wrappedValue.dismiss()
                     } addAction: {}
                     .padding([.bottom],32)
@@ -159,14 +161,7 @@ struct AddVehicleScreen: View {
                             buildModel()
                             
                             Task {
-                                await viewmodel.addVehicle()
-                                
-                                guard let success = viewmodel.success else { return }
-                                
-                                if success {
-                                    presentationMode.wrappedValue.dismiss()
-                                    NotificationCenter.default.post(name: NSNotification.vehicleSuccess, object: nil)
-                                }
+                                await handleAction()
                             }
                             
                         } label: {
@@ -202,6 +197,9 @@ struct AddVehicleScreen: View {
             } // MARK: - ZStack
         }
         .navigationBarBackButtonHidden()
+        .onAppear {
+            loadData()
+        }
     }
     
     
@@ -224,6 +222,55 @@ struct AddVehicleScreen: View {
     
     private func buildValidation() -> Bool {
         return !sequenceNumber.isEmpty && selectedPalteType != nil && !vehicleNumber.isEmpty && !vehicleLeftChar.isEmpty && !vehicleMiddleChar.isEmpty && !vehicleRightChar.isEmpty
+    }
+    
+    private func handleEditViee() -> Bool {
+        guard vehicleObject != nil else {return false}
+        return true
+    }
+    
+    private func loadData() {
+        guard let vehicleObject else { return }
+        
+        selectedPalteType = vehicleObject.plateType
+        sequenceNumber = vehicleObject.sequenceNumber
+        vehicleNumber = vehicleObject.vehiclePlate.number
+        vehicleRightChar = vehicleObject.vehiclePlate.rightLetter
+        vehicleMiddleChar = vehicleObject.vehiclePlate.middleLetter
+        vehicleLeftChar = vehicleObject.vehiclePlate.leftLetter
+        
+    }
+    
+    private func handleAction() async {
+        guard let vehicleObject else {
+            
+            Task {
+                await viewmodel.addVehicle()
+                
+                guard let success = viewmodel.success else { return }
+                
+                if success {
+                    presentationMode.wrappedValue.dismiss()
+                    NotificationCenter.default.post(name: NSNotification.vehicleSuccess, object: nil)
+                }
+            }
+            
+            return
+        }
+        
+        
+        Task {
+            await viewmodel.updateVehicle()
+            
+            guard let success = viewmodel.success else { return }
+            
+            if success {
+                presentationMode.wrappedValue.dismiss()
+                NotificationCenter.default.post(name: NSNotification.vehicleSuccess, object: nil)
+            }
+        }
+        
+        
     }
 }
 
