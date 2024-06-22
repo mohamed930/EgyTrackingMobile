@@ -103,6 +103,7 @@ struct CarCell_Previews: PreviewProvider {
                                             middleLetter: "V",
                                             leftLetter: "F")
                                  ,
-                                 manufacturingYear: "2020"))
+                                 manufacturingYear: "2020", 
+                                 imeiNumber: "iemi"))
     }
 }

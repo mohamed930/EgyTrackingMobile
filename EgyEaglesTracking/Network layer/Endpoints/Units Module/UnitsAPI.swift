@@ -9,6 +9,7 @@ import Foundation
 
 protocol UnitsAPIProtocol {
     func fetchUnitsForBinding() async throws -> BaseModel<[UnitsForBindingModel]>
+    func bindToUnitForVehicle(iemi: String,vehicleId: String) async throws -> BaseModelWithoutData
 }
 
 class UnitsAPI: BaseAPI<UnitsNetworking>, UnitsAPIProtocol {
@@ -18,4 +19,7 @@ class UnitsAPI: BaseAPI<UnitsNetworking>, UnitsAPIProtocol {
     }
     
     
+    func bindToUnitForVehicle(iemi: String,vehicleId: String) async throws -> BaseModelWithoutData {
+        try await fetchData(Target: .bindUnitToVehilce(iemi: iemi, vehicleId: vehicleId, token: self.fetchUserToken()))
+    }
 }

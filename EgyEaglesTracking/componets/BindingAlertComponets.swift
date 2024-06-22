@@ -16,7 +16,7 @@ struct BindingAlertComponets: View {
     @Binding var isActive: Bool
     @State var offset: CGFloat = 1000
     
-    var action: () -> ()
+    var action: (String) -> ()
     
     private let unitapi = UnitsAPI()
     
@@ -76,7 +76,6 @@ struct BindingAlertComponets: View {
                     Button(action: {
                         // Action for Cancel button
                         close()
-                        action()
                         
                     }) {
                         Text("Cancel")
@@ -96,6 +95,7 @@ struct BindingAlertComponets: View {
                     // Logout Button (Filled)
                     Button(action: {
                         close()
+                        action(getIemi())
                         
                     }) {
                         Text("Confirm")
@@ -106,6 +106,8 @@ struct BindingAlertComponets: View {
                             .background(Color("#239C6F"))
                             .cornerRadius(25)
                     }
+                    .disabled(!buildValidation())
+                    .opacity(!buildValidation() ? 0.5 : 1)
 
                 } // MARK: - HStack
                 .padding([.leading,.trailing,.bottom],20)
@@ -155,9 +157,20 @@ struct BindingAlertComponets: View {
             isActive = false
         }
     }
+    
+    private func buildValidation() -> Bool{
+        guard let selectedIndex else { return false }
+        
+        return selectedIndex != 0
+    }
+    
+    private func getIemi() -> String{
+        guard let selectedIndex else { return "" }
+        return data[selectedIndex]
+    }
 }
 
 #Preview {
     @State var isActive: Bool = true
-    return BindingAlertComponets(isActive: $isActive, action: {})
+    return BindingAlertComponets(isActive: $isActive, action: { _ in })
 }

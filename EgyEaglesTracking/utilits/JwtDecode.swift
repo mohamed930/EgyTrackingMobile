@@ -9,34 +9,22 @@ import SwiftUI
 import JWTDecode
 
 struct Lamar: Codable {
-    let sub: String
-    let waslId: String
-    let iss: String
-    let xApiKey: String
-    let cType: String
+    let sub, jti, uemail, uid: String
+    let pCid, cType, role, xapiKey: String
+    let waslID: String
     let permission: [Permission]
-    let aud: String
-    let uid: String
-    let pCid: String
     let exp: Int
-    let jti: String
-    let uemail: String
-    let role: String
-    
+    let iss, aud: String
+
     enum CodingKeys: String, CodingKey {
-        case sub
-        case waslId = "WaslId"
-        case iss
-        case xApiKey = "XapiKey"
-        case cType = "CType"
-        case permission = "Permission"
-        case aud
-        case uid
+        case sub, jti, uemail, uid
         case pCid = "PCid"
-        case exp
-        case jti
-        case uemail
+        case cType = "CType"
         case role = "Role"
+        case xapiKey = "XapiKey"
+        case waslID = "WaslId"
+        case permission = "Permission"
+        case exp, iss, aud
     }
 }
 
@@ -81,12 +69,15 @@ enum Permission: String, Codable {
     case bind = "Bind"
     case addVehicleToWasl = "AddVehicleToWasl"
     case updateVehicleFromWasl = "UpdateVehicleFromWasl"
+    case getAllVehicleDeleted = "GetAllVehicleDeleted"
     case viewUnits = "ViewUnits"
     case viewUnit = "ViewUnit"
     case deleteUnit = "DeleteUnit"
     case createUnit = "CreateUnit"
     case updateUnit = "UpdateUnit"
     case activeUnit = "ActiveUnit"
+    case getAllUnitDeleted = "GetAllUnitDeleted"
+    case returnUnitFromDeleted = "ReturnUnitFromDeleted"
     case createSensor = "CreateSensor"
     case updateSensor = "UpdateSensor"
     case viewSensors = "ViewSensors"
@@ -107,6 +98,7 @@ enum Permission: String, Codable {
     case getAllApprovalRequestsSensor = "GetAllApprovalRequestsSensor"
     case acceptApprovalRequests = "AcceptApprovalRequests"
 }
+
 
 
 class JwtDecode {

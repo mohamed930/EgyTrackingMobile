@@ -16,6 +16,7 @@ class VehicleViewModel: ObservableObject {
     var vehicleId: String = ""
     
     private let homeapi = HomeAPI()
+    private let unitapi = UnitsAPI()
     
     func fetchData() async {
         DispatchQueue.main.async { [weak self] in
@@ -99,6 +100,40 @@ class VehicleViewModel: ObservableObject {
             }
             
             print(error.localizedDescription)
+        }
+    }
+    
+    
+    func bindIemiToVehicle(iemi: String) async -> Bool {
+        
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            
+            isloading.toggle()
+        }
+        
+        do {
+            let response = try await unitapi.bindToUnitForVehicle(iemi: iemi, vehicleId: vehicleId)
+            
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
+                
+                isloading.toggle()
+            }
+            
+            return response.success
+        }
+        catch {
+            
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
+                
+                isloading.toggle()
+            }
+            
+            print(error.localizedDescription)
+            
+            return false
         }
     }
 }

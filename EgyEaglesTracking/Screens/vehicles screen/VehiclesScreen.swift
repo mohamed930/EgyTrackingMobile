@@ -19,6 +19,8 @@ struct VehiclesScreen: View {
     
     @State var bindingActive: Bool = false
     
+    @State var successAlert: Bool = false
+    
     var body: some View {
         NavigationView {
             
@@ -140,14 +142,24 @@ struct VehiclesScreen: View {
                 }
                 
                 if bindingActive {
-                    BindingAlertComponets(isActive: $bindingActive) {
+                    BindingAlertComponets(isActive: $bindingActive) { iemi in
                         // MARK: - Add Binding Action.
+                        Task {
+                            let response = await viewmodel.bindIemiToVehicle(iemi: iemi)
+                            
+                            if response {
+                                successAlert.toggle()
+                            }
+                        }
                     }
                 }
                 
                 
                 
-            } // MARK: - ZStacl
+            } // MARK: - ZStack
+            .alert(isPresented: $successAlert) {
+                Alert(title: Text("Bind Success"), message: Text("Bind unit to vehicle successfully"), dismissButton: .cancel(Text("Ok")))
+            }
             
             
         }

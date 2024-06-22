@@ -45,7 +45,7 @@ struct VehicleCell: View {
                                 .font(.system(size: 12,weight: .medium))
                                 .foregroundColor(Color("#4B5563"))
                             
-                            Text("\(model.manufacturingYear ?? "--")")
+                            Text("\(model.imeiNumber ?? "--")")
                                 .font(.system(size: 12,weight: .medium))
                                 .foregroundColor(Color("#4B5563"))
                         }
@@ -94,7 +94,8 @@ struct VehicleCell_Previews: PreviewProvider {
                                                   middleLetter: "V",
                                                   leftLetter: "F")
                                        ,
-                                       manufacturingYear: "2020")
+                                       manufacturingYear: "2020",
+                                       imeiNumber: "iemi")
         
         VehicleCell(model: exampleCompany)
     }
