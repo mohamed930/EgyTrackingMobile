@@ -61,6 +61,7 @@
 		D3D8883A2C039E500057C047 /* NavigationComponets.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D888392C039E500057C047 /* NavigationComponets.swift */; };
 		D3D8883C2C03A4160057C047 /* WelcomeComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D8883B2C03A4160057C047 /* WelcomeComponents.swift */; };
 		D3D8883E2C03A4FE0057C047 /* PermissionsComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D8883D2C03A4FE0057C047 /* PermissionsComponents.swift */; };
+		D3F32C4A2C283D78009171EA /* UnitsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F32C492C283D78009171EA /* UnitsScreen.swift */; };
 		D3F61CA72C1B773900FAB707 /* VehicleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F61CA62C1B773900FAB707 /* VehicleCell.swift */; };
 		D3F61CAB2C1B7DF800FAB707 /* VehicleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F61CAA2C1B7DF800FAB707 /* VehicleViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -119,6 +120,7 @@
 		D3D888392C039E500057C047 /* NavigationComponets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationComponets.swift; sourceTree = "<group>"; };
 		D3D8883B2C03A4160057C047 /* WelcomeComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeComponents.swift; sourceTree = "<group>"; };
 		D3D8883D2C03A4FE0057C047 /* PermissionsComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsComponents.swift; sourceTree = "<group>"; };
+		D3F32C492C283D78009171EA /* UnitsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitsScreen.swift; sourceTree = "<group>"; };
 		D3F61CA62C1B773900FAB707 /* VehicleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleCell.swift; sourceTree = "<group>"; };
 		D3F61CAA2C1B7DF800FAB707 /* VehicleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -272,6 +274,7 @@
 				D32581732C09EC0D0084F2A8 /* AddCompany screen */,
 				D37C46582C17918A001064F7 /* vehicles screen */,
 				D3CA01022C1DA64D0079E375 /* Add vehicle screen */,
+				D3F32C482C283D69009171EA /* Units screen */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -405,6 +408,22 @@
 			path = "Profile Screen";
 			sourceTree = "<group>";
 		};
+		D3F32C482C283D69009171EA /* Units screen */ = {
+			isa = PBXGroup;
+			children = (
+				D3F32C492C283D78009171EA /* UnitsScreen.swift */,
+				D3F32C4B2C283F3B009171EA /* cell */,
+			);
+			path = "Units screen";
+			sourceTree = "<group>";
+		};
+		D3F32C4B2C283F3B009171EA /* cell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
 		D3F61CA52C1B772600FAB707 /* cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -526,6 +545,7 @@
 				D37C46572C178DCE001064F7 /* NSNotification.swift in Sources */,
 				D3D00DB42BFE624C00E31DFA /* LoginViewModel.swift in Sources */,
 				D3D888382C039DDD0057C047 /* ProfileScreen.swift in Sources */,
+				D3F32C4A2C283D78009171EA /* UnitsScreen.swift in Sources */,
 				D397E5A12C01066000511488 /* CarsModel.swift in Sources */,
 				D3047F382C05A4E50031E3BE /* PlaceHolderComponents.swift in Sources */,
 				D307107E2C00BE6B00D24849 /* HomeScreen.swift in Sources */,
