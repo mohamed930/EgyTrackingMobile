@@ -16,6 +16,9 @@
 		D30710762C00B60700D24849 /* SwiftfulLoadingIndicators in Frameworks */ = {isa = PBXBuildFile; productRef = D30710752C00B60700D24849 /* SwiftfulLoadingIndicators */; };
 		D307107A2C00BC4E00D24849 /* LoaderIndecatorComponets.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30710792C00BC4E00D24849 /* LoaderIndecatorComponets.swift */; };
 		D307107E2C00BE6B00D24849 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D307107D2C00BE6B00D24849 /* HomeScreen.swift */; };
+		D310A7A62C43121900257A2E /* UnitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D310A7A52C43121900257A2E /* UnitCell.swift */; };
+		D310A7A82C43127800257A2E /* UnitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D310A7A72C43127800257A2E /* UnitModel.swift */; };
+		D310A7AA2C4313C000257A2E /* UnitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D310A7A92C4313C000257A2E /* UnitViewModel.swift */; };
 		D32297D62BFBE20200EE19E9 /* TextFieldComponets.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32297D52BFBE20200EE19E9 /* TextFieldComponets.swift */; };
 		D32297D92BFBE77500EE19E9 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32297D82BFBE77500EE19E9 /* View.swift */; };
 		D32581752C09EC220084F2A8 /* AddCompanyScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32581742C09EC220084F2A8 /* AddCompanyScreen.swift */; };
@@ -75,6 +78,9 @@
 		D3047F372C05A4E50031E3BE /* PlaceHolderComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceHolderComponents.swift; sourceTree = "<group>"; };
 		D30710792C00BC4E00D24849 /* LoaderIndecatorComponets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderIndecatorComponets.swift; sourceTree = "<group>"; };
 		D307107D2C00BE6B00D24849 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		D310A7A52C43121900257A2E /* UnitCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitCell.swift; sourceTree = "<group>"; };
+		D310A7A72C43127800257A2E /* UnitModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitModel.swift; sourceTree = "<group>"; };
+		D310A7A92C4313C000257A2E /* UnitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitViewModel.swift; sourceTree = "<group>"; };
 		D32297D52BFBE20200EE19E9 /* TextFieldComponets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldComponets.swift; sourceTree = "<group>"; };
 		D32297D82BFBE77500EE19E9 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		D32581742C09EC220084F2A8 /* AddCompanyScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCompanyScreen.swift; sourceTree = "<group>"; };
@@ -411,6 +417,8 @@
 		D3F32C482C283D69009171EA /* Units screen */ = {
 			isa = PBXGroup;
 			children = (
+				D310A7A72C43127800257A2E /* UnitModel.swift */,
+				D310A7A92C4313C000257A2E /* UnitViewModel.swift */,
 				D3F32C492C283D78009171EA /* UnitsScreen.swift */,
 				D3F32C4B2C283F3B009171EA /* cell */,
 			);
@@ -420,6 +428,7 @@
 		D3F32C4B2C283F3B009171EA /* cell */ = {
 			isa = PBXGroup;
 			children = (
+				D310A7A52C43121900257A2E /* UnitCell.swift */,
 			);
 			path = cell;
 			sourceTree = "<group>";
@@ -528,6 +537,7 @@
 				D37C465A2C17919B001064F7 /* VehiclesScreen.swift in Sources */,
 				D34F462C2C033D930053FC77 /* HomeAPI.swift in Sources */,
 				D3D00DB22BFE5FE800E31DFA /* LoginModel.swift in Sources */,
+				D310A7AA2C4313C000257A2E /* UnitViewModel.swift in Sources */,
 				D3028C492C25AA4400BAC4EE /* UnitsAPI.swift in Sources */,
 				D397E5A42C0106BC00511488 /* CarCell.swift in Sources */,
 				D32581772C09EDC40084F2A8 /* InputComponents.swift in Sources */,
@@ -540,6 +550,7 @@
 				D3CA01062C1DA66F0079E375 /* AddVehicleScreen.swift in Sources */,
 				D3D00DB02BFE5FA200E31DFA /* AuthAPI.swift in Sources */,
 				D3BC0CFF2C075C9F008FDE8B /* UserModel.swift in Sources */,
+				D310A7A82C43127800257A2E /* UnitModel.swift in Sources */,
 				D32A64762C259EA2002812F2 /* BindingAlertComponets.swift in Sources */,
 				D3B669492C0828A0001C7CFE /* CompanyScreen.swift in Sources */,
 				D37C46572C178DCE001064F7 /* NSNotification.swift in Sources */,
@@ -559,6 +570,7 @@
 				D3F61CAB2C1B7DF800FAB707 /* VehicleViewModel.swift in Sources */,
 				D397E59D2C00F0D300511488 /* customAlert.swift in Sources */,
 				D3028C4B2C25AC0400BAC4EE /* UnitsForBindingModel.swift in Sources */,
+				D310A7A62C43121900257A2E /* UnitCell.swift in Sources */,
 				D3B6694E2C082EC0001C7CFE /* CompanyModel.swift in Sources */,
 				D3028C472C25A98000BAC4EE /* UnitsNetworking.swift in Sources */,
 				D3377BDD2C0C4B290075576C /* PickerTextField.swift in Sources */,

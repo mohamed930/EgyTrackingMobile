@@ -10,6 +10,7 @@ import Foundation
 enum UnitsNetworking {
     case unitForBinding(token: String)
     case bindUnitToVehilce(iemi: String,vehicleId: String,token: String)
+    case fetchAllUnits(token: String)
 }
 
 extension UnitsNetworking: TargetType {
@@ -23,12 +24,14 @@ extension UnitsNetworking: TargetType {
                 return .bindUnit
             case .bindUnitToVehilce:
                 return .bindUnitToVehilce
+            case .fetchAllUnits:
+                return .allUnits
         }
     }
     
     var method: HTTPMethod {
         switch self {
-            case .unitForBinding:
+            case .unitForBinding , .fetchAllUnits:
                 return .get
             case .bindUnitToVehilce:
                 return .put
@@ -39,16 +42,20 @@ extension UnitsNetworking: TargetType {
         switch self {
             case .unitForBinding:
                 return .requestPlain
-        case .bindUnitToVehilce(let iemi,let vehicleId,_):
-            return .requestParameters(parameters: ["vehicleId": vehicleId,"imei": iemi], endcoding: .body)
+            case .bindUnitToVehilce(let iemi,let vehicleId,_):
+                return .requestParameters(parameters: ["vehicleId": vehicleId,"imei": iemi], endcoding: .body)
+            case .fetchAllUnits:
+                return .requestPlain
         }
     }
     
     var headers: [String : String]? {
         switch self {
             case .unitForBinding(let token),
-                 .bindUnitToVehilce(_,_,let token):
+                 .bindUnitToVehilce(_,_,let token),
+                 .fetchAllUnits(let token):
                 return ["Authorization": "Bearer \(token)"]
+        
         }
     }
     

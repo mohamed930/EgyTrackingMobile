@@ -23,4 +23,5 @@ enum Api: String {
     case bindUnit = "api/Vehicles/Units"
     case bindUnitToVehilce = "api/Vehicles/Bind"
     case updateVehicle = "api/Vehicles/UpdateVehicle"
+    case allUnits = "api/Units"
 }
