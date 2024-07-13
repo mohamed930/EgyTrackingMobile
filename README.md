@@ -30,9 +30,9 @@ open EgyEagles.xcodeproj
 Build and run the project on your preferred device or simulator.
 Requirements
 
-Xcode 12.0 or later
+Xcode 15.0 or later
 Swift 5.3 or later
-iOS 14.0 or later
+iOS 15.0 or later
 Usage
 
 Add car companies to the system.
