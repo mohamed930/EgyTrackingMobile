@@ -52,7 +52,6 @@
 		D3CA01082C1DB7970079E375 /* AddVehicleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CA01072C1DB7970079E375 /* AddVehicleModel.swift */; };
 		D3CA010A2C1DB91B0079E375 /* AddVehicleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CA01092C1DB91B0079E375 /* AddVehicleViewModel.swift */; };
 		D3D00DA02BFE577600E31DFA /* Target.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D00D9F2BFE577600E31DFA /* Target.swift */; };
-		D3D00DA32BFE57B900E31DFA /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D00DA22BFE57B900E31DFA /* Api.swift */; };
 		D3D00DA52BFE57F400E31DFA /* BaseApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D00DA42BFE57F400E31DFA /* BaseApi.swift */; };
 		D3D00DA82BFE58B600E31DFA /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D00DA72BFE58B600E31DFA /* ErrorMessage.swift */; };
 		D3D00DAD2BFE5EBD00E31DFA /* AuthNetowrking.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D00DAC2BFE5EBD00E31DFA /* AuthNetowrking.swift */; };
@@ -114,7 +113,6 @@
 		D3CA01072C1DB7970079E375 /* AddVehicleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVehicleModel.swift; sourceTree = "<group>"; };
 		D3CA01092C1DB91B0079E375 /* AddVehicleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVehicleViewModel.swift; sourceTree = "<group>"; };
 		D3D00D9F2BFE577600E31DFA /* Target.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Target.swift; sourceTree = "<group>"; };
-		D3D00DA22BFE57B900E31DFA /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		D3D00DA42BFE57F400E31DFA /* BaseApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseApi.swift; sourceTree = "<group>"; };
 		D3D00DA72BFE58B600E31DFA /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
 		D3D00DAC2BFE5EBD00E31DFA /* AuthNetowrking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthNetowrking.swift; sourceTree = "<group>"; };
@@ -366,7 +364,6 @@
 		D3D00DA12BFE57B000E31DFA /* Constans */ = {
 			isa = PBXGroup;
 			children = (
-				D3D00DA22BFE57B900E31DFA /* Api.swift */,
 			);
 			path = Constans;
 			sourceTree = "<group>";
@@ -525,7 +522,6 @@
 				D36A369F2C0A4E7E00866D49 /* SendToWASLView.swift in Sources */,
 				D397E59F2C00FA9000511488 /* HomeViewModel.swift in Sources */,
 				D3D00DA52BFE57F400E31DFA /* BaseApi.swift in Sources */,
-				D3D00DA32BFE57B900E31DFA /* Api.swift in Sources */,
 				D3D8883C2C03A4160057C047 /* WelcomeComponents.swift in Sources */,
 				D36210EA2C08CA060076133B /* CompanyViewModel.swift in Sources */,
 				D3CA010A2C1DB91B0079E375 /* AddVehicleViewModel.swift in Sources */,
