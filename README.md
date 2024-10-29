@@ -63,6 +63,6 @@ This project is licensed under the MIT License. See the LICENSE file for details
 
 Contact
 
-If you have any questions or suggestions, feel free to reach out to me at your-email@example.com.
+If you have any questions or suggestions, feel free to reach out to me at mo.ali12477@gmail.com
 
 You can upload the demo video to a platform like YouTube or directly to GitHub and update the demo link accordingly.
